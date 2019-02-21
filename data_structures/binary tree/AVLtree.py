@@ -2,6 +2,7 @@
 '''
 An auto-balanced binary tree!
 '''
+from __future__ import print_function
 import math
 import random
 class my_queue:
