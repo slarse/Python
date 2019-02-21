@@ -8,7 +8,7 @@ def main():
         num1 = int(nums[0]); num2 = int(nums[1])
     except (IndexError, UnboundLocalError, ValueError):
         print("Wrong Input")
-    print(f"gcd({num1}, {num2}) = {gcd(num1, num2)}")
+    print("gcd(%d, %d) = %d" % (num1, num2, gcd(num1, num2)))
 
 if __name__ == '__main__':
     main()

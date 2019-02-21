@@ -29,11 +29,11 @@ def main():
 
     # Value expected: 29.73dB
     print("-- First Test --")
-    print(f"PSNR value is {psnr(original, contrast)} dB")
+    print("PSNR value is %f dB" % (psnr(original, contrast)))
 
     # # Value expected: 31.53dB (Wikipedia Example)
     print("\n-- Second Test --")
-    print(f"PSNR value is {psnr(original2, contrast2)} dB")
+    print("PSNR value is %f dB" % (psnr(original2, contrast2)))
 
 
 if __name__ == '__main__':
