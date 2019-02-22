@@ -87,20 +87,24 @@ def reset():
 
 #######################################
 
-# Initialization
-reset()
+def main():
+    # Initialization
+    reset()
 
-# Pushing Data (Input)
-import random
-message = random.sample(range(0xFFFFFFFF), 100)
-for chunk in message:
-  push(chunk)
+    # Pushing Data (Input)
+    import random
+    message = random.sample(range(0xFFFFFFFF), 100)
+    for chunk in message:
+      push(chunk)
 
-# for controlling 
-inp = ""
+    # for controlling 
+    inp = ""
 
-# Pulling Data (Output)
-while inp in ("e", "E"):
-  print("%s" % format(pull(), '#04x'))
-  print(buffer_space); print(params_space)
-  inp = input("(e)exit? ").strip()
+    # Pulling Data (Output)
+    while inp in ("e", "E"):
+      print("%s" % format(pull(), '#04x'))
+      print(buffer_space); print(params_space)
+      inp = input("(e)exit? ").strip()
+
+if __name__ == "__main__":
+    main()
