@@ -24,7 +24,7 @@ with open("README.md", mode="r") as file:
     README = file.read()
 
 TEST_REQUIREMENTS = ["pytest>=4.0.0", "pytest-cov", "pytest-timeout"]
-REQUIRED = ["numpy"]
+REQUIRED = ["numpy", "matplotlib", "sympy", "scikit-learn", "tensorflow"]
 
 setup(
     name="TheAlgorithms",
