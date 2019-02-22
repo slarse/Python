@@ -1,0 +1,3736 @@
+============================= test session starts ==============================
+platform linux2 -- Python 2.7.15, pytest-4.3.0, py-1.7.0, pluggy-0.8.1
+rootdir: /home/slarse/Documents/github/cdate/dd2480/Python, inifile:
+plugins: timeout-1.3.3, cov-2.6.1
+collected 256 items
+
+tests/test_imports.py ...FF.........FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF [ 19%]
+FFFFFFFFFFFFFFFFFFFF.F...FFF.......F..F...FFFFF.F.......F...F.F...F..F.. [ 47%]
+....F...F......F....F..........F.....F......F....F.FF.............F..... [ 75%]
+....F....F.F.......F.........F...F.....FFFFFFFFF.F.F.F..F...F.           [100%]
+
+=================================== FAILURES ===================================
+__ test_import_module[thealgorithms.file_transfer_protocol.ftp_send_receive] ___
+
+module = 'thealgorithms.file_transfer_protocol.ftp_send_receive'
+
+    @pytest.mark.parametrize("module", _gather_modules())
+    @pytest.mark.timeout(1)
+    def test_import_module(module):
+        """Test that all modules from project root can be imported"""
+>       mod = importlib.import_module(module)
+
+tests/test_imports.py:40: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+/usr/lib/python2.7/importlib/__init__.py:37: in import_module
+    __import__(name)
+thealgorithms/file_transfer_protocol/ftp_send_receive.py:12: in <module>
+    ftp = FTP('xxx.xxx.x.x')  # Enter the ip address or the domain name here
+/usr/lib/python2.7/ftplib.py:120: in __init__
+    self.connect(host)
+/usr/lib/python2.7/ftplib.py:135: in connect
+    self.sock = socket.create_connection((self.host, self.port), self.timeout)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+address = ('xxx.xxx.x.x', 21), timeout = <object object at 0x7fc3177721e0>
+source_address = None
+
+    def create_connection(address, timeout=_GLOBAL_DEFAULT_TIMEOUT,
+                          source_address=None):
+        """Connect to *address* and return the socket object.
+    
+        Convenience function.  Connect to *address* (a 2-tuple ``(host,
+        port)``) and return the socket object.  Passing the optional
+        *timeout* parameter will set the timeout on the socket instance
+        before attempting to connect.  If no *timeout* is supplied, the
+        global default timeout setting returned by :func:`getdefaulttimeout`
+        is used.  If *source_address* is set it must be a tuple of (host, port)
+        for the socket to bind as a source address before making the connection.
+        A host of '' or port 0 tells the OS to use the default.
+        """
+    
+        host, port = address
+        err = None
+>       for res in getaddrinfo(host, port, 0, SOCK_STREAM):
+E       gaierror: [Errno -2] Name or service not known
+
+/usr/lib/python2.7/socket.py:557: gaierror
+__ test_import_module[thealgorithms.file_transfer_protocol.ftp_client_server] __
+
+module = 'thealgorithms.file_transfer_protocol.ftp_client_server'
+
+    @pytest.mark.parametrize("module", _gather_modules())
+    @pytest.mark.timeout(1)
+    def test_import_module(module):
+        """Test that all modules from project root can be imported"""
+>       mod = importlib.import_module(module)
+
+tests/test_imports.py:40: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+/usr/lib/python2.7/importlib/__init__.py:37: in import_module
+    __import__(name)
+thealgorithms/file_transfer_protocol/ftp_client_server.py:14: in <module>
+    conn, addr = s.accept()     # Establish connection with client.
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <socket._socketobject object at 0x7fc315907670>
+
+    def accept(self):
+>       sock, addr = self._sock.accept()
+E       Failed: Timeout >1.0s
+
+/usr/lib/python2.7/socket.py:206: Failed
+----------------------------- Captured stdout call -----------------------------
+Server listening....
+ test_import_module[thealgorithms.digital_image_processing.filters.median_filter] 
+
+module = 'thealgorithms.digital_image_processing.filters.median_filter'
+
+    @pytest.mark.parametrize("module", _gather_modules())
+    @pytest.mark.timeout(1)
+    def test_import_module(module):
+        """Test that all modules from project root can be imported"""
+>       mod = importlib.import_module(module)
+
+tests/test_imports.py:40: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+/usr/lib/python2.7/importlib/__init__.py:37: in import_module
+    __import__(name)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    """
+    
+>   from cv2 import imread, cvtColor, COLOR_BGR2GRAY, imshow, waitKey
+E   ImportError: No module named cv2
+
+thealgorithms/digital_image_processing/filters/median_filter.py:5: ImportError
+_______ test_import_module[thealgorithms.project_euler.problem_11.sol1] ________
+
+module = 'thealgorithms.project_euler.problem_11.sol1'
+
+    @pytest.mark.parametrize("module", _gather_modules())
+    @pytest.mark.timeout(1)
+    def test_import_module(module):
+        """Test that all modules from project root can be imported"""
+>       mod = importlib.import_module(module)
+
+tests/test_imports.py:40: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+name = 'thealgorithms.project_euler.problem_11.sol1', package = None
+
+    def import_module(name, package=None):
+        """Import a module.
+    
+        The 'package' argument is required when performing a relative import. It
+        specifies the package to use as the anchor point from which to resolve the
+        relative import to an absolute import.
+    
+        """
+        if name.startswith('.'):
+            if not package:
+                raise TypeError("relative imports require the 'package' argument")
+            level = 0
+            for character in name:
+                if character != '.':
+                    break
+                level += 1
+            name = _resolve_name(name[level:], package, level)
+>       __import__(name)
+E       ImportError: No module named project_euler.problem_11.sol1
+
+/usr/lib/python2.7/importlib/__init__.py:37: ImportError
+_______ test_import_module[thealgorithms.project_euler.problem_11.sol2] ________
+
+module = 'thealgorithms.project_euler.problem_11.sol2'
+
+    @pytest.mark.parametrize("module", _gather_modules())
+    @pytest.mark.timeout(1)
+    def test_import_module(module):
+        """Test that all modules from project root can be imported"""
+>       mod = importlib.import_module(module)
+
+tests/test_imports.py:40: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+name = 'thealgorithms.project_euler.problem_11.sol2', package = None
+
+    def import_module(name, package=None):
+        """Import a module.
+    
+        The 'package' argument is required when performing a relative import. It
+        specifies the package to use as the anchor point from which to resolve the
+        relative import to an absolute import.
+    
+        """
+        if name.startswith('.'):
+            if not package:
+                raise TypeError("relative imports require the 'package' argument")
+            level = 0
+            for character in name:
+                if character != '.':
+                    break
+                level += 1
+            name = _resolve_name(name[level:], package, level)
+>       __import__(name)
+E       ImportError: No module named project_euler.problem_11.sol2
+
+/usr/lib/python2.7/importlib/__init__.py:37: ImportError
+_______ test_import_module[thealgorithms.project_euler.problem_48.sol1] ________
+
+module = 'thealgorithms.project_euler.problem_48.sol1'
+
+    @pytest.mark.parametrize("module", _gather_modules())
+    @pytest.mark.timeout(1)
+    def test_import_module(module):
+        """Test that all modules from project root can be imported"""
+>       mod = importlib.import_module(module)
+
+tests/test_imports.py:40: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+name = 'thealgorithms.project_euler.problem_48.sol1', package = None
+
+    def import_module(name, package=None):
+        """Import a module.
+    
+        The 'package' argument is required when performing a relative import. It
+        specifies the package to use as the anchor point from which to resolve the
+        relative import to an absolute import.
+    
+        """
+        if name.startswith('.'):
+            if not package:
+                raise TypeError("relative imports require the 'package' argument")
+            level = 0
+            for character in name:
+                if character != '.':
+                    break
+                level += 1
+            name = _resolve_name(name[level:], package, level)
+>       __import__(name)
+E       ImportError: No module named project_euler.problem_48.sol1
+
+/usr/lib/python2.7/importlib/__init__.py:37: ImportError
+_______ test_import_module[thealgorithms.project_euler.problem_08.sol1] ________
+
+module = 'thealgorithms.project_euler.problem_08.sol1'
+
+    @pytest.mark.parametrize("module", _gather_modules())
+    @pytest.mark.timeout(1)
+    def test_import_module(module):
+        """Test that all modules from project root can be imported"""
+>       mod = importlib.import_module(module)
+
+tests/test_imports.py:40: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+name = 'thealgorithms.project_euler.problem_08.sol1', package = None
+
+    def import_module(name, package=None):
+        """Import a module.
+    
+        The 'package' argument is required when performing a relative import. It
+        specifies the package to use as the anchor point from which to resolve the
+        relative import to an absolute import.
+    
+        """
+        if name.startswith('.'):
+            if not package:
+                raise TypeError("relative imports require the 'package' argument")
+            level = 0
+            for character in name:
+                if character != '.':
+                    break
+                level += 1
+            name = _resolve_name(name[level:], package, level)
+>       __import__(name)
+E       ImportError: No module named project_euler.problem_08.sol1
+
+/usr/lib/python2.7/importlib/__init__.py:37: ImportError
+_______ test_import_module[thealgorithms.project_euler.problem_08.sol2] ________
+
+module = 'thealgorithms.project_euler.problem_08.sol2'
+
+    @pytest.mark.parametrize("module", _gather_modules())
+    @pytest.mark.timeout(1)
+    def test_import_module(module):
+        """Test that all modules from project root can be imported"""
+>       mod = importlib.import_module(module)
+
+tests/test_imports.py:40: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+name = 'thealgorithms.project_euler.problem_08.sol2', package = None
+
+    def import_module(name, package=None):
+        """Import a module.
+    
+        The 'package' argument is required when performing a relative import. It
+        specifies the package to use as the anchor point from which to resolve the
+        relative import to an absolute import.
+    
+        """
+        if name.startswith('.'):
+            if not package:
+                raise TypeError("relative imports require the 'package' argument")
+            level = 0
+            for character in name:
+                if character != '.':
+                    break
+                level += 1
+            name = _resolve_name(name[level:], package, level)
+>       __import__(name)
+E       ImportError: No module named project_euler.problem_08.sol2
+
+/usr/lib/python2.7/importlib/__init__.py:37: ImportError
+_______ test_import_module[thealgorithms.project_euler.problem_07.sol1] ________
+
+module = 'thealgorithms.project_euler.problem_07.sol1'
+
+    @pytest.mark.parametrize("module", _gather_modules())
+    @pytest.mark.timeout(1)
+    def test_import_module(module):
+        """Test that all modules from project root can be imported"""
+>       mod = importlib.import_module(module)
+
+tests/test_imports.py:40: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+name = 'thealgorithms.project_euler.problem_07.sol1', package = None
+
+    def import_module(name, package=None):
+        """Import a module.
+    
+        The 'package' argument is required when performing a relative import. It
+        specifies the package to use as the anchor point from which to resolve the
+        relative import to an absolute import.
+    
+        """
+        if name.startswith('.'):
+            if not package:
+                raise TypeError("relative imports require the 'package' argument")
+            level = 0
+            for character in name:
+                if character != '.':
+                    break
+                level += 1
+            name = _resolve_name(name[level:], package, level)
+>       __import__(name)
+E       ImportError: No module named project_euler.problem_07.sol1
+
+/usr/lib/python2.7/importlib/__init__.py:37: ImportError
+_______ test_import_module[thealgorithms.project_euler.problem_07.sol3] ________
+
+module = 'thealgorithms.project_euler.problem_07.sol3'
+
+    @pytest.mark.parametrize("module", _gather_modules())
+    @pytest.mark.timeout(1)
+    def test_import_module(module):
+        """Test that all modules from project root can be imported"""
+>       mod = importlib.import_module(module)
+
+tests/test_imports.py:40: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+name = 'thealgorithms.project_euler.problem_07.sol3', package = None
+
+    def import_module(name, package=None):
+        """Import a module.
+    
+        The 'package' argument is required when performing a relative import. It
+        specifies the package to use as the anchor point from which to resolve the
+        relative import to an absolute import.
+    
+        """
+        if name.startswith('.'):
+            if not package:
+                raise TypeError("relative imports require the 'package' argument")
+            level = 0
+            for character in name:
+                if character != '.':
+                    break
+                level += 1
+            name = _resolve_name(name[level:], package, level)
+>       __import__(name)
+E       ImportError: No module named project_euler.problem_07.sol3
+
+/usr/lib/python2.7/importlib/__init__.py:37: ImportError
+_______ test_import_module[thealgorithms.project_euler.problem_07.sol2] ________
+
+module = 'thealgorithms.project_euler.problem_07.sol2'
+
+    @pytest.mark.parametrize("module", _gather_modules())
+    @pytest.mark.timeout(1)
+    def test_import_module(module):
+        """Test that all modules from project root can be imported"""
+>       mod = importlib.import_module(module)
+
+tests/test_imports.py:40: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+name = 'thealgorithms.project_euler.problem_07.sol2', package = None
+
+    def import_module(name, package=None):
+        """Import a module.
+    
+        The 'package' argument is required when performing a relative import. It
+        specifies the package to use as the anchor point from which to resolve the
+        relative import to an absolute import.
+    
+        """
+        if name.startswith('.'):
+            if not package:
+                raise TypeError("relative imports require the 'package' argument")
+            level = 0
+            for character in name:
+                if character != '.':
+                    break
+                level += 1
+            name = _resolve_name(name[level:], package, level)
+>       __import__(name)
+E       ImportError: No module named project_euler.problem_07.sol2
+
+/usr/lib/python2.7/importlib/__init__.py:37: ImportError
+_______ test_import_module[thealgorithms.project_euler.problem_02.sol1] ________
+
+module = 'thealgorithms.project_euler.problem_02.sol1'
+
+    @pytest.mark.parametrize("module", _gather_modules())
+    @pytest.mark.timeout(1)
+    def test_import_module(module):
+        """Test that all modules from project root can be imported"""
+>       mod = importlib.import_module(module)
+
+tests/test_imports.py:40: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+name = 'thealgorithms.project_euler.problem_02.sol1', package = None
+
+    def import_module(name, package=None):
+        """Import a module.
+    
+        The 'package' argument is required when performing a relative import. It
+        specifies the package to use as the anchor point from which to resolve the
+        relative import to an absolute import.
+    
+        """
+        if name.startswith('.'):
+            if not package:
+                raise TypeError("relative imports require the 'package' argument")
+            level = 0
+            for character in name:
+                if character != '.':
+                    break
+                level += 1
+            name = _resolve_name(name[level:], package, level)
+>       __import__(name)
+E       ImportError: No module named project_euler.problem_02.sol1
+
+/usr/lib/python2.7/importlib/__init__.py:37: ImportError
+_______ test_import_module[thealgorithms.project_euler.problem_02.sol3] ________
+
+module = 'thealgorithms.project_euler.problem_02.sol3'
+
+    @pytest.mark.parametrize("module", _gather_modules())
+    @pytest.mark.timeout(1)
+    def test_import_module(module):
+        """Test that all modules from project root can be imported"""
+>       mod = importlib.import_module(module)
+
+tests/test_imports.py:40: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+name = 'thealgorithms.project_euler.problem_02.sol3', package = None
+
+    def import_module(name, package=None):
+        """Import a module.
+    
+        The 'package' argument is required when performing a relative import. It
+        specifies the package to use as the anchor point from which to resolve the
+        relative import to an absolute import.
+    
+        """
+        if name.startswith('.'):
+            if not package:
+                raise TypeError("relative imports require the 'package' argument")
+            level = 0
+            for character in name:
+                if character != '.':
+                    break
+                level += 1
+            name = _resolve_name(name[level:], package, level)
+>       __import__(name)
+E       ImportError: No module named project_euler.problem_02.sol3
+
+/usr/lib/python2.7/importlib/__init__.py:37: ImportError
+_______ test_import_module[thealgorithms.project_euler.problem_02.sol2] ________
+
+module = 'thealgorithms.project_euler.problem_02.sol2'
+
+    @pytest.mark.parametrize("module", _gather_modules())
+    @pytest.mark.timeout(1)
+    def test_import_module(module):
+        """Test that all modules from project root can be imported"""
+>       mod = importlib.import_module(module)
+
+tests/test_imports.py:40: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+name = 'thealgorithms.project_euler.problem_02.sol2', package = None
+
+    def import_module(name, package=None):
+        """Import a module.
+    
+        The 'package' argument is required when performing a relative import. It
+        specifies the package to use as the anchor point from which to resolve the
+        relative import to an absolute import.
+    
+        """
+        if name.startswith('.'):
+            if not package:
+                raise TypeError("relative imports require the 'package' argument")
+            level = 0
+            for character in name:
+                if character != '.':
+                    break
+                level += 1
+            name = _resolve_name(name[level:], package, level)
+>       __import__(name)
+E       ImportError: No module named project_euler.problem_02.sol2
+
+/usr/lib/python2.7/importlib/__init__.py:37: ImportError
+_______ test_import_module[thealgorithms.project_euler.problem_19.sol1] ________
+
+module = 'thealgorithms.project_euler.problem_19.sol1'
+
+    @pytest.mark.parametrize("module", _gather_modules())
+    @pytest.mark.timeout(1)
+    def test_import_module(module):
+        """Test that all modules from project root can be imported"""
+>       mod = importlib.import_module(module)
+
+tests/test_imports.py:40: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+name = 'thealgorithms.project_euler.problem_19.sol1', package = None
+
+    def import_module(name, package=None):
+        """Import a module.
+    
+        The 'package' argument is required when performing a relative import. It
+        specifies the package to use as the anchor point from which to resolve the
+        relative import to an absolute import.
+    
+        """
+        if name.startswith('.'):
+            if not package:
+                raise TypeError("relative imports require the 'package' argument")
+            level = 0
+            for character in name:
+                if character != '.':
+                    break
+                level += 1
+            name = _resolve_name(name[level:], package, level)
+>       __import__(name)
+E       ImportError: No module named project_euler.problem_19.sol1
+
+/usr/lib/python2.7/importlib/__init__.py:37: ImportError
+_______ test_import_module[thealgorithms.project_euler.problem_22.sol1] ________
+
+module = 'thealgorithms.project_euler.problem_22.sol1'
+
+    @pytest.mark.parametrize("module", _gather_modules())
+    @pytest.mark.timeout(1)
+    def test_import_module(module):
+        """Test that all modules from project root can be imported"""
+>       mod = importlib.import_module(module)
+
+tests/test_imports.py:40: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+name = 'thealgorithms.project_euler.problem_22.sol1', package = None
+
+    def import_module(name, package=None):
+        """Import a module.
+    
+        The 'package' argument is required when performing a relative import. It
+        specifies the package to use as the anchor point from which to resolve the
+        relative import to an absolute import.
+    
+        """
+        if name.startswith('.'):
+            if not package:
+                raise TypeError("relative imports require the 'package' argument")
+            level = 0
+            for character in name:
+                if character != '.':
+                    break
+                level += 1
+            name = _resolve_name(name[level:], package, level)
+>       __import__(name)
+E       ImportError: No module named project_euler.problem_22.sol1
+
+/usr/lib/python2.7/importlib/__init__.py:37: ImportError
+_______ test_import_module[thealgorithms.project_euler.problem_22.sol2] ________
+
+module = 'thealgorithms.project_euler.problem_22.sol2'
+
+    @pytest.mark.parametrize("module", _gather_modules())
+    @pytest.mark.timeout(1)
+    def test_import_module(module):
+        """Test that all modules from project root can be imported"""
+>       mod = importlib.import_module(module)
+
+tests/test_imports.py:40: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+name = 'thealgorithms.project_euler.problem_22.sol2', package = None
+
+    def import_module(name, package=None):
+        """Import a module.
+    
+        The 'package' argument is required when performing a relative import. It
+        specifies the package to use as the anchor point from which to resolve the
+        relative import to an absolute import.
+    
+        """
+        if name.startswith('.'):
+            if not package:
+                raise TypeError("relative imports require the 'package' argument")
+            level = 0
+            for character in name:
+                if character != '.':
+                    break
+                level += 1
+            name = _resolve_name(name[level:], package, level)
+>       __import__(name)
+E       ImportError: No module named project_euler.problem_22.sol2
+
+/usr/lib/python2.7/importlib/__init__.py:37: ImportError
+_______ test_import_module[thealgorithms.project_euler.problem_13.sol1] ________
+
+module = 'thealgorithms.project_euler.problem_13.sol1'
+
+    @pytest.mark.parametrize("module", _gather_modules())
+    @pytest.mark.timeout(1)
+    def test_import_module(module):
+        """Test that all modules from project root can be imported"""
+>       mod = importlib.import_module(module)
+
+tests/test_imports.py:40: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+name = 'thealgorithms.project_euler.problem_13.sol1', package = None
+
+    def import_module(name, package=None):
+        """Import a module.
+    
+        The 'package' argument is required when performing a relative import. It
+        specifies the package to use as the anchor point from which to resolve the
+        relative import to an absolute import.
+    
+        """
+        if name.startswith('.'):
+            if not package:
+                raise TypeError("relative imports require the 'package' argument")
+            level = 0
+            for character in name:
+                if character != '.':
+                    break
+                level += 1
+            name = _resolve_name(name[level:], package, level)
+>       __import__(name)
+E       ImportError: No module named project_euler.problem_13.sol1
+
+/usr/lib/python2.7/importlib/__init__.py:37: ImportError
+_______ test_import_module[thealgorithms.project_euler.problem_16.sol1] ________
+
+module = 'thealgorithms.project_euler.problem_16.sol1'
+
+    @pytest.mark.parametrize("module", _gather_modules())
+    @pytest.mark.timeout(1)
+    def test_import_module(module):
+        """Test that all modules from project root can be imported"""
+>       mod = importlib.import_module(module)
+
+tests/test_imports.py:40: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+name = 'thealgorithms.project_euler.problem_16.sol1', package = None
+
+    def import_module(name, package=None):
+        """Import a module.
+    
+        The 'package' argument is required when performing a relative import. It
+        specifies the package to use as the anchor point from which to resolve the
+        relative import to an absolute import.
+    
+        """
+        if name.startswith('.'):
+            if not package:
+                raise TypeError("relative imports require the 'package' argument")
+            level = 0
+            for character in name:
+                if character != '.':
+                    break
+                level += 1
+            name = _resolve_name(name[level:], package, level)
+>       __import__(name)
+E       ImportError: No module named project_euler.problem_16.sol1
+
+/usr/lib/python2.7/importlib/__init__.py:37: ImportError
+_______ test_import_module[thealgorithms.project_euler.problem_24.sol1] ________
+
+module = 'thealgorithms.project_euler.problem_24.sol1'
+
+    @pytest.mark.parametrize("module", _gather_modules())
+    @pytest.mark.timeout(1)
+    def test_import_module(module):
+        """Test that all modules from project root can be imported"""
+>       mod = importlib.import_module(module)
+
+tests/test_imports.py:40: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+name = 'thealgorithms.project_euler.problem_24.sol1', package = None
+
+    def import_module(name, package=None):
+        """Import a module.
+    
+        The 'package' argument is required when performing a relative import. It
+        specifies the package to use as the anchor point from which to resolve the
+        relative import to an absolute import.
+    
+        """
+        if name.startswith('.'):
+            if not package:
+                raise TypeError("relative imports require the 'package' argument")
+            level = 0
+            for character in name:
+                if character != '.':
+                    break
+                level += 1
+            name = _resolve_name(name[level:], package, level)
+>       __import__(name)
+E       ImportError: No module named project_euler.problem_24.sol1
+
+/usr/lib/python2.7/importlib/__init__.py:37: ImportError
+_______ test_import_module[thealgorithms.project_euler.problem_21.sol1] ________
+
+module = 'thealgorithms.project_euler.problem_21.sol1'
+
+    @pytest.mark.parametrize("module", _gather_modules())
+    @pytest.mark.timeout(1)
+    def test_import_module(module):
+        """Test that all modules from project root can be imported"""
+>       mod = importlib.import_module(module)
+
+tests/test_imports.py:40: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+name = 'thealgorithms.project_euler.problem_21.sol1', package = None
+
+    def import_module(name, package=None):
+        """Import a module.
+    
+        The 'package' argument is required when performing a relative import. It
+        specifies the package to use as the anchor point from which to resolve the
+        relative import to an absolute import.
+    
+        """
+        if name.startswith('.'):
+            if not package:
+                raise TypeError("relative imports require the 'package' argument")
+            level = 0
+            for character in name:
+                if character != '.':
+                    break
+                level += 1
+            name = _resolve_name(name[level:], package, level)
+>       __import__(name)
+E       ImportError: No module named project_euler.problem_21.sol1
+
+/usr/lib/python2.7/importlib/__init__.py:37: ImportError
+_______ test_import_module[thealgorithms.project_euler.problem_20.sol1] ________
+
+module = 'thealgorithms.project_euler.problem_20.sol1'
+
+    @pytest.mark.parametrize("module", _gather_modules())
+    @pytest.mark.timeout(1)
+    def test_import_module(module):
+        """Test that all modules from project root can be imported"""
+>       mod = importlib.import_module(module)
+
+tests/test_imports.py:40: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+name = 'thealgorithms.project_euler.problem_20.sol1', package = None
+
+    def import_module(name, package=None):
+        """Import a module.
+    
+        The 'package' argument is required when performing a relative import. It
+        specifies the package to use as the anchor point from which to resolve the
+        relative import to an absolute import.
+    
+        """
+        if name.startswith('.'):
+            if not package:
+                raise TypeError("relative imports require the 'package' argument")
+            level = 0
+            for character in name:
+                if character != '.':
+                    break
+                level += 1
+            name = _resolve_name(name[level:], package, level)
+>       __import__(name)
+E       ImportError: No module named project_euler.problem_20.sol1
+
+/usr/lib/python2.7/importlib/__init__.py:37: ImportError
+_______ test_import_module[thealgorithms.project_euler.problem_20.sol2] ________
+
+module = 'thealgorithms.project_euler.problem_20.sol2'
+
+    @pytest.mark.parametrize("module", _gather_modules())
+    @pytest.mark.timeout(1)
+    def test_import_module(module):
+        """Test that all modules from project root can be imported"""
+>       mod = importlib.import_module(module)
+
+tests/test_imports.py:40: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+name = 'thealgorithms.project_euler.problem_20.sol2', package = None
+
+    def import_module(name, package=None):
+        """Import a module.
+    
+        The 'package' argument is required when performing a relative import. It
+        specifies the package to use as the anchor point from which to resolve the
+        relative import to an absolute import.
+    
+        """
+        if name.startswith('.'):
+            if not package:
+                raise TypeError("relative imports require the 'package' argument")
+            level = 0
+            for character in name:
+                if character != '.':
+                    break
+                level += 1
+            name = _resolve_name(name[level:], package, level)
+>       __import__(name)
+E       ImportError: No module named project_euler.problem_20.sol2
+
+/usr/lib/python2.7/importlib/__init__.py:37: ImportError
+_______ test_import_module[thealgorithms.project_euler.problem_25.sol1] ________
+
+module = 'thealgorithms.project_euler.problem_25.sol1'
+
+    @pytest.mark.parametrize("module", _gather_modules())
+    @pytest.mark.timeout(1)
+    def test_import_module(module):
+        """Test that all modules from project root can be imported"""
+>       mod = importlib.import_module(module)
+
+tests/test_imports.py:40: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+name = 'thealgorithms.project_euler.problem_25.sol1', package = None
+
+    def import_module(name, package=None):
+        """Import a module.
+    
+        The 'package' argument is required when performing a relative import. It
+        specifies the package to use as the anchor point from which to resolve the
+        relative import to an absolute import.
+    
+        """
+        if name.startswith('.'):
+            if not package:
+                raise TypeError("relative imports require the 'package' argument")
+            level = 0
+            for character in name:
+                if character != '.':
+                    break
+                level += 1
+            name = _resolve_name(name[level:], package, level)
+>       __import__(name)
+E       ImportError: No module named project_euler.problem_25.sol1
+
+/usr/lib/python2.7/importlib/__init__.py:37: ImportError
+_______ test_import_module[thealgorithms.project_euler.problem_25.sol2] ________
+
+module = 'thealgorithms.project_euler.problem_25.sol2'
+
+    @pytest.mark.parametrize("module", _gather_modules())
+    @pytest.mark.timeout(1)
+    def test_import_module(module):
+        """Test that all modules from project root can be imported"""
+>       mod = importlib.import_module(module)
+
+tests/test_imports.py:40: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+name = 'thealgorithms.project_euler.problem_25.sol2', package = None
+
+    def import_module(name, package=None):
+        """Import a module.
+    
+        The 'package' argument is required when performing a relative import. It
+        specifies the package to use as the anchor point from which to resolve the
+        relative import to an absolute import.
+    
+        """
+        if name.startswith('.'):
+            if not package:
+                raise TypeError("relative imports require the 'package' argument")
+            level = 0
+            for character in name:
+                if character != '.':
+                    break
+                level += 1
+            name = _resolve_name(name[level:], package, level)
+>       __import__(name)
+E       ImportError: No module named project_euler.problem_25.sol2
+
+/usr/lib/python2.7/importlib/__init__.py:37: ImportError
+_______ test_import_module[thealgorithms.project_euler.problem_14.sol1] ________
+
+module = 'thealgorithms.project_euler.problem_14.sol1'
+
+    @pytest.mark.parametrize("module", _gather_modules())
+    @pytest.mark.timeout(1)
+    def test_import_module(module):
+        """Test that all modules from project root can be imported"""
+>       mod = importlib.import_module(module)
+
+tests/test_imports.py:40: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+name = 'thealgorithms.project_euler.problem_14.sol1', package = None
+
+    def import_module(name, package=None):
+        """Import a module.
+    
+        The 'package' argument is required when performing a relative import. It
+        specifies the package to use as the anchor point from which to resolve the
+        relative import to an absolute import.
+    
+        """
+        if name.startswith('.'):
+            if not package:
+                raise TypeError("relative imports require the 'package' argument")
+            level = 0
+            for character in name:
+                if character != '.':
+                    break
+                level += 1
+            name = _resolve_name(name[level:], package, level)
+>       __import__(name)
+E       ImportError: No module named project_euler.problem_14.sol1
+
+/usr/lib/python2.7/importlib/__init__.py:37: ImportError
+_______ test_import_module[thealgorithms.project_euler.problem_14.sol2] ________
+
+module = 'thealgorithms.project_euler.problem_14.sol2'
+
+    @pytest.mark.parametrize("module", _gather_modules())
+    @pytest.mark.timeout(1)
+    def test_import_module(module):
+        """Test that all modules from project root can be imported"""
+>       mod = importlib.import_module(module)
+
+tests/test_imports.py:40: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+name = 'thealgorithms.project_euler.problem_14.sol2', package = None
+
+    def import_module(name, package=None):
+        """Import a module.
+    
+        The 'package' argument is required when performing a relative import. It
+        specifies the package to use as the anchor point from which to resolve the
+        relative import to an absolute import.
+    
+        """
+        if name.startswith('.'):
+            if not package:
+                raise TypeError("relative imports require the 'package' argument")
+            level = 0
+            for character in name:
+                if character != '.':
+                    break
+                level += 1
+            name = _resolve_name(name[level:], package, level)
+>       __import__(name)
+E       ImportError: No module named project_euler.problem_14.sol2
+
+/usr/lib/python2.7/importlib/__init__.py:37: ImportError
+_______ test_import_module[thealgorithms.project_euler.problem_52.sol1] ________
+
+module = 'thealgorithms.project_euler.problem_52.sol1'
+
+    @pytest.mark.parametrize("module", _gather_modules())
+    @pytest.mark.timeout(1)
+    def test_import_module(module):
+        """Test that all modules from project root can be imported"""
+>       mod = importlib.import_module(module)
+
+tests/test_imports.py:40: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+name = 'thealgorithms.project_euler.problem_52.sol1', package = None
+
+    def import_module(name, package=None):
+        """Import a module.
+    
+        The 'package' argument is required when performing a relative import. It
+        specifies the package to use as the anchor point from which to resolve the
+        relative import to an absolute import.
+    
+        """
+        if name.startswith('.'):
+            if not package:
+                raise TypeError("relative imports require the 'package' argument")
+            level = 0
+            for character in name:
+                if character != '.':
+                    break
+                level += 1
+            name = _resolve_name(name[level:], package, level)
+>       __import__(name)
+E       ImportError: No module named project_euler.problem_52.sol1
+
+/usr/lib/python2.7/importlib/__init__.py:37: ImportError
+_______ test_import_module[thealgorithms.project_euler.problem_03.sol1] ________
+
+module = 'thealgorithms.project_euler.problem_03.sol1'
+
+    @pytest.mark.parametrize("module", _gather_modules())
+    @pytest.mark.timeout(1)
+    def test_import_module(module):
+        """Test that all modules from project root can be imported"""
+>       mod = importlib.import_module(module)
+
+tests/test_imports.py:40: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+name = 'thealgorithms.project_euler.problem_03.sol1', package = None
+
+    def import_module(name, package=None):
+        """Import a module.
+    
+        The 'package' argument is required when performing a relative import. It
+        specifies the package to use as the anchor point from which to resolve the
+        relative import to an absolute import.
+    
+        """
+        if name.startswith('.'):
+            if not package:
+                raise TypeError("relative imports require the 'package' argument")
+            level = 0
+            for character in name:
+                if character != '.':
+                    break
+                level += 1
+            name = _resolve_name(name[level:], package, level)
+>       __import__(name)
+E       ImportError: No module named project_euler.problem_03.sol1
+
+/usr/lib/python2.7/importlib/__init__.py:37: ImportError
+_______ test_import_module[thealgorithms.project_euler.problem_03.sol2] ________
+
+module = 'thealgorithms.project_euler.problem_03.sol2'
+
+    @pytest.mark.parametrize("module", _gather_modules())
+    @pytest.mark.timeout(1)
+    def test_import_module(module):
+        """Test that all modules from project root can be imported"""
+>       mod = importlib.import_module(module)
+
+tests/test_imports.py:40: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+name = 'thealgorithms.project_euler.problem_03.sol2', package = None
+
+    def import_module(name, package=None):
+        """Import a module.
+    
+        The 'package' argument is required when performing a relative import. It
+        specifies the package to use as the anchor point from which to resolve the
+        relative import to an absolute import.
+    
+        """
+        if name.startswith('.'):
+            if not package:
+                raise TypeError("relative imports require the 'package' argument")
+            level = 0
+            for character in name:
+                if character != '.':
+                    break
+                level += 1
+            name = _resolve_name(name[level:], package, level)
+>       __import__(name)
+E       ImportError: No module named project_euler.problem_03.sol2
+
+/usr/lib/python2.7/importlib/__init__.py:37: ImportError
+_______ test_import_module[thealgorithms.project_euler.problem_31.sol1] ________
+
+module = 'thealgorithms.project_euler.problem_31.sol1'
+
+    @pytest.mark.parametrize("module", _gather_modules())
+    @pytest.mark.timeout(1)
+    def test_import_module(module):
+        """Test that all modules from project root can be imported"""
+>       mod = importlib.import_module(module)
+
+tests/test_imports.py:40: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+name = 'thealgorithms.project_euler.problem_31.sol1', package = None
+
+    def import_module(name, package=None):
+        """Import a module.
+    
+        The 'package' argument is required when performing a relative import. It
+        specifies the package to use as the anchor point from which to resolve the
+        relative import to an absolute import.
+    
+        """
+        if name.startswith('.'):
+            if not package:
+                raise TypeError("relative imports require the 'package' argument")
+            level = 0
+            for character in name:
+                if character != '.':
+                    break
+                level += 1
+            name = _resolve_name(name[level:], package, level)
+>       __import__(name)
+E       ImportError: No module named project_euler.problem_31.sol1
+
+/usr/lib/python2.7/importlib/__init__.py:37: ImportError
+_______ test_import_module[thealgorithms.project_euler.problem_09.sol1] ________
+
+module = 'thealgorithms.project_euler.problem_09.sol1'
+
+    @pytest.mark.parametrize("module", _gather_modules())
+    @pytest.mark.timeout(1)
+    def test_import_module(module):
+        """Test that all modules from project root can be imported"""
+>       mod = importlib.import_module(module)
+
+tests/test_imports.py:40: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+name = 'thealgorithms.project_euler.problem_09.sol1', package = None
+
+    def import_module(name, package=None):
+        """Import a module.
+    
+        The 'package' argument is required when performing a relative import. It
+        specifies the package to use as the anchor point from which to resolve the
+        relative import to an absolute import.
+    
+        """
+        if name.startswith('.'):
+            if not package:
+                raise TypeError("relative imports require the 'package' argument")
+            level = 0
+            for character in name:
+                if character != '.':
+                    break
+                level += 1
+            name = _resolve_name(name[level:], package, level)
+>       __import__(name)
+E       ImportError: No module named project_euler.problem_09.sol1
+
+/usr/lib/python2.7/importlib/__init__.py:37: ImportError
+_______ test_import_module[thealgorithms.project_euler.problem_09.sol3] ________
+
+module = 'thealgorithms.project_euler.problem_09.sol3'
+
+    @pytest.mark.parametrize("module", _gather_modules())
+    @pytest.mark.timeout(1)
+    def test_import_module(module):
+        """Test that all modules from project root can be imported"""
+>       mod = importlib.import_module(module)
+
+tests/test_imports.py:40: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+name = 'thealgorithms.project_euler.problem_09.sol3', package = None
+
+    def import_module(name, package=None):
+        """Import a module.
+    
+        The 'package' argument is required when performing a relative import. It
+        specifies the package to use as the anchor point from which to resolve the
+        relative import to an absolute import.
+    
+        """
+        if name.startswith('.'):
+            if not package:
+                raise TypeError("relative imports require the 'package' argument")
+            level = 0
+            for character in name:
+                if character != '.':
+                    break
+                level += 1
+            name = _resolve_name(name[level:], package, level)
+>       __import__(name)
+E       ImportError: No module named project_euler.problem_09.sol3
+
+/usr/lib/python2.7/importlib/__init__.py:37: ImportError
+_______ test_import_module[thealgorithms.project_euler.problem_09.sol2] ________
+
+module = 'thealgorithms.project_euler.problem_09.sol2'
+
+    @pytest.mark.parametrize("module", _gather_modules())
+    @pytest.mark.timeout(1)
+    def test_import_module(module):
+        """Test that all modules from project root can be imported"""
+>       mod = importlib.import_module(module)
+
+tests/test_imports.py:40: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+name = 'thealgorithms.project_euler.problem_09.sol2', package = None
+
+    def import_module(name, package=None):
+        """Import a module.
+    
+        The 'package' argument is required when performing a relative import. It
+        specifies the package to use as the anchor point from which to resolve the
+        relative import to an absolute import.
+    
+        """
+        if name.startswith('.'):
+            if not package:
+                raise TypeError("relative imports require the 'package' argument")
+            level = 0
+            for character in name:
+                if character != '.':
+                    break
+                level += 1
+            name = _resolve_name(name[level:], package, level)
+>       __import__(name)
+E       ImportError: No module named project_euler.problem_09.sol2
+
+/usr/lib/python2.7/importlib/__init__.py:37: ImportError
+_______ test_import_module[thealgorithms.project_euler.problem_12.sol1] ________
+
+module = 'thealgorithms.project_euler.problem_12.sol1'
+
+    @pytest.mark.parametrize("module", _gather_modules())
+    @pytest.mark.timeout(1)
+    def test_import_module(module):
+        """Test that all modules from project root can be imported"""
+>       mod = importlib.import_module(module)
+
+tests/test_imports.py:40: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+name = 'thealgorithms.project_euler.problem_12.sol1', package = None
+
+    def import_module(name, package=None):
+        """Import a module.
+    
+        The 'package' argument is required when performing a relative import. It
+        specifies the package to use as the anchor point from which to resolve the
+        relative import to an absolute import.
+    
+        """
+        if name.startswith('.'):
+            if not package:
+                raise TypeError("relative imports require the 'package' argument")
+            level = 0
+            for character in name:
+                if character != '.':
+                    break
+                level += 1
+            name = _resolve_name(name[level:], package, level)
+>       __import__(name)
+E       ImportError: No module named project_euler.problem_12.sol1
+
+/usr/lib/python2.7/importlib/__init__.py:37: ImportError
+_______ test_import_module[thealgorithms.project_euler.problem_12.sol2] ________
+
+module = 'thealgorithms.project_euler.problem_12.sol2'
+
+    @pytest.mark.parametrize("module", _gather_modules())
+    @pytest.mark.timeout(1)
+    def test_import_module(module):
+        """Test that all modules from project root can be imported"""
+>       mod = importlib.import_module(module)
+
+tests/test_imports.py:40: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+name = 'thealgorithms.project_euler.problem_12.sol2', package = None
+
+    def import_module(name, package=None):
+        """Import a module.
+    
+        The 'package' argument is required when performing a relative import. It
+        specifies the package to use as the anchor point from which to resolve the
+        relative import to an absolute import.
+    
+        """
+        if name.startswith('.'):
+            if not package:
+                raise TypeError("relative imports require the 'package' argument")
+            level = 0
+            for character in name:
+                if character != '.':
+                    break
+                level += 1
+            name = _resolve_name(name[level:], package, level)
+>       __import__(name)
+E       ImportError: No module named project_euler.problem_12.sol2
+
+/usr/lib/python2.7/importlib/__init__.py:37: ImportError
+_______ test_import_module[thealgorithms.project_euler.problem_76.sol1] ________
+
+module = 'thealgorithms.project_euler.problem_76.sol1'
+
+    @pytest.mark.parametrize("module", _gather_modules())
+    @pytest.mark.timeout(1)
+    def test_import_module(module):
+        """Test that all modules from project root can be imported"""
+>       mod = importlib.import_module(module)
+
+tests/test_imports.py:40: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+name = 'thealgorithms.project_euler.problem_76.sol1', package = None
+
+    def import_module(name, package=None):
+        """Import a module.
+    
+        The 'package' argument is required when performing a relative import. It
+        specifies the package to use as the anchor point from which to resolve the
+        relative import to an absolute import.
+    
+        """
+        if name.startswith('.'):
+            if not package:
+                raise TypeError("relative imports require the 'package' argument")
+            level = 0
+            for character in name:
+                if character != '.':
+                    break
+                level += 1
+            name = _resolve_name(name[level:], package, level)
+>       __import__(name)
+E       ImportError: No module named project_euler.problem_76.sol1
+
+/usr/lib/python2.7/importlib/__init__.py:37: ImportError
+_______ test_import_module[thealgorithms.project_euler.problem_06.sol1] ________
+
+module = 'thealgorithms.project_euler.problem_06.sol1'
+
+    @pytest.mark.parametrize("module", _gather_modules())
+    @pytest.mark.timeout(1)
+    def test_import_module(module):
+        """Test that all modules from project root can be imported"""
+>       mod = importlib.import_module(module)
+
+tests/test_imports.py:40: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+name = 'thealgorithms.project_euler.problem_06.sol1', package = None
+
+    def import_module(name, package=None):
+        """Import a module.
+    
+        The 'package' argument is required when performing a relative import. It
+        specifies the package to use as the anchor point from which to resolve the
+        relative import to an absolute import.
+    
+        """
+        if name.startswith('.'):
+            if not package:
+                raise TypeError("relative imports require the 'package' argument")
+            level = 0
+            for character in name:
+                if character != '.':
+                    break
+                level += 1
+            name = _resolve_name(name[level:], package, level)
+>       __import__(name)
+E       ImportError: No module named project_euler.problem_06.sol1
+
+/usr/lib/python2.7/importlib/__init__.py:37: ImportError
+_______ test_import_module[thealgorithms.project_euler.problem_06.sol3] ________
+
+module = 'thealgorithms.project_euler.problem_06.sol3'
+
+    @pytest.mark.parametrize("module", _gather_modules())
+    @pytest.mark.timeout(1)
+    def test_import_module(module):
+        """Test that all modules from project root can be imported"""
+>       mod = importlib.import_module(module)
+
+tests/test_imports.py:40: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+name = 'thealgorithms.project_euler.problem_06.sol3', package = None
+
+    def import_module(name, package=None):
+        """Import a module.
+    
+        The 'package' argument is required when performing a relative import. It
+        specifies the package to use as the anchor point from which to resolve the
+        relative import to an absolute import.
+    
+        """
+        if name.startswith('.'):
+            if not package:
+                raise TypeError("relative imports require the 'package' argument")
+            level = 0
+            for character in name:
+                if character != '.':
+                    break
+                level += 1
+            name = _resolve_name(name[level:], package, level)
+>       __import__(name)
+E       ImportError: No module named project_euler.problem_06.sol3
+
+/usr/lib/python2.7/importlib/__init__.py:37: ImportError
+_______ test_import_module[thealgorithms.project_euler.problem_06.sol2] ________
+
+module = 'thealgorithms.project_euler.problem_06.sol2'
+
+    @pytest.mark.parametrize("module", _gather_modules())
+    @pytest.mark.timeout(1)
+    def test_import_module(module):
+        """Test that all modules from project root can be imported"""
+>       mod = importlib.import_module(module)
+
+tests/test_imports.py:40: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+name = 'thealgorithms.project_euler.problem_06.sol2', package = None
+
+    def import_module(name, package=None):
+        """Import a module.
+    
+        The 'package' argument is required when performing a relative import. It
+        specifies the package to use as the anchor point from which to resolve the
+        relative import to an absolute import.
+    
+        """
+        if name.startswith('.'):
+            if not package:
+                raise TypeError("relative imports require the 'package' argument")
+            level = 0
+            for character in name:
+                if character != '.':
+                    break
+                level += 1
+            name = _resolve_name(name[level:], package, level)
+>       __import__(name)
+E       ImportError: No module named project_euler.problem_06.sol2
+
+/usr/lib/python2.7/importlib/__init__.py:37: ImportError
+_______ test_import_module[thealgorithms.project_euler.problem_53.sol1] ________
+
+module = 'thealgorithms.project_euler.problem_53.sol1'
+
+    @pytest.mark.parametrize("module", _gather_modules())
+    @pytest.mark.timeout(1)
+    def test_import_module(module):
+        """Test that all modules from project root can be imported"""
+>       mod = importlib.import_module(module)
+
+tests/test_imports.py:40: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+name = 'thealgorithms.project_euler.problem_53.sol1', package = None
+
+    def import_module(name, package=None):
+        """Import a module.
+    
+        The 'package' argument is required when performing a relative import. It
+        specifies the package to use as the anchor point from which to resolve the
+        relative import to an absolute import.
+    
+        """
+        if name.startswith('.'):
+            if not package:
+                raise TypeError("relative imports require the 'package' argument")
+            level = 0
+            for character in name:
+                if character != '.':
+                    break
+                level += 1
+            name = _resolve_name(name[level:], package, level)
+>       __import__(name)
+E       ImportError: No module named project_euler.problem_53.sol1
+
+/usr/lib/python2.7/importlib/__init__.py:37: ImportError
+_______ test_import_module[thealgorithms.project_euler.problem_36.sol1] ________
+
+module = 'thealgorithms.project_euler.problem_36.sol1'
+
+    @pytest.mark.parametrize("module", _gather_modules())
+    @pytest.mark.timeout(1)
+    def test_import_module(module):
+        """Test that all modules from project root can be imported"""
+>       mod = importlib.import_module(module)
+
+tests/test_imports.py:40: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+name = 'thealgorithms.project_euler.problem_36.sol1', package = None
+
+    def import_module(name, package=None):
+        """Import a module.
+    
+        The 'package' argument is required when performing a relative import. It
+        specifies the package to use as the anchor point from which to resolve the
+        relative import to an absolute import.
+    
+        """
+        if name.startswith('.'):
+            if not package:
+                raise TypeError("relative imports require the 'package' argument")
+            level = 0
+            for character in name:
+                if character != '.':
+                    break
+                level += 1
+            name = _resolve_name(name[level:], package, level)
+>       __import__(name)
+E       ImportError: No module named project_euler.problem_36.sol1
+
+/usr/lib/python2.7/importlib/__init__.py:37: ImportError
+_______ test_import_module[thealgorithms.project_euler.problem_15.sol1] ________
+
+module = 'thealgorithms.project_euler.problem_15.sol1'
+
+    @pytest.mark.parametrize("module", _gather_modules())
+    @pytest.mark.timeout(1)
+    def test_import_module(module):
+        """Test that all modules from project root can be imported"""
+>       mod = importlib.import_module(module)
+
+tests/test_imports.py:40: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+name = 'thealgorithms.project_euler.problem_15.sol1', package = None
+
+    def import_module(name, package=None):
+        """Import a module.
+    
+        The 'package' argument is required when performing a relative import. It
+        specifies the package to use as the anchor point from which to resolve the
+        relative import to an absolute import.
+    
+        """
+        if name.startswith('.'):
+            if not package:
+                raise TypeError("relative imports require the 'package' argument")
+            level = 0
+            for character in name:
+                if character != '.':
+                    break
+                level += 1
+            name = _resolve_name(name[level:], package, level)
+>       __import__(name)
+E       ImportError: No module named project_euler.problem_15.sol1
+
+/usr/lib/python2.7/importlib/__init__.py:37: ImportError
+_______ test_import_module[thealgorithms.project_euler.problem_05.sol1] ________
+
+module = 'thealgorithms.project_euler.problem_05.sol1'
+
+    @pytest.mark.parametrize("module", _gather_modules())
+    @pytest.mark.timeout(1)
+    def test_import_module(module):
+        """Test that all modules from project root can be imported"""
+>       mod = importlib.import_module(module)
+
+tests/test_imports.py:40: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+name = 'thealgorithms.project_euler.problem_05.sol1', package = None
+
+    def import_module(name, package=None):
+        """Import a module.
+    
+        The 'package' argument is required when performing a relative import. It
+        specifies the package to use as the anchor point from which to resolve the
+        relative import to an absolute import.
+    
+        """
+        if name.startswith('.'):
+            if not package:
+                raise TypeError("relative imports require the 'package' argument")
+            level = 0
+            for character in name:
+                if character != '.':
+                    break
+                level += 1
+            name = _resolve_name(name[level:], package, level)
+>       __import__(name)
+E       ImportError: No module named project_euler.problem_05.sol1
+
+/usr/lib/python2.7/importlib/__init__.py:37: ImportError
+_______ test_import_module[thealgorithms.project_euler.problem_05.sol2] ________
+
+module = 'thealgorithms.project_euler.problem_05.sol2'
+
+    @pytest.mark.parametrize("module", _gather_modules())
+    @pytest.mark.timeout(1)
+    def test_import_module(module):
+        """Test that all modules from project root can be imported"""
+>       mod = importlib.import_module(module)
+
+tests/test_imports.py:40: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+name = 'thealgorithms.project_euler.problem_05.sol2', package = None
+
+    def import_module(name, package=None):
+        """Import a module.
+    
+        The 'package' argument is required when performing a relative import. It
+        specifies the package to use as the anchor point from which to resolve the
+        relative import to an absolute import.
+    
+        """
+        if name.startswith('.'):
+            if not package:
+                raise TypeError("relative imports require the 'package' argument")
+            level = 0
+            for character in name:
+                if character != '.':
+                    break
+                level += 1
+            name = _resolve_name(name[level:], package, level)
+>       __import__(name)
+E       ImportError: No module named project_euler.problem_05.sol2
+
+/usr/lib/python2.7/importlib/__init__.py:37: ImportError
+_______ test_import_module[thealgorithms.project_euler.problem_40.sol1] ________
+
+module = 'thealgorithms.project_euler.problem_40.sol1'
+
+    @pytest.mark.parametrize("module", _gather_modules())
+    @pytest.mark.timeout(1)
+    def test_import_module(module):
+        """Test that all modules from project root can be imported"""
+>       mod = importlib.import_module(module)
+
+tests/test_imports.py:40: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+name = 'thealgorithms.project_euler.problem_40.sol1', package = None
+
+    def import_module(name, package=None):
+        """Import a module.
+    
+        The 'package' argument is required when performing a relative import. It
+        specifies the package to use as the anchor point from which to resolve the
+        relative import to an absolute import.
+    
+        """
+        if name.startswith('.'):
+            if not package:
+                raise TypeError("relative imports require the 'package' argument")
+            level = 0
+            for character in name:
+                if character != '.':
+                    break
+                level += 1
+            name = _resolve_name(name[level:], package, level)
+>       __import__(name)
+E       ImportError: No module named project_euler.problem_40.sol1
+
+/usr/lib/python2.7/importlib/__init__.py:37: ImportError
+_______ test_import_module[thealgorithms.project_euler.problem_17.sol1] ________
+
+module = 'thealgorithms.project_euler.problem_17.sol1'
+
+    @pytest.mark.parametrize("module", _gather_modules())
+    @pytest.mark.timeout(1)
+    def test_import_module(module):
+        """Test that all modules from project root can be imported"""
+>       mod = importlib.import_module(module)
+
+tests/test_imports.py:40: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+name = 'thealgorithms.project_euler.problem_17.sol1', package = None
+
+    def import_module(name, package=None):
+        """Import a module.
+    
+        The 'package' argument is required when performing a relative import. It
+        specifies the package to use as the anchor point from which to resolve the
+        relative import to an absolute import.
+    
+        """
+        if name.startswith('.'):
+            if not package:
+                raise TypeError("relative imports require the 'package' argument")
+            level = 0
+            for character in name:
+                if character != '.':
+                    break
+                level += 1
+            name = _resolve_name(name[level:], package, level)
+>       __import__(name)
+E       ImportError: No module named project_euler.problem_17.sol1
+
+/usr/lib/python2.7/importlib/__init__.py:37: ImportError
+_______ test_import_module[thealgorithms.project_euler.problem_01.sol1] ________
+
+module = 'thealgorithms.project_euler.problem_01.sol1'
+
+    @pytest.mark.parametrize("module", _gather_modules())
+    @pytest.mark.timeout(1)
+    def test_import_module(module):
+        """Test that all modules from project root can be imported"""
+>       mod = importlib.import_module(module)
+
+tests/test_imports.py:40: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+name = 'thealgorithms.project_euler.problem_01.sol1', package = None
+
+    def import_module(name, package=None):
+        """Import a module.
+    
+        The 'package' argument is required when performing a relative import. It
+        specifies the package to use as the anchor point from which to resolve the
+        relative import to an absolute import.
+    
+        """
+        if name.startswith('.'):
+            if not package:
+                raise TypeError("relative imports require the 'package' argument")
+            level = 0
+            for character in name:
+                if character != '.':
+                    break
+                level += 1
+            name = _resolve_name(name[level:], package, level)
+>       __import__(name)
+E       ImportError: No module named project_euler.problem_01.sol1
+
+/usr/lib/python2.7/importlib/__init__.py:37: ImportError
+_______ test_import_module[thealgorithms.project_euler.problem_01.sol5] ________
+
+module = 'thealgorithms.project_euler.problem_01.sol5'
+
+    @pytest.mark.parametrize("module", _gather_modules())
+    @pytest.mark.timeout(1)
+    def test_import_module(module):
+        """Test that all modules from project root can be imported"""
+>       mod = importlib.import_module(module)
+
+tests/test_imports.py:40: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+name = 'thealgorithms.project_euler.problem_01.sol5', package = None
+
+    def import_module(name, package=None):
+        """Import a module.
+    
+        The 'package' argument is required when performing a relative import. It
+        specifies the package to use as the anchor point from which to resolve the
+        relative import to an absolute import.
+    
+        """
+        if name.startswith('.'):
+            if not package:
+                raise TypeError("relative imports require the 'package' argument")
+            level = 0
+            for character in name:
+                if character != '.':
+                    break
+                level += 1
+            name = _resolve_name(name[level:], package, level)
+>       __import__(name)
+E       ImportError: No module named project_euler.problem_01.sol5
+
+/usr/lib/python2.7/importlib/__init__.py:37: ImportError
+_______ test_import_module[thealgorithms.project_euler.problem_01.sol3] ________
+
+module = 'thealgorithms.project_euler.problem_01.sol3'
+
+    @pytest.mark.parametrize("module", _gather_modules())
+    @pytest.mark.timeout(1)
+    def test_import_module(module):
+        """Test that all modules from project root can be imported"""
+>       mod = importlib.import_module(module)
+
+tests/test_imports.py:40: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+name = 'thealgorithms.project_euler.problem_01.sol3', package = None
+
+    def import_module(name, package=None):
+        """Import a module.
+    
+        The 'package' argument is required when performing a relative import. It
+        specifies the package to use as the anchor point from which to resolve the
+        relative import to an absolute import.
+    
+        """
+        if name.startswith('.'):
+            if not package:
+                raise TypeError("relative imports require the 'package' argument")
+            level = 0
+            for character in name:
+                if character != '.':
+                    break
+                level += 1
+            name = _resolve_name(name[level:], package, level)
+>       __import__(name)
+E       ImportError: No module named project_euler.problem_01.sol3
+
+/usr/lib/python2.7/importlib/__init__.py:37: ImportError
+_______ test_import_module[thealgorithms.project_euler.problem_01.sol2] ________
+
+module = 'thealgorithms.project_euler.problem_01.sol2'
+
+    @pytest.mark.parametrize("module", _gather_modules())
+    @pytest.mark.timeout(1)
+    def test_import_module(module):
+        """Test that all modules from project root can be imported"""
+>       mod = importlib.import_module(module)
+
+tests/test_imports.py:40: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+name = 'thealgorithms.project_euler.problem_01.sol2', package = None
+
+    def import_module(name, package=None):
+        """Import a module.
+    
+        The 'package' argument is required when performing a relative import. It
+        specifies the package to use as the anchor point from which to resolve the
+        relative import to an absolute import.
+    
+        """
+        if name.startswith('.'):
+            if not package:
+                raise TypeError("relative imports require the 'package' argument")
+            level = 0
+            for character in name:
+                if character != '.':
+                    break
+                level += 1
+            name = _resolve_name(name[level:], package, level)
+>       __import__(name)
+E       ImportError: No module named project_euler.problem_01.sol2
+
+/usr/lib/python2.7/importlib/__init__.py:37: ImportError
+_______ test_import_module[thealgorithms.project_euler.problem_01.sol4] ________
+
+module = 'thealgorithms.project_euler.problem_01.sol4'
+
+    @pytest.mark.parametrize("module", _gather_modules())
+    @pytest.mark.timeout(1)
+    def test_import_module(module):
+        """Test that all modules from project root can be imported"""
+>       mod = importlib.import_module(module)
+
+tests/test_imports.py:40: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+name = 'thealgorithms.project_euler.problem_01.sol4', package = None
+
+    def import_module(name, package=None):
+        """Import a module.
+    
+        The 'package' argument is required when performing a relative import. It
+        specifies the package to use as the anchor point from which to resolve the
+        relative import to an absolute import.
+    
+        """
+        if name.startswith('.'):
+            if not package:
+                raise TypeError("relative imports require the 'package' argument")
+            level = 0
+            for character in name:
+                if character != '.':
+                    break
+                level += 1
+            name = _resolve_name(name[level:], package, level)
+>       __import__(name)
+E       ImportError: No module named project_euler.problem_01.sol4
+
+/usr/lib/python2.7/importlib/__init__.py:37: ImportError
+_______ test_import_module[thealgorithms.project_euler.problem_10.sol1] ________
+
+module = 'thealgorithms.project_euler.problem_10.sol1'
+
+    @pytest.mark.parametrize("module", _gather_modules())
+    @pytest.mark.timeout(1)
+    def test_import_module(module):
+        """Test that all modules from project root can be imported"""
+>       mod = importlib.import_module(module)
+
+tests/test_imports.py:40: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+name = 'thealgorithms.project_euler.problem_10.sol1', package = None
+
+    def import_module(name, package=None):
+        """Import a module.
+    
+        The 'package' argument is required when performing a relative import. It
+        specifies the package to use as the anchor point from which to resolve the
+        relative import to an absolute import.
+    
+        """
+        if name.startswith('.'):
+            if not package:
+                raise TypeError("relative imports require the 'package' argument")
+            level = 0
+            for character in name:
+                if character != '.':
+                    break
+                level += 1
+            name = _resolve_name(name[level:], package, level)
+>       __import__(name)
+E       ImportError: No module named project_euler.problem_10.sol1
+
+/usr/lib/python2.7/importlib/__init__.py:37: ImportError
+_______ test_import_module[thealgorithms.project_euler.problem_10.sol2] ________
+
+module = 'thealgorithms.project_euler.problem_10.sol2'
+
+    @pytest.mark.parametrize("module", _gather_modules())
+    @pytest.mark.timeout(1)
+    def test_import_module(module):
+        """Test that all modules from project root can be imported"""
+>       mod = importlib.import_module(module)
+
+tests/test_imports.py:40: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+name = 'thealgorithms.project_euler.problem_10.sol2', package = None
+
+    def import_module(name, package=None):
+        """Import a module.
+    
+        The 'package' argument is required when performing a relative import. It
+        specifies the package to use as the anchor point from which to resolve the
+        relative import to an absolute import.
+    
+        """
+        if name.startswith('.'):
+            if not package:
+                raise TypeError("relative imports require the 'package' argument")
+            level = 0
+            for character in name:
+                if character != '.':
+                    break
+                level += 1
+            name = _resolve_name(name[level:], package, level)
+>       __import__(name)
+E       ImportError: No module named project_euler.problem_10.sol2
+
+/usr/lib/python2.7/importlib/__init__.py:37: ImportError
+_______ test_import_module[thealgorithms.project_euler.problem_28.sol1] ________
+
+module = 'thealgorithms.project_euler.problem_28.sol1'
+
+    @pytest.mark.parametrize("module", _gather_modules())
+    @pytest.mark.timeout(1)
+    def test_import_module(module):
+        """Test that all modules from project root can be imported"""
+>       mod = importlib.import_module(module)
+
+tests/test_imports.py:40: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+name = 'thealgorithms.project_euler.problem_28.sol1', package = None
+
+    def import_module(name, package=None):
+        """Import a module.
+    
+        The 'package' argument is required when performing a relative import. It
+        specifies the package to use as the anchor point from which to resolve the
+        relative import to an absolute import.
+    
+        """
+        if name.startswith('.'):
+            if not package:
+                raise TypeError("relative imports require the 'package' argument")
+            level = 0
+            for character in name:
+                if character != '.':
+                    break
+                level += 1
+            name = _resolve_name(name[level:], package, level)
+>       __import__(name)
+E       ImportError: No module named project_euler.problem_28.sol1
+
+/usr/lib/python2.7/importlib/__init__.py:37: ImportError
+_______ test_import_module[thealgorithms.project_euler.problem_04.sol1] ________
+
+module = 'thealgorithms.project_euler.problem_04.sol1'
+
+    @pytest.mark.parametrize("module", _gather_modules())
+    @pytest.mark.timeout(1)
+    def test_import_module(module):
+        """Test that all modules from project root can be imported"""
+>       mod = importlib.import_module(module)
+
+tests/test_imports.py:40: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+name = 'thealgorithms.project_euler.problem_04.sol1', package = None
+
+    def import_module(name, package=None):
+        """Import a module.
+    
+        The 'package' argument is required when performing a relative import. It
+        specifies the package to use as the anchor point from which to resolve the
+        relative import to an absolute import.
+    
+        """
+        if name.startswith('.'):
+            if not package:
+                raise TypeError("relative imports require the 'package' argument")
+            level = 0
+            for character in name:
+                if character != '.':
+                    break
+                level += 1
+            name = _resolve_name(name[level:], package, level)
+>       __import__(name)
+E       ImportError: No module named project_euler.problem_04.sol1
+
+/usr/lib/python2.7/importlib/__init__.py:37: ImportError
+_______ test_import_module[thealgorithms.project_euler.problem_04.sol2] ________
+
+module = 'thealgorithms.project_euler.problem_04.sol2'
+
+    @pytest.mark.parametrize("module", _gather_modules())
+    @pytest.mark.timeout(1)
+    def test_import_module(module):
+        """Test that all modules from project root can be imported"""
+>       mod = importlib.import_module(module)
+
+tests/test_imports.py:40: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+name = 'thealgorithms.project_euler.problem_04.sol2', package = None
+
+    def import_module(name, package=None):
+        """Import a module.
+    
+        The 'package' argument is required when performing a relative import. It
+        specifies the package to use as the anchor point from which to resolve the
+        relative import to an absolute import.
+    
+        """
+        if name.startswith('.'):
+            if not package:
+                raise TypeError("relative imports require the 'package' argument")
+            level = 0
+            for character in name:
+                if character != '.':
+                    break
+                level += 1
+            name = _resolve_name(name[level:], package, level)
+>       __import__(name)
+E       ImportError: No module named project_euler.problem_04.sol2
+
+/usr/lib/python2.7/importlib/__init__.py:37: ImportError
+_____ test_import_module[thealgorithms.project_euler.problem_29.solution] ______
+
+module = 'thealgorithms.project_euler.problem_29.solution'
+
+    @pytest.mark.parametrize("module", _gather_modules())
+    @pytest.mark.timeout(1)
+    def test_import_module(module):
+        """Test that all modules from project root can be imported"""
+>       mod = importlib.import_module(module)
+
+tests/test_imports.py:40: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+name = 'thealgorithms.project_euler.problem_29.solution', package = None
+
+    def import_module(name, package=None):
+        """Import a module.
+    
+        The 'package' argument is required when performing a relative import. It
+        specifies the package to use as the anchor point from which to resolve the
+        relative import to an absolute import.
+    
+        """
+        if name.startswith('.'):
+            if not package:
+                raise TypeError("relative imports require the 'package' argument")
+            level = 0
+            for character in name:
+                if character != '.':
+                    break
+                level += 1
+            name = _resolve_name(name[level:], package, level)
+>       __import__(name)
+E       ImportError: No module named project_euler.problem_29.solution
+
+/usr/lib/python2.7/importlib/__init__.py:37: ImportError
+______________ test_import_module[thealgorithms.strings.manacher] ______________
+
+module = 'thealgorithms.strings.manacher'
+
+    @pytest.mark.parametrize("module", _gather_modules())
+    @pytest.mark.timeout(1)
+    def test_import_module(module):
+        """Test that all modules from project root can be imported"""
+>       mod = importlib.import_module(module)
+
+tests/test_imports.py:40: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+name = 'thealgorithms.strings.manacher', package = None
+
+    def import_module(name, package=None):
+        """Import a module.
+    
+        The 'package' argument is required when performing a relative import. It
+        specifies the package to use as the anchor point from which to resolve the
+        relative import to an absolute import.
+    
+        """
+        if name.startswith('.'):
+            if not package:
+                raise TypeError("relative imports require the 'package' argument")
+            level = 0
+            for character in name:
+                if character != '.':
+                    break
+                level += 1
+            name = _resolve_name(name[level:], package, level)
+>       __import__(name)
+E         File "thealgorithms/strings/manacher.py", line 9
+E       SyntaxError: Non-ASCII character '\xe2' in file thealgorithms/strings/manacher.py on line 10, but no encoding declared; see http://python.org/dev/peps/pep-0263/ for details
+
+/usr/lib/python2.7/importlib/__init__.py:37: SyntaxError
+____________ test_import_module[thealgorithms.simple_client.server] ____________
+
+module = 'thealgorithms.simple_client.server'
+
+    @pytest.mark.parametrize("module", _gather_modules())
+    @pytest.mark.timeout(1)
+    def test_import_module(module):
+        """Test that all modules from project root can be imported"""
+>       mod = importlib.import_module(module)
+
+tests/test_imports.py:40: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+/usr/lib/python2.7/importlib/__init__.py:37: in import_module
+    __import__(name)
+thealgorithms/simple_client/server.py:11: in <module>
+    conn, addr = s.accept()#start the actual data flow
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <socket._socketobject object at 0x7fc3156e56e0>
+
+    def accept(self):
+>       sock, addr = self._sock.accept()
+E       Failed: Timeout >1.0s
+
+/usr/lib/python2.7/socket.py:206: Failed
+____________ test_import_module[thealgorithms.simple_client.client] ____________
+
+module = 'thealgorithms.simple_client.client'
+
+    @pytest.mark.parametrize("module", _gather_modules())
+    @pytest.mark.timeout(1)
+    def test_import_module(module):
+        """Test that all modules from project root can be imported"""
+>       mod = importlib.import_module(module)
+
+tests/test_imports.py:40: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+/usr/lib/python2.7/importlib/__init__.py:37: in import_module
+    __import__(name)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    import socket
+    
+    HOST, PORT = '127.0.0.1', 1400
+    
+    s = socket.socket(
+    
+                socket.AF_INET,     #           ADDRESS FAMILIES
+                                    #Name                   Purpose
+                                    #AF_UNIX, AF_LOCAL      Local communication
+                                    #AF_INET                IPv4 Internet protocols
+                                    #AF_INET6               IPv6 Internet protocols
+                                    #AF_APPLETALK           Appletalk
+                                    #AF_BLUETOOTH           Bluetooth
+    
+    
+                socket.SOCK_STREAM  #           SOCKET TYPES
+                                    #Name           Way of Interaction
+                                    #SOCK_STREAM    TCP
+                                    #SOCK_DGRAM     UDP
+    )
+    s.connect((HOST, PORT))
+    
+    s.send('Hello World'.encode('ascii'))#in UDP use sendto()
+>   data = s.recv(1024)#in UDP use recvfrom()
+E   Failed: Timeout >1.0s
+
+thealgorithms/simple_client/client.py:26: Failed
+___________ test_import_module[thealgorithms.maths.segmented_sieve] ____________
+
+module = 'thealgorithms.maths.segmented_sieve'
+
+    @pytest.mark.parametrize("module", _gather_modules())
+    @pytest.mark.timeout(1)
+    def test_import_module(module):
+        """Test that all modules from project root can be imported"""
+>       mod = importlib.import_module(module)
+
+tests/test_imports.py:40: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+/usr/lib/python2.7/importlib/__init__.py:37: in import_module
+    __import__(name)
+thealgorithms/maths/segmented_sieve.py:46: in <module>
+    print(sieve(10**6))
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+n = 1000000
+
+    def sieve(n):
+        in_prime = []
+        start = 2
+        end   = int(math.sqrt(n)) # Size of every segment
+        temp = [True] * (end + 1)
+        prime = []
+    
+        while(start <= end):
+            if temp[start] == True:
+                in_prime.append(start)
+                for i in range(start*start, end+1, start):
+                    if temp[i] == True:
+                        temp[i] = False
+            start += 1
+        prime += in_prime
+    
+        low = end + 1
+        high = low + end - 1
+        if high > n:
+            high = n
+    
+        while(low <= n):
+            temp = [True] * (high-low+1)
+            for each in in_prime:
+    
+                t = math.floor(low / each) * each
+                if t < low:
+                    t += each
+    
+>               for j in range(t, high+1, each):
+E               TypeError: range() integer start argument expected, got float.
+
+thealgorithms/maths/segmented_sieve.py:32: TypeError
+________ test_import_module[thealgorithms.maths.sieve_of_eratosthenes] _________
+
+module = 'thealgorithms.maths.sieve_of_eratosthenes'
+
+    @pytest.mark.parametrize("module", _gather_modules())
+    @pytest.mark.timeout(1)
+    def test_import_module(module):
+        """Test that all modules from project root can be imported"""
+>       mod = importlib.import_module(module)
+
+tests/test_imports.py:40: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+/usr/lib/python2.7/importlib/__init__.py:37: in import_module
+    __import__(name)
+thealgorithms/maths/sieve_of_eratosthenes.py:2: in <module>
+    n = int(input("Enter n: "))
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <_pytest.capture.DontReadFromInput object at 0x7fc315d8ba50>, args = ()
+
+    def read(self, *args):
+>       raise IOError("reading from stdin while output is captured")
+E       IOError: reading from stdin while output is captured
+
+/home/slarse/.local/lib/python2.7/site-packages/_pytest/capture.py:656: IOError
+----------------------------- Captured stdout call -----------------------------
+Enter n: 
+____________ test_import_module[thealgorithms.hashes.chaos_machine] ____________
+
+module = 'thealgorithms.hashes.chaos_machine'
+
+    @pytest.mark.parametrize("module", _gather_modules())
+    @pytest.mark.timeout(1)
+    def test_import_module(module):
+        """Test that all modules from project root can be imported"""
+>       mod = importlib.import_module(module)
+
+tests/test_imports.py:40: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+/usr/lib/python2.7/importlib/__init__.py:37: in import_module
+    __import__(name)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    """example of simple chaos machine"""
+    from __future__ import print_function
+    
+    try:
+      input = raw_input  # Python 2
+    except NameError:
+      pass               # Python 3
+    
+    # Chaos Machine (K, t, m)
+    K = [0.33, 0.44, 0.55, 0.44, 0.33]; t = 3; m = 5
+    
+    # Buffer Space (with Parameters Space)
+    buffer_space, params_space = [], []
+    
+    # Machine Time
+    machine_time = 0
+    
+    def push(seed):
+      global buffer_space, params_space, machine_time, \
+        K, m, t
+    
+      # Choosing Dynamical Systems (All)
+      for key, value in enumerate(buffer_space):
+        # Evolution Parameter
+        e = float(seed / value)
+    
+        # Control Theory: Orbit Change
+        value = (buffer_space[(key + 1) % m] + e) % 1
+    
+        # Control Theory: Trajectory Change
+        r = (params_space[key] + e) % 1 + 3
+    
+        # Modification (Transition Function) - Jumps
+        buffer_space[key] = \
+          round(float(r * value * (1 - value)), 10)
+        params_space[key] = \
+          r # Saving to Parameters Space
+    
+      # Logistic Map
+      assert max(buffer_space) < 1
+      assert max(params_space) < 4
+    
+      # Machine Time
+      machine_time += 1
+    
+    def pull():
+      global buffer_space, params_space, machine_time, \
+        K, m, t
+    
+      # PRNG (Xorshift by George Marsaglia)
+      def xorshift(X, Y):
+        X ^= Y >> 13
+        Y ^= X << 17
+        X ^= Y >> 5
+        return X
+    
+      # Choosing Dynamical Systems (Increment)
+      key = machine_time % m
+    
+      # Evolution (Time Length)
+      for i in range(0, t):
+        # Variables (Position + Parameters)
+        r     = params_space[key]
+        value = buffer_space[key]
+    
+        # Modification (Transition Function) - Flow
+        buffer_space[key] = \
+          round(float(r * value * (1 - value)), 10)
+        params_space[key] = \
+          (machine_time * 0.01 + r * 1.01) % 1 + 3
+    
+      # Choosing Chaotic Data
+      X = int(buffer_space[(key + 2) % m] * (10 ** 10))
+      Y = int(buffer_space[(key - 2) % m] * (10 ** 10))
+    
+      # Machine Time
+      machine_time += 1
+    
+      return xorshift(X, Y) % 0xFFFFFFFF
+    
+    def reset():
+      global buffer_space, params_space, machine_time, \
+        K, m, t
+    
+      buffer_space = K; params_space = [0] * m
+      machine_time = 0
+    
+    #######################################
+    
+    # Initialization
+    reset()
+    
+    # Pushing Data (Input)
+    import random
+>   message = random.sample(range(0xFFFFFFFF), 100)
+E   MemoryError
+
+thealgorithms/hashes/chaos_machine.py:95: MemoryError
+_ test_import_module[thealgorithms.neural_network.convolution_neural_network] __
+
+module = 'thealgorithms.neural_network.convolution_neural_network'
+
+    @pytest.mark.parametrize("module", _gather_modules())
+    @pytest.mark.timeout(1)
+    def test_import_module(module):
+        """Test that all modules from project root can be imported"""
+>       mod = importlib.import_module(module)
+
+tests/test_imports.py:40: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+/usr/lib/python2.7/importlib/__init__.py:37: in import_module
+    __import__(name)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+              '''
+    from __future__ import print_function
+    
+>   import numpy as np
+E   ImportError: No module named numpy
+
+thealgorithms/neural_network/convolution_neural_network.py:20: ImportError
+____________ test_import_module[thealgorithms.neural_network.bpnn] _____________
+
+module = 'thealgorithms.neural_network.bpnn'
+
+    @pytest.mark.parametrize("module", _gather_modules())
+    @pytest.mark.timeout(1)
+    def test_import_module(module):
+        """Test that all modules from project root can be imported"""
+>       mod = importlib.import_module(module)
+
+tests/test_imports.py:40: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+/usr/lib/python2.7/importlib/__init__.py:37: in import_module
+    __import__(name)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    '''
+    
+>   import numpy as np
+E   ImportError: No module named numpy
+
+thealgorithms/neural_network/bpnn.py:22: ImportError
+_________ test_import_module[thealgorithms.neural_network.perceptron] __________
+
+module = 'thealgorithms.neural_network.perceptron'
+
+    @pytest.mark.parametrize("module", _gather_modules())
+    @pytest.mark.timeout(1)
+    def test_import_module(module):
+        """Test that all modules from project root can be imported"""
+>       mod = importlib.import_module(module)
+
+tests/test_imports.py:40: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+/usr/lib/python2.7/importlib/__init__.py:37: in import_module
+    __import__(name)
+thealgorithms/neural_network/perceptron.py:123: in <module>
+    sample.insert(i, float(input('value: ')))
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <_pytest.capture.DontReadFromInput object at 0x7fc315d8ba50>, args = ()
+
+    def read(self, *args):
+>       raise IOError("reading from stdin while output is captured")
+E       IOError: reading from stdin while output is captured
+
+/home/slarse/.local/lib/python2.7/site-packages/_pytest/capture.py:656: IOError
+----------------------------- Captured stdout call -----------------------------
+('\nEpoch:\n', 391)
+------------------------
+
+value: 
+_______ test_import_module[thealgorithms.linear_algebra_python.src.lib] ________
+
+module = 'thealgorithms.linear_algebra_python.src.lib'
+
+    @pytest.mark.parametrize("module", _gather_modules())
+    @pytest.mark.timeout(1)
+    def test_import_module(module):
+        """Test that all modules from project root can be imported"""
+>       mod = importlib.import_module(module)
+
+tests/test_imports.py:40: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+name = 'thealgorithms.linear_algebra_python.src.lib', package = None
+
+    def import_module(name, package=None):
+        """Import a module.
+    
+        The 'package' argument is required when performing a relative import. It
+        specifies the package to use as the anchor point from which to resolve the
+        relative import to an absolute import.
+    
+        """
+        if name.startswith('.'):
+            if not package:
+                raise TypeError("relative imports require the 'package' argument")
+            level = 0
+            for character in name:
+                if character != '.':
+                    break
+                level += 1
+            name = _resolve_name(name[level:], package, level)
+>       __import__(name)
+E       ImportError: No module named linear_algebra_python.src.lib
+
+/usr/lib/python2.7/importlib/__init__.py:37: ImportError
+______ test_import_module[thealgorithms.linear_algebra_python.src.tests] _______
+
+module = 'thealgorithms.linear_algebra_python.src.tests'
+
+    @pytest.mark.parametrize("module", _gather_modules())
+    @pytest.mark.timeout(1)
+    def test_import_module(module):
+        """Test that all modules from project root can be imported"""
+>       mod = importlib.import_module(module)
+
+tests/test_imports.py:40: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+name = 'thealgorithms.linear_algebra_python.src.tests', package = None
+
+    def import_module(name, package=None):
+        """Import a module.
+    
+        The 'package' argument is required when performing a relative import. It
+        specifies the package to use as the anchor point from which to resolve the
+        relative import to an absolute import.
+    
+        """
+        if name.startswith('.'):
+            if not package:
+                raise TypeError("relative imports require the 'package' argument")
+            level = 0
+            for character in name:
+                if character != '.':
+                    break
+                level += 1
+            name = _resolve_name(name[level:], package, level)
+>       __import__(name)
+E       ImportError: No module named linear_algebra_python.src.tests
+
+/usr/lib/python2.7/importlib/__init__.py:37: ImportError
+_____ test_import_module[thealgorithms.traversals.binary_tree_traversals] ______
+
+module = 'thealgorithms.traversals.binary_tree_traversals'
+
+    @pytest.mark.parametrize("module", _gather_modules())
+    @pytest.mark.timeout(1)
+    def test_import_module(module):
+        """Test that all modules from project root can be imported"""
+>       mod = importlib.import_module(module)
+
+tests/test_imports.py:40: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+/usr/lib/python2.7/importlib/__init__.py:37: in import_module
+    __import__(name)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    """
+    from __future__ import print_function
+    
+>   import queue
+E   ImportError: No module named queue
+
+thealgorithms/traversals/binary_tree_traversals.py:6: ImportError
+________________ test_import_module[thealgorithms.Maths.absMin] ________________
+
+module = 'thealgorithms.Maths.absMin'
+
+    @pytest.mark.parametrize("module", _gather_modules())
+    @pytest.mark.timeout(1)
+    def test_import_module(module):
+        """Test that all modules from project root can be imported"""
+>       mod = importlib.import_module(module)
+
+tests/test_imports.py:40: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+/usr/lib/python2.7/importlib/__init__.py:37: in import_module
+    __import__(name)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+>   from Maths.abs import absVal
+E   ImportError: No module named Maths.abs
+
+thealgorithms/Maths/absMin.py:1: ImportError
+____ test_import_module[thealgorithms.arithmetic_analysis.lu_decomposition] ____
+
+module = 'thealgorithms.arithmetic_analysis.lu_decomposition'
+
+    @pytest.mark.parametrize("module", _gather_modules())
+    @pytest.mark.timeout(1)
+    def test_import_module(module):
+        """Test that all modules from project root can be imported"""
+>       mod = importlib.import_module(module)
+
+tests/test_imports.py:40: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+name = 'thealgorithms.arithmetic_analysis.lu_decomposition', package = None
+
+    def import_module(name, package=None):
+        """Import a module.
+    
+        The 'package' argument is required when performing a relative import. It
+        specifies the package to use as the anchor point from which to resolve the
+        relative import to an absolute import.
+    
+        """
+        if name.startswith('.'):
+            if not package:
+                raise TypeError("relative imports require the 'package' argument")
+            level = 0
+            for character in name:
+                if character != '.':
+                    break
+                level += 1
+            name = _resolve_name(name[level:], package, level)
+>       __import__(name)
+E         File "thealgorithms/arithmetic_analysis/lu_decomposition.py", line 1
+E       SyntaxError: Non-ASCII character '\xe2' in file thealgorithms/arithmetic_analysis/lu_decomposition.py on line 1, but no encoding declared; see http://python.org/dev/peps/pep-0263/ for details
+
+/usr/lib/python2.7/importlib/__init__.py:37: SyntaxError
+_ test_import_module[thealgorithms.arithmetic_analysis.newton_raphson_method] __
+
+module = 'thealgorithms.arithmetic_analysis.newton_raphson_method'
+
+    @pytest.mark.parametrize("module", _gather_modules())
+    @pytest.mark.timeout(1)
+    def test_import_module(module):
+        """Test that all modules from project root can be imported"""
+>       mod = importlib.import_module(module)
+
+tests/test_imports.py:40: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+/usr/lib/python2.7/importlib/__init__.py:37: in import_module
+    __import__(name)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+>   from sympy import diff
+E   ImportError: No module named sympy
+
+thealgorithms/arithmetic_analysis/newton_raphson_method.py:4: ImportError
+_____ test_import_module[thealgorithms.dynamic_programming.fastfibonacci] ______
+
+module = 'thealgorithms.dynamic_programming.fastfibonacci'
+
+    @pytest.mark.parametrize("module", _gather_modules())
+    @pytest.mark.timeout(1)
+    def test_import_module(module):
+        """Test that all modules from project root can be imported"""
+>       mod = importlib.import_module(module)
+
+tests/test_imports.py:40: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+name = 'thealgorithms.dynamic_programming.fastfibonacci', package = None
+
+    def import_module(name, package=None):
+        """Import a module.
+    
+        The 'package' argument is required when performing a relative import. It
+        specifies the package to use as the anchor point from which to resolve the
+        relative import to an absolute import.
+    
+        """
+        if name.startswith('.'):
+            if not package:
+                raise TypeError("relative imports require the 'package' argument")
+            level = 0
+            for character in name:
+                if character != '.':
+                    break
+                level += 1
+            name = _resolve_name(name[level:], package, level)
+>       __import__(name)
+E         File "thealgorithms/dynamic_programming/fastfibonacci.py", line 13
+E           def fibonacci(n: int):  # noqa: E999 This syntax is Python 3 only
+E                          ^
+E       SyntaxError: invalid syntax
+
+/usr/lib/python2.7/importlib/__init__.py:37: SyntaxError
+___ test_import_module[thealgorithms.dynamic_programming.FractionalKnapsack] ___
+
+module = 'thealgorithms.dynamic_programming.FractionalKnapsack'
+
+    @pytest.mark.parametrize("module", _gather_modules())
+    @pytest.mark.timeout(1)
+    def test_import_module(module):
+        """Test that all modules from project root can be imported"""
+>       mod = importlib.import_module(module)
+
+tests/test_imports.py:40: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+/usr/lib/python2.7/importlib/__init__.py:37: in import_module
+    __import__(name)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+>   from itertools import accumulate
+E   ImportError: cannot import name accumulate
+
+thealgorithms/dynamic_programming/FractionalKnapsack.py:1: ImportError
+ test_import_module[thealgorithms.dynamic_programming.k_means_clustering_tensorflow] 
+
+module = 'thealgorithms.dynamic_programming.k_means_clustering_tensorflow'
+
+    @pytest.mark.parametrize("module", _gather_modules())
+    @pytest.mark.timeout(1)
+    def test_import_module(module):
+        """Test that all modules from project root can be imported"""
+>       mod = importlib.import_module(module)
+
+tests/test_imports.py:40: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+/usr/lib/python2.7/importlib/__init__.py:37: in import_module
+    __import__(name)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+>   import tensorflow as tf
+E   ImportError: No module named tensorflow
+
+thealgorithms/dynamic_programming/k_means_clustering_tensorflow.py:1: ImportError
+_____ test_import_module[thealgorithms.dynamic_programming.max_sub_array] ______
+
+module = 'thealgorithms.dynamic_programming.max_sub_array'
+
+    @pytest.mark.parametrize("module", _gather_modules())
+    @pytest.mark.timeout(1)
+    def test_import_module(module):
+        """Test that all modules from project root can be imported"""
+>       mod = importlib.import_module(module)
+
+tests/test_imports.py:40: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+/usr/lib/python2.7/importlib/__init__.py:37: in import_module
+    __import__(name)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    """
+    from __future__ import print_function
+    
+    import time
+>   import matplotlib.pyplot as plt
+E   ImportError: No module named matplotlib.pyplot
+
+thealgorithms/dynamic_programming/max_sub_array.py:7: ImportError
+_ test_import_module[thealgorithms.sorts.random_normal_distribution_quicksort] _
+
+module = 'thealgorithms.sorts.random_normal_distribution_quicksort'
+
+    @pytest.mark.parametrize("module", _gather_modules())
+    @pytest.mark.timeout(1)
+    def test_import_module(module):
+        """Test that all modules from project root can be imported"""
+>       mod = importlib.import_module(module)
+
+tests/test_imports.py:40: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+/usr/lib/python2.7/importlib/__init__.py:37: in import_module
+    __import__(name)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    from __future__ import print_function
+    from random import randint
+    from tempfile import TemporaryFile
+>   import numpy as np
+E   ImportError: No module named numpy
+
+thealgorithms/sorts/random_normal_distribution_quicksort.py:4: ImportError
+______________ test_import_module[thealgorithms.sorts.cyclesort] _______________
+
+module = 'thealgorithms.sorts.cyclesort'
+
+    @pytest.mark.parametrize("module", _gather_modules())
+    @pytest.mark.timeout(1)
+    def test_import_module(module):
+        """Test that all modules from project root can be imported"""
+>       mod = importlib.import_module(module)
+
+tests/test_imports.py:40: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+/usr/lib/python2.7/importlib/__init__.py:37: in import_module
+    __import__(name)
+thealgorithms/sorts/cyclesort.py:53: in <module>
+    user_input = raw_input('Enter numbers separated by a comma:\n')
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <_pytest.capture.DontReadFromInput object at 0x7fc315d8ba50>, args = ()
+
+    def read(self, *args):
+>       raise IOError("reading from stdin while output is captured")
+E       IOError: reading from stdin while output is captured
+
+/home/slarse/.local/lib/python2.7/site-packages/_pytest/capture.py:656: IOError
+----------------------------- Captured stdout call -----------------------------
+Enter numbers separated by a comma:
+_____________ test_import_module[thealgorithms.sorts.BitonicSort] ______________
+
+module = 'thealgorithms.sorts.BitonicSort'
+
+    @pytest.mark.parametrize("module", _gather_modules())
+    @pytest.mark.timeout(1)
+    def test_import_module(module):
+        """Test that all modules from project root can be imported"""
+>       mod = importlib.import_module(module)
+
+tests/test_imports.py:40: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+/usr/lib/python2.7/importlib/__init__.py:37: in import_module
+    __import__(name)
+thealgorithms/sorts/BitonicSort.py:48: in <module>
+    n = int(input())
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <_pytest.capture.DontReadFromInput object at 0x7fc315d8ba50>, args = ()
+
+    def read(self, *args):
+>       raise IOError("reading from stdin while output is captured")
+E       IOError: reading from stdin while output is captured
+
+/home/slarse/.local/lib/python2.7/site-packages/_pytest/capture.py:656: IOError
+_______________ test_import_module[thealgorithms.other.anagrams] _______________
+
+module = 'thealgorithms.other.anagrams'
+
+    @pytest.mark.parametrize("module", _gather_modules())
+    @pytest.mark.timeout(1)
+    def test_import_module(module):
+        """Test that all modules from project root can be imported"""
+>       mod = importlib.import_module(module)
+
+tests/test_imports.py:40: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+/usr/lib/python2.7/importlib/__init__.py:37: in import_module
+    __import__(name)
+thealgorithms/other/anagrams.py:22: in <module>
+    for word in word_list if len(anagram(word)) > 1}
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+.0 = <listiterator object at 0x7fc31367dc50>
+
+    all_anagrams = {word: anagram(word)
+>                   for word in word_list if len(anagram(word)) > 1}
+E   Failed: Timeout >1.0s
+
+thealgorithms/other/anagrams.py:22: Failed
+----------------------------- Captured stdout call -----------------------------
+creating word list...
+finding anagrams...
+__ test_import_module[thealgorithms.other.detecting_english_programmatically] __
+
+module = 'thealgorithms.other.detecting_english_programmatically'
+
+    @pytest.mark.parametrize("module", _gather_modules())
+    @pytest.mark.timeout(1)
+    def test_import_module(module):
+        """Test that all modules from project root can be imported"""
+>       mod = importlib.import_module(module)
+
+tests/test_imports.py:40: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+/usr/lib/python2.7/importlib/__init__.py:37: in import_module
+    __import__(name)
+thealgorithms/other/detecting_english_programmatically.py:14: in <module>
+    ENGLISH_WORDS = loadDictionary()
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    def loadDictionary():
+        path = os.path.split(os.path.realpath(__file__))
+        englishWords = {}
+>       with open(path[0] + '/Dictionary.txt') as dictionaryFile:
+E       IOError: [Errno 2] No such file or directory: '/home/slarse/Documents/github/cdate/dd2480/Python/thealgorithms/other/Dictionary.txt'
+
+thealgorithms/other/detecting_english_programmatically.py:9: IOError
+_________ test_import_module[thealgorithms.other.sierpinski_triangle] __________
+
+module = 'thealgorithms.other.sierpinski_triangle'
+
+    @pytest.mark.parametrize("module", _gather_modules())
+    @pytest.mark.timeout(1)
+    def test_import_module(module):
+        """Test that all modules from project root can be imported"""
+>       mod = importlib.import_module(module)
+
+tests/test_imports.py:40: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+/usr/lib/python2.7/importlib/__init__.py:37: in import_module
+    __import__(name)
+thealgorithms/other/sierpinski_triangle.py:27: in <module>
+    import turtle
+/usr/lib/python2.7/lib-tk/turtle.py:107: in <module>
+    import Tkinter as TK
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    """
+    
+    __version__ = "$Revision: 81008 $"
+    
+    import sys
+    if sys.platform == "win32":
+        # Attempt to configure Tcl/Tk without requiring PATH
+        import FixTk
+>   import _tkinter # If this fails your Python may not be configured for Tk
+E   ImportError: libtk8.6.so: cannot open shared object file: No such file or directory
+
+/usr/lib/python2.7/lib-tk/Tkinter.py:39: ImportError
+_______ test_import_module[thealgorithms.other.game_of_life.game_o_life] _______
+
+module = 'thealgorithms.other.game_of_life.game_o_life'
+
+    @pytest.mark.parametrize("module", _gather_modules())
+    @pytest.mark.timeout(1)
+    def test_import_module(module):
+        """Test that all modules from project root can be imported"""
+>       mod = importlib.import_module(module)
+
+tests/test_imports.py:40: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+/usr/lib/python2.7/importlib/__init__.py:37: in import_module
+    __import__(name)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+     '''
+>   import numpy as np
+E   ImportError: No module named numpy
+
+thealgorithms/other/game_of_life/game_o_life.py:30: ImportError
+_____ test_import_module[thealgorithms.analysis.compression_analysis.psnr] _____
+
+module = 'thealgorithms.analysis.compression_analysis.psnr'
+
+    @pytest.mark.parametrize("module", _gather_modules())
+    @pytest.mark.timeout(1)
+    def test_import_module(module):
+        """Test that all modules from project root can be imported"""
+>       mod = importlib.import_module(module)
+
+tests/test_imports.py:40: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+name = 'thealgorithms.analysis.compression_analysis.psnr', package = None
+
+    def import_module(name, package=None):
+        """Import a module.
+    
+        The 'package' argument is required when performing a relative import. It
+        specifies the package to use as the anchor point from which to resolve the
+        relative import to an absolute import.
+    
+        """
+        if name.startswith('.'):
+            if not package:
+                raise TypeError("relative imports require the 'package' argument")
+            level = 0
+            for character in name:
+                if character != '.':
+                    break
+                level += 1
+            name = _resolve_name(name[level:], package, level)
+>       __import__(name)
+E       ImportError: No module named analysis.compression_analysis.psnr
+
+/usr/lib/python2.7/importlib/__init__.py:37: ImportError
+___________ test_import_module[thealgorithms.ciphers.caesar_cipher] ____________
+
+module = 'thealgorithms.ciphers.caesar_cipher'
+
+    @pytest.mark.parametrize("module", _gather_modules())
+    @pytest.mark.timeout(1)
+    def test_import_module(module):
+        """Test that all modules from project root can be imported"""
+>       mod = importlib.import_module(module)
+
+tests/test_imports.py:40: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+/usr/lib/python2.7/importlib/__init__.py:37: in import_module
+    __import__(name)
+thealgorithms/ciphers/caesar_cipher.py:63: in <module>
+    main()
+thealgorithms/ciphers/caesar_cipher.py:43: in main
+    choice = input("What would you like to do?: ")
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <_pytest.capture.DontReadFromInput object at 0x7fc315d8ba50>, args = ()
+
+    def read(self, *args):
+>       raise IOError("reading from stdin while output is captured")
+E       IOError: reading from stdin while output is captured
+
+/home/slarse/.local/lib/python2.7/site-packages/_pytest/capture.py:656: IOError
+----------------------------- Captured stdout call -----------------------------
+----------
+**Menu**
+----------
+1.Encrpyt
+2.Decrypt
+3.BruteForce
+4.Quit
+What would you like to do?: 
+_______ test_import_module[thealgorithms.data_structures.graph.dijkstra] _______
+
+module = 'thealgorithms.data_structures.graph.dijkstra'
+
+    @pytest.mark.parametrize("module", _gather_modules())
+    @pytest.mark.timeout(1)
+    def test_import_module(module):
+        """Test that all modules from project root can be imported"""
+>       mod = importlib.import_module(module)
+
+tests/test_imports.py:40: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+/usr/lib/python2.7/importlib/__init__.py:37: in import_module
+    __import__(name)
+thealgorithms/data_structures/graph/dijkstra.py:41: in <module>
+    V = int(input("Enter number of vertices: "))
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <_pytest.capture.DontReadFromInput object at 0x7fc315d8ba50>, args = ()
+
+    def read(self, *args):
+>       raise IOError("reading from stdin while output is captured")
+E       IOError: reading from stdin while output is captured
+
+/home/slarse/.local/lib/python2.7/site-packages/_pytest/capture.py:656: IOError
+----------------------------- Captured stdout call -----------------------------
+Enter number of vertices: 
+_____ test_import_module[thealgorithms.data_structures.graph.bellman_ford] _____
+
+module = 'thealgorithms.data_structures.graph.bellman_ford'
+
+    @pytest.mark.parametrize("module", _gather_modules())
+    @pytest.mark.timeout(1)
+    def test_import_module(module):
+        """Test that all modules from project root can be imported"""
+>       mod = importlib.import_module(module)
+
+tests/test_imports.py:40: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+/usr/lib/python2.7/importlib/__init__.py:37: in import_module
+    __import__(name)
+thealgorithms/data_structures/graph/bellman_ford.py:38: in <module>
+    V = int(input("Enter number of vertices: "))
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <_pytest.capture.DontReadFromInput object at 0x7fc315d8ba50>, args = ()
+
+    def read(self, *args):
+>       raise IOError("reading from stdin while output is captured")
+E       IOError: reading from stdin while output is captured
+
+/home/slarse/.local/lib/python2.7/site-packages/_pytest/capture.py:656: IOError
+----------------------------- Captured stdout call -----------------------------
+Enter number of vertices: 
+____ test_import_module[thealgorithms.data_structures.graph.floyd_warshall] ____
+
+module = 'thealgorithms.data_structures.graph.floyd_warshall'
+
+    @pytest.mark.parametrize("module", _gather_modules())
+    @pytest.mark.timeout(1)
+    def test_import_module(module):
+        """Test that all modules from project root can be imported"""
+>       mod = importlib.import_module(module)
+
+tests/test_imports.py:40: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+/usr/lib/python2.7/importlib/__init__.py:37: in import_module
+    __import__(name)
+thealgorithms/data_structures/graph/floyd_warshall.py:33: in <module>
+    V = int(input("Enter number of vertices: "))
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <_pytest.capture.DontReadFromInput object at 0x7fc315d8ba50>, args = ()
+
+    def read(self, *args):
+>       raise IOError("reading from stdin while output is captured")
+E       IOError: reading from stdin while output is captured
+
+/home/slarse/.local/lib/python2.7/site-packages/_pytest/capture.py:656: IOError
+----------------------------- Captured stdout call -----------------------------
+Enter number of vertices: 
+_________ test_import_module[thealgorithms.data_structures.trie.trie] __________
+
+module = 'thealgorithms.data_structures.trie.trie'
+
+    @pytest.mark.parametrize("module", _gather_modules())
+    @pytest.mark.timeout(1)
+    def test_import_module(module):
+        """Test that all modules from project root can be imported"""
+>       mod = importlib.import_module(module)
+
+tests/test_imports.py:40: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+name = 'thealgorithms.data_structures.trie.trie', package = None
+
+    def import_module(name, package=None):
+        """Import a module.
+    
+        The 'package' argument is required when performing a relative import. It
+        specifies the package to use as the anchor point from which to resolve the
+        relative import to an absolute import.
+    
+        """
+        if name.startswith('.'):
+            if not package:
+                raise TypeError("relative imports require the 'package' argument")
+            level = 0
+            for character in name:
+                if character != '.':
+                    break
+                level += 1
+            name = _resolve_name(name[level:], package, level)
+>       __import__(name)
+E         File "thealgorithms/data_structures/trie/trie.py", line 15
+E           def insert_many(self, words: [str]):  # noqa: E999 This syntax is Python 3 only
+E                                      ^
+E       SyntaxError: invalid syntax
+
+/usr/lib/python2.7/importlib/__init__.py:37: SyntaxError
+ test_import_module[thealgorithms.data_structures.stacks.balanced_parentheses] _
+
+module = 'thealgorithms.data_structures.stacks.balanced_parentheses'
+
+    @pytest.mark.parametrize("module", _gather_modules())
+    @pytest.mark.timeout(1)
+    def test_import_module(module):
+        """Test that all modules from project root can be imported"""
+>       mod = importlib.import_module(module)
+
+tests/test_imports.py:40: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+/usr/lib/python2.7/importlib/__init__.py:37: in import_module
+    __import__(name)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    from __future__ import print_function
+    from __future__ import absolute_import
+>   from stack import Stack
+E   ImportError: No module named stack
+
+thealgorithms/data_structures/stacks/balanced_parentheses.py:3: ImportError
+ test_import_module[thealgorithms.data_structures.stacks.infix_to_postfix_conversion] 
+
+module = 'thealgorithms.data_structures.stacks.infix_to_postfix_conversion'
+
+    @pytest.mark.parametrize("module", _gather_modules())
+    @pytest.mark.timeout(1)
+    def test_import_module(module):
+        """Test that all modules from project root can be imported"""
+>       mod = importlib.import_module(module)
+
+tests/test_imports.py:40: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+/usr/lib/python2.7/importlib/__init__.py:37: in import_module
+    __import__(name)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    from __future__ import print_function
+    from __future__ import absolute_import
+    import string
+    
+>   from .Stack import Stack
+E   ImportError: No module named Stack
+
+thealgorithms/data_structures/stacks/infix_to_postfix_conversion.py:5: ImportError
+_____ test_import_module[thealgorithms.machine_learning.linear_regression] _____
+
+module = 'thealgorithms.machine_learning.linear_regression'
+
+    @pytest.mark.parametrize("module", _gather_modules())
+    @pytest.mark.timeout(1)
+    def test_import_module(module):
+        """Test that all modules from project root can be imported"""
+>       mod = importlib.import_module(module)
+
+tests/test_imports.py:40: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+/usr/lib/python2.7/importlib/__init__.py:37: in import_module
+    __import__(name)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    """
+    from __future__ import print_function
+    
+    import requests
+>   import numpy as np
+E   ImportError: No module named numpy
+
+thealgorithms/machine_learning/linear_regression.py:13: ImportError
+____ test_import_module[thealgorithms.machine_learning.logistic_regression] ____
+
+module = 'thealgorithms.machine_learning.logistic_regression'
+
+    @pytest.mark.parametrize("module", _gather_modules())
+    @pytest.mark.timeout(1)
+    def test_import_module(module):
+        """Test that all modules from project root can be imported"""
+>       mod = importlib.import_module(module)
+
+tests/test_imports.py:40: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+/usr/lib/python2.7/importlib/__init__.py:37: in import_module
+    __import__(name)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+         Helpful resources : 1.Coursera ML course    2.https://medium.com/@martinpella/logistic-regression-from-scratch-in-python-124c5636b8ac'''
+    
+>   import numpy as np
+E   ImportError: No module named numpy
+
+thealgorithms/machine_learning/logistic_regression.py:15: ImportError
+_____ test_import_module[thealgorithms.machine_learning.gradient_descent] ______
+
+module = 'thealgorithms.machine_learning.gradient_descent'
+
+    @pytest.mark.parametrize("module", _gather_modules())
+    @pytest.mark.timeout(1)
+    def test_import_module(module):
+        """Test that all modules from project root can be imported"""
+>       mod = importlib.import_module(module)
+
+tests/test_imports.py:40: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+/usr/lib/python2.7/importlib/__init__.py:37: in import_module
+    __import__(name)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    """
+    from __future__ import print_function, division
+>   import numpy
+E   ImportError: No module named numpy
+
+thealgorithms/machine_learning/gradient_descent.py:5: ImportError
+_______ test_import_module[thealgorithms.machine_learning.decision_tree] _______
+
+module = 'thealgorithms.machine_learning.decision_tree'
+
+    @pytest.mark.parametrize("module", _gather_modules())
+    @pytest.mark.timeout(1)
+    def test_import_module(module):
+        """Test that all modules from project root can be imported"""
+>       mod = importlib.import_module(module)
+
+tests/test_imports.py:40: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+/usr/lib/python2.7/importlib/__init__.py:37: in import_module
+    __import__(name)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    """
+    from __future__ import print_function
+    
+>   import numpy as np
+E   ImportError: No module named numpy
+
+thealgorithms/machine_learning/decision_tree.py:8: ImportError
+_____ test_import_module[thealgorithms.machine_learning.scoring_functions] _____
+
+module = 'thealgorithms.machine_learning.scoring_functions'
+
+    @pytest.mark.parametrize("module", _gather_modules())
+    @pytest.mark.timeout(1)
+    def test_import_module(module):
+        """Test that all modules from project root can be imported"""
+>       mod = importlib.import_module(module)
+
+tests/test_imports.py:40: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+/usr/lib/python2.7/importlib/__init__.py:37: in import_module
+    __import__(name)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+>   import numpy as np
+    
+    """ Here I implemented the scoring functions.
+        MAE, MSE, RMSE, RMSLE are included.
+    
+        Those are used for calculating differences between
+        predicted values and actual values.
+    
+        Metrics are slightly differentiated. Sometimes squared, rooted,
+        even log is used.
+    
+        Using log and roots can be perceived as tools for penalizing big
+        erors. However, using appropriate metrics depends on the situations,
+        and types of data
+E       ImportError: No module named numpy
+
+thealgorithms/machine_learning/scoring_functions.py:1: ImportError
+_______ test_import_module[thealgorithms.machine_learning.k_means_clust] _______
+
+module = 'thealgorithms.machine_learning.k_means_clust'
+
+    @pytest.mark.parametrize("module", _gather_modules())
+    @pytest.mark.timeout(1)
+    def test_import_module(module):
+        """Test that all modules from project root can be imported"""
+>       mod = importlib.import_module(module)
+
+tests/test_imports.py:40: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+/usr/lib/python2.7/importlib/__init__.py:37: in import_module
+    __import__(name)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    '''
+    from __future__ import print_function
+>   from sklearn.metrics import pairwise_distances
+E   ImportError: No module named sklearn.metrics
+
+thealgorithms/machine_learning/k_means_clust.py:50: ImportError
+________ test_import_module[thealgorithms.machine_learning.perceptron] _________
+
+module = 'thealgorithms.machine_learning.perceptron'
+
+    @pytest.mark.parametrize("module", _gather_modules())
+    @pytest.mark.timeout(1)
+    def test_import_module(module):
+        """Test that all modules from project root can be imported"""
+>       mod = importlib.import_module(module)
+
+tests/test_imports.py:40: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+/usr/lib/python2.7/importlib/__init__.py:37: in import_module
+    __import__(name)
+thealgorithms/machine_learning/perceptron.py:123: in <module>
+    sample.insert(i, float(input('value: ')))
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <_pytest.capture.DontReadFromInput object at 0x7fc315d8ba50>, args = ()
+
+    def read(self, *args):
+>       raise IOError("reading from stdin while output is captured")
+E       IOError: reading from stdin while output is captured
+
+/home/slarse/.local/lib/python2.7/site-packages/_pytest/capture.py:656: IOError
+----------------------------- Captured stdout call -----------------------------
+('\nEpoch:\n', 359)
+------------------------
+
+value: 
+ test_import_module[thealgorithms.machine_learning.Random_Forest_Classification.random_forest_classification] 
+
+module = 'thealgorithms.machine_learning.Random_Forest_Classification.random_forest_classification'
+
+    @pytest.mark.parametrize("module", _gather_modules())
+    @pytest.mark.timeout(1)
+    def test_import_module(module):
+        """Test that all modules from project root can be imported"""
+>       mod = importlib.import_module(module)
+
+tests/test_imports.py:40: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+/usr/lib/python2.7/importlib/__init__.py:37: in import_module
+    __import__(name)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+>   import numpy as np
+E   ImportError: No module named numpy
+
+thealgorithms/machine_learning/Random_Forest_Classification/random_forest_classification.py:4: ImportError
+ test_import_module[thealgorithms.machine_learning.Random_Forest_Regression.random_forest_regression] 
+
+module = 'thealgorithms.machine_learning.Random_Forest_Regression.random_forest_regression'
+
+    @pytest.mark.parametrize("module", _gather_modules())
+    @pytest.mark.timeout(1)
+    def test_import_module(module):
+        """Test that all modules from project root can be imported"""
+>       mod = importlib.import_module(module)
+
+tests/test_imports.py:40: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+/usr/lib/python2.7/importlib/__init__.py:37: in import_module
+    __import__(name)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+>   import numpy as np
+E   ImportError: No module named numpy
+
+thealgorithms/machine_learning/Random_Forest_Regression/random_forest_regression.py:4: ImportError
+____________ test_import_module[thealgorithms.graphs.scc_kosaraju] _____________
+
+module = 'thealgorithms.graphs.scc_kosaraju'
+
+    @pytest.mark.parametrize("module", _gather_modules())
+    @pytest.mark.timeout(1)
+    def test_import_module(module):
+        """Test that all modules from project root can be imported"""
+>       mod = importlib.import_module(module)
+
+tests/test_imports.py:40: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+/usr/lib/python2.7/importlib/__init__.py:37: in import_module
+    __import__(name)
+thealgorithms/graphs/scc_kosaraju.py:3: in <module>
+    n, m = list(map(int,input().split()))
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <_pytest.capture.DontReadFromInput object at 0x7fc315d8ba50>, args = ()
+
+    def read(self, *args):
+>       raise IOError("reading from stdin while output is captured")
+E       IOError: reading from stdin while output is captured
+
+/home/slarse/.local/lib/python2.7/site-packages/_pytest/capture.py:656: IOError
+_____ test_import_module[thealgorithms.graphs.minimum_spanning_tree_prims] _____
+
+module = 'thealgorithms.graphs.minimum_spanning_tree_prims'
+
+    @pytest.mark.parametrize("module", _gather_modules())
+    @pytest.mark.timeout(1)
+    def test_import_module(module):
+        """Test that all modules from project root can be imported"""
+>       mod = importlib.import_module(module)
+
+tests/test_imports.py:40: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+/usr/lib/python2.7/importlib/__init__.py:37: in import_module
+    __import__(name)
+thealgorithms/graphs/minimum_spanning_tree_prims.py:104: in <module>
+    n = int(input("Enter number of vertices: "))
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <_pytest.capture.DontReadFromInput object at 0x7fc315d8ba50>, args = ()
+
+    def read(self, *args):
+>       raise IOError("reading from stdin while output is captured")
+E       IOError: reading from stdin while output is captured
+
+/home/slarse/.local/lib/python2.7/site-packages/_pytest/capture.py:656: IOError
+----------------------------- Captured stdout call -----------------------------
+Enter number of vertices: 
+____ test_import_module[thealgorithms.graphs.minimum_spanning_tree_kruskal] ____
+
+module = 'thealgorithms.graphs.minimum_spanning_tree_kruskal'
+
+    @pytest.mark.parametrize("module", _gather_modules())
+    @pytest.mark.timeout(1)
+    def test_import_module(module):
+        """Test that all modules from project root can be imported"""
+>       mod = importlib.import_module(module)
+
+tests/test_imports.py:40: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+/usr/lib/python2.7/importlib/__init__.py:37: in import_module
+    __import__(name)
+thealgorithms/graphs/minimum_spanning_tree_kruskal.py:2: in <module>
+    num_nodes, num_edges = list(map(int,input().split()))
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <_pytest.capture.DontReadFromInput object at 0x7fc315d8ba50>, args = ()
+
+    def read(self, *args):
+>       raise IOError("reading from stdin while output is captured")
+E       IOError: reading from stdin while output is captured
+
+/home/slarse/.local/lib/python2.7/site-packages/_pytest/capture.py:656: IOError
+________ test_import_module[thealgorithms.graphs.multi_hueristic_astar] ________
+
+module = 'thealgorithms.graphs.multi_hueristic_astar'
+
+    @pytest.mark.parametrize("module", _gather_modules())
+    @pytest.mark.timeout(1)
+    def test_import_module(module):
+        """Test that all modules from project root can be imported"""
+>       mod = importlib.import_module(module)
+
+tests/test_imports.py:40: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+/usr/lib/python2.7/importlib/__init__.py:37: in import_module
+    __import__(name)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    from __future__ import print_function
+    import heapq
+>   import numpy as np
+E   ImportError: No module named numpy
+
+thealgorithms/graphs/multi_hueristic_astar.py:3: ImportError
+____________ test_import_module[thealgorithms.graphs.basic_graphs] _____________
+
+module = 'thealgorithms.graphs.basic_graphs'
+
+    @pytest.mark.parametrize("module", _gather_modules())
+    @pytest.mark.timeout(1)
+    def test_import_module(module):
+        """Test that all modules from project root can be imported"""
+>       mod = importlib.import_module(module)
+
+tests/test_imports.py:40: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+/usr/lib/python2.7/importlib/__init__.py:37: in import_module
+    __import__(name)
+thealgorithms/graphs/basic_graphs.py:14: in <module>
+    n, m = map(int, raw_input().split(" "))
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <_pytest.capture.DontReadFromInput object at 0x7fc315d8ba50>, args = ()
+
+    def read(self, *args):
+>       raise IOError("reading from stdin while output is captured")
+E       IOError: reading from stdin while output is captured
+
+/home/slarse/.local/lib/python2.7/site-packages/_pytest/capture.py:656: IOError
+
+---------- coverage: platform linux2, python 2.7.15-final-0 ----------
+Name                                                                                          Stmts   Miss Branch BrPart  Cover
+-------------------------------------------------------------------------------------------------------------------------------
+thealgorithms/Graphs/BFS.py                                                                      13      0      6      0   100%
+thealgorithms/Graphs/DFS.py                                                                      12      0      6      0   100%
+thealgorithms/Graphs/__init__.py                                                                  0      0      0      0   100%
+thealgorithms/Maths/3n+1.py                                                                      17     15      8      1    12%
+thealgorithms/Maths/FindMax.py                                                                   10      7      6      1    25%
+thealgorithms/Maths/FindMin.py                                                                   10      8      6      1    19%
+thealgorithms/Maths/__init__.py                                                                   0      0      0      0   100%
+thealgorithms/Maths/abs.py                                                                        8      5      4      1    33%
+thealgorithms/Maths/absMax.py                                                                    12      8      6      1    28%
+thealgorithms/Maths/absMin.py                                                                    12     11      6      0     6%
+thealgorithms/Maths/average.py                                                                   12      9      4      1    25%
+thealgorithms/Maths/find_hcf.py                                                                  16     13     10      1    15%
+thealgorithms/Maths/find_lcm.py                                                                  14     11      4      1    22%
+thealgorithms/__init__.py                                                                         0      0      0      0   100%
+thealgorithms/arithmetic_analysis/__init__.py                                                     0      0      0      0   100%
+thealgorithms/arithmetic_analysis/bisection.py                                                   24     20     14      1    13%
+thealgorithms/arithmetic_analysis/intersection.py                                                14     10      4      1    28%
+thealgorithms/arithmetic_analysis/lu_decomposition.py                                            25     25     14      0     0%
+thealgorithms/arithmetic_analysis/newton_method.py                                               13      9      4      1    29%
+thealgorithms/arithmetic_analysis/newton_raphson_method.py                                       13     12      4      0     6%
+thealgorithms/binary_tree/__init__.py                                                             0      0      0      0   100%
+thealgorithms/binary_tree/basic_binary_tree.py                                                   35     29     12      1    15%
+thealgorithms/boolean_algebra/__init__.py                                                         0      0      0      0   100%
+thealgorithms/boolean_algebra/quine_mc_cluskey.py                                               101     93     66      1     5%
+thealgorithms/ciphers/__init__.py                                                                 0      0      0      0   100%
+thealgorithms/ciphers/affine_cipher.py                                                           58     48     24      1    13%
+thealgorithms/ciphers/base16.py                                                                   9      6      2      1    36%
+thealgorithms/ciphers/base32.py                                                                   9      6      2      1    36%
+thealgorithms/ciphers/base64_cipher.py                                                           45     41     18      1     8%
+thealgorithms/ciphers/base85.py                                                                   9      6      2      1    36%
+thealgorithms/ciphers/brute_force_caesar_cipher.py                                               22     18     10      1    16%
+thealgorithms/ciphers/caesar_cipher.py                                                           58     45     28      0    15%
+thealgorithms/ciphers/cryptomath_module.py                                                       13     11      6      0    11%
+thealgorithms/ciphers/elgamal_key_generator.py                                                   41     31      8      1    22%
+thealgorithms/ciphers/onepad_cipher.py                                                           24     18      6      1    23%
+thealgorithms/ciphers/playfair_cipher.py                                                         63     56     30      0     8%
+thealgorithms/ciphers/rabin_miller.py                                                            38     32     22      1    12%
+thealgorithms/ciphers/rot13.py                                                                   18     14      8      1    19%
+thealgorithms/ciphers/rsa_cipher.py                                                              93     80     34      1    11%
+thealgorithms/ciphers/rsa_key_generator.py                                                       37     30      6      1    19%
+thealgorithms/ciphers/simple_substitution_cipher.py                                              46     36     16      1    18%
+thealgorithms/ciphers/transposition_cipher.py                                                    36     30     14      1    14%
+thealgorithms/ciphers/transposition_cipher_encrypt_decrypt_file.py                               31     26     12      1    14%
+thealgorithms/ciphers/vigenere_cipher.py                                                         41     34     20      1    13%
+thealgorithms/ciphers/xor_cipher.py                                                              59     51     20      0    10%
+thealgorithms/data_structures/__init__.py                                                         0      0      0      0   100%
+thealgorithms/data_structures/arrays.py                                                           3      0      0      0   100%
+thealgorithms/data_structures/avl.py                                                            121     59     38      5    46%
+thealgorithms/data_structures/binary_tree/AVLtree.py                                            202    163     64      1    15%
+thealgorithms/data_structures/binary_tree/__init__.py                                             0      0      0      0   100%
+thealgorithms/data_structures/binary_tree/binary_search_tree.py                                 153    125     64      1    13%
+thealgorithms/data_structures/binary_tree/fenwick_tree.py                                        25     19      6      1    23%
+thealgorithms/data_structures/binary_tree/lazy_segment_tree.py                                   77     66     24      1    12%
+thealgorithms/data_structures/binary_tree/segment_tree.py                                        58     45     14      1    19%
+thealgorithms/data_structures/graph/__init__.py                                                   0      0      0      0   100%
+thealgorithms/data_structures/graph/bellman_ford.py                                              39     35     18      0     7%
+thealgorithms/data_structures/graph/breadth_first_search.py                                      35     27     12      1    19%
+thealgorithms/data_structures/graph/depth_first_search.py                                        35     26     14      1    20%
+thealgorithms/data_structures/graph/dijkstra.py                                                  40     35     18      0     9%
+thealgorithms/data_structures/graph/dijkstra_algorithm.py                                       130    108     44      1    13%
+thealgorithms/data_structures/graph/even_tree.py                                                 25     20     10      1    17%
+thealgorithms/data_structures/graph/floyd_warshall.py                                            32     28     22      0     7%
+thealgorithms/data_structures/graph/graph.py                                                     24     18      6      1    23%
+thealgorithms/data_structures/graph/graph_list.py                                                20      0      4      0   100%
+thealgorithms/data_structures/graph/graph_matrix.py                                              20      0      4      0   100%
+thealgorithms/data_structures/hashing/__init__.py                                                 4      1      0      0    75%
+thealgorithms/data_structures/hashing/double_hash.py                                             18     11      4      0    32%
+thealgorithms/data_structures/hashing/hash_table.py                                              54     42     12      0    18%
+thealgorithms/data_structures/hashing/hash_table_with_linked_list.py                             15      8      2      0    41%
+thealgorithms/data_structures/hashing/number_theory/__init__.py                                   0      0      0      0   100%
+thealgorithms/data_structures/hashing/number_theory/prime_numbers.py                             16     13      8      0    13%
+thealgorithms/data_structures/hashing/quadratic_probing.py                                       13      9      4      0    24%
+thealgorithms/data_structures/heap/__init__.py                                                    0      0      0      0   100%
+thealgorithms/data_structures/heap/heap.py                                                       74     59     22      1    17%
+thealgorithms/data_structures/linked_list/__init__.py                                            17     10      2      0    37%
+thealgorithms/data_structures/linked_list/doubly_linked_list.py                                  55     40     12      0    22%
+thealgorithms/data_structures/linked_list/singly_linked_list.py                                  76     62     20      1    16%
+thealgorithms/data_structures/linked_list/swapNodes.py                                           51     43     16      1    13%
+thealgorithms/data_structures/queue/__init__.py                                                   0      0      0      0   100%
+thealgorithms/data_structures/queue/deqeue.py                                                    15      0      0      0   100%
+thealgorithms/data_structures/queue/queue_on_list.py                                             24     16      2      0    31%
+thealgorithms/data_structures/queue/queue_on_pseudo_stack.py                                     30     22      2      0    25%
+thealgorithms/data_structures/stacks/__init__.py                                                 16     11      4      0    25%
+thealgorithms/data_structures/stacks/balanced_parentheses.py                                     19     16     12      0    10%
+thealgorithms/data_structures/stacks/infix_to_postfix_conversion.py                              36     32     20      0     7%
+thealgorithms/data_structures/stacks/next.py                                                     11      0      6      0   100%
+thealgorithms/data_structures/stacks/stack.py                                                    40     26     10      1    30%
+thealgorithms/data_structures/stacks/stock_span_problem.py                                       18      0      6      0   100%
+thealgorithms/data_structures/trie/__init__.py                                                    0      0      0      0   100%
+thealgorithms/data_structures/union_find/__init__.py                                              0      0      0      0   100%
+thealgorithms/data_structures/union_find/tests_union_find.py                                     56     45     12      1    18%
+thealgorithms/data_structures/union_find/union_find.py                                           33     27     12      0    13%
+thealgorithms/digital_image_processing/__init__.py                                                0      0      0      0   100%
+thealgorithms/digital_image_processing/filters/__init__.py                                        0      0      0      0   100%
+thealgorithms/digital_image_processing/filters/median_filter.py                                  19     18      6      0     4%
+thealgorithms/dynamic_programming/FractionalKnapsack.py                                           9      8      2      0     9%
+thealgorithms/dynamic_programming/__init__.py                                                     0      0      0      0   100%
+thealgorithms/dynamic_programming/abbreviation.py                                                15     13     12      1    11%
+thealgorithms/dynamic_programming/coin_change.py                                                 11      8      6      1    24%
+thealgorithms/dynamic_programming/edit_distance.py                                               42     35     14      1    14%
+thealgorithms/dynamic_programming/fibonacci.py                                                   41     36     14      1    11%
+thealgorithms/dynamic_programming/floyd_warshall.py                                              31     24      8      1    21%
+thealgorithms/dynamic_programming/integer_partition.py                                           32     25     12      1    18%
+thealgorithms/dynamic_programming/k_means_clustering_tensorflow.py                               45     44     10      0     2%
+thealgorithms/dynamic_programming/knapsack.py                                                    23     20     12      1    11%
+thealgorithms/dynamic_programming/longest_common_subsequence.py                                  23     18     10      1    18%
+thealgorithms/dynamic_programming/longest_increasing_subsequence.py                              24      0     10      1    97%
+thealgorithms/dynamic_programming/longest_increasing_subsequence_O(nlogn).py                     24      2     12      2    89%
+thealgorithms/dynamic_programming/longest_sub_array.py                                           17     12      4      1    29%
+thealgorithms/dynamic_programming/matrix_chain_order.py                                          31     25     12      1    16%
+thealgorithms/dynamic_programming/max_sub_array.py                                               47     44     20      0     4%
+thealgorithms/dynamic_programming/minimum_partition.py                                           18     17     14      0     3%
+thealgorithms/dynamic_programming/rod_cutting.py                                                 20      1     10      1    93%
+thealgorithms/factorial_python.py                                                                 9      2      6      2    73%
+thealgorithms/file_transfer_protocol/__init__.py                                                  0      0      0      0   100%
+thealgorithms/file_transfer_protocol/ftp_client_server.py                                        41     32      4      0    20%
+thealgorithms/file_transfer_protocol/ftp_send_receive.py                                         14     12      0      0    14%
+thealgorithms/graphs/Directed_and_Undirected_Weighted_Graph.py                                  366    334    196      0     6%
+thealgorithms/graphs/__init__.py                                                                  0      0      0      0   100%
+thealgorithms/graphs/a_star.py                                                                   66      2     26      1    97%
+thealgorithms/graphs/articulation_points.py                                                      33      0     20      0   100%
+thealgorithms/graphs/basic_graphs.py                                                            151    145     96      0     2%
+thealgorithms/graphs/check_bipartite_graph_bfs.py                                                26      3     16      3    86%
+thealgorithms/graphs/dijkstra.py                                                                 20      2     10      2    87%
+thealgorithms/graphs/finding_bridges.py                                                          25      0     12      0   100%
+thealgorithms/graphs/kahns_algorithm_long.py                                                     21      0     16      0   100%
+thealgorithms/graphs/kahns_algorithm_topo.py                                                     24      1     16      1    95%
+thealgorithms/graphs/minimum_spanning_tree_kruskal.py                                            24     22     12      0     6%
+thealgorithms/graphs/minimum_spanning_tree_prims.py                                              86     82     30      0     3%
+thealgorithms/graphs/multi_hueristic_astar.py                                                   197    194    102      0     1%
+thealgorithms/graphs/scc_kosaraju.py                                                             35     33     16      0     4%
+thealgorithms/graphs/tarjans_scc.py                                                              47     43     18      1     8%
+thealgorithms/hashes/__init__.py                                                                  0      0      0      0   100%
+thealgorithms/hashes/chaos_machine.py                                                            47     33      8      0    25%
+thealgorithms/hashes/md5.py                                                                      87     75     28      1    11%
+thealgorithms/hashes/sha1.py                                                                     60     45     18      1    21%
+thealgorithms/machine_learning/Random_Forest_Classification/__init__.py                           0      0      0      0   100%
+thealgorithms/machine_learning/Random_Forest_Classification/random_forest_classification.py      44     43      4      0     2%
+thealgorithms/machine_learning/Random_Forest_Regression/__init__.py                               0      0      0      0   100%
+thealgorithms/machine_learning/Random_Forest_Regression/random_forest_regression.py              18     17      0      0     6%
+thealgorithms/machine_learning/__init__.py                                                        0      0      0      0   100%
+thealgorithms/machine_learning/decision_tree.py                                                  77     75     30      0     2%
+thealgorithms/machine_learning/gradient_descent.py                                               57     55     22      0     3%
+thealgorithms/machine_learning/k_means_clust.py                                                  70     68     22      0     4%
+thealgorithms/machine_learning/linear_regression.py                                              49     46      8      0     5%
+thealgorithms/machine_learning/logistic_regression.py                                            45     43      6      0     4%
+thealgorithms/machine_learning/perceptron.py                                                     57     11     20      1    79%
+thealgorithms/machine_learning/scoring_functions.py                                              42     41      0      0     2%
+thealgorithms/maths/PrimeCheck.py                                                                11      7      6      1    29%
+thealgorithms/maths/__init__.py                                                                   0      0      0      0   100%
+thealgorithms/maths/basic_maths.py                                                               57     50     28      1     9%
+thealgorithms/maths/fibonacci_sequence_recursion.py                                              14     10      6      1    25%
+thealgorithms/maths/greater_common_divisor.py                                                    11      8      2      1    31%
+thealgorithms/maths/modular_exponential.py                                                       15     12      8      1    17%
+thealgorithms/maths/newton_raphson.py                                                            30     26     16      1    11%
+thealgorithms/maths/segmented_sieve.py                                                           36     10     24      6    63%
+thealgorithms/maths/sieve_of_eratosthenes.py                                                     19     17     12      0     6%
+thealgorithms/maths/simpson_rule.py                                                              32     25      6      1    21%
+thealgorithms/maths/trapezoidal_rule.py                                                          29     23      6      1    20%
+thealgorithms/matrix/__init__.py                                                                  0      0      0      0   100%
+thealgorithms/matrix/matrix_multiplication_addition.py                                           30     26     12      1    12%
+thealgorithms/networking_flow/__init__.py                                                         0      0      0      0   100%
+thealgorithms/networking_flow/ford_fulkerson.py                                                  34      0     12      0   100%
+thealgorithms/networking_flow/minimum_cut.py                                                     39      0     18      0   100%
+thealgorithms/neural_network/__init__.py                                                          0      0      0      0   100%
+thealgorithms/neural_network/bpnn.py                                                            113    111     28      0     1%
+thealgorithms/neural_network/convolution_neural_network.py                                      195    192     40      0     1%
+thealgorithms/neural_network/perceptron.py                                                       57     11     20      1    79%
+thealgorithms/other/__init__.py                                                                   0      0      0      0   100%
+thealgorithms/other/anagrams.py                                                                  22      6      4      1    73%
+thealgorithms/other/binary_exponentiation.py                                                     17     14      8      0    12%
+thealgorithms/other/binary_exponentiation_2.py                                                   17     14      8      0    12%
+thealgorithms/other/detecting_english_programmatically.py                                        36     28     12      0    17%
+thealgorithms/other/euclidean_gcd.py                                                             15     11      4      1    26%
+thealgorithms/other/findingPrimes.py                                                             12      9     10      0    14%
+thealgorithms/other/fischer_yates_shuffle.py                                                     14     10      4      1    28%
+thealgorithms/other/frequency_finder.py                                                          40     32     22      1    15%
+thealgorithms/other/game_of_life/__init__.py                                                      0      0      0      0   100%
+thealgorithms/other/game_of_life/game_o_life.py                                                  59     58     28      0     1%
+thealgorithms/other/linear_congruential_generator.py                                             16      9      2      1    44%
+thealgorithms/other/nested_brackets.py                                                           20     16     12      1    16%
+thealgorithms/other/palindrome.py                                                                21     17     10      1    16%
+thealgorithms/other/password_generator.py                                                        21      4      2      0    83%
+thealgorithms/other/primelib.py                                                                 190    171     70      0     7%
+thealgorithms/other/sierpinski_triangle.py                                                       25     23      4      0     7%
+thealgorithms/other/tower_of_hanoi.py                                                            13      8      4      1    35%
+thealgorithms/other/two_sum.py                                                                   11      9      4      0    13%
+thealgorithms/other/word_patterns.py                                                             29     24     10      1    15%
+thealgorithms/searches/__init__.py                                                                0      0      0      0   100%
+thealgorithms/searches/binary_search.py                                                          50     41     20      1    14%
+thealgorithms/searches/interpolation_search.py                                                   46     39     20      1    12%
+thealgorithms/searches/jump_search.py                                                            22      3     10      3    81%
+thealgorithms/searches/linear_search.py                                                          19     14      8      1    22%
+thealgorithms/searches/quick_select.py                                                           24     21     10      0     9%
+thealgorithms/searches/sentinel_linear_search.py                                                 22     20      8      1    10%
+thealgorithms/searches/tabu_search.py                                                           110    101     48      1     6%
+thealgorithms/searches/ternary_search.py                                                         66     56     34      1    11%
+thealgorithms/searches/test_tabu_search.py                                                       23     10      0      0    57%
+thealgorithms/simple_client/__init__.py                                                           0      0      0      0   100%
+thealgorithms/simple_client/client.py                                                             8      2      0      0    75%
+thealgorithms/simple_client/server.py                                                            13      7      2      0    40%
+thealgorithms/sorts/BitonicSort.py                                                               27     21     12      0    15%
+thealgorithms/sorts/__init__.py                                                                   0      0      0      0   100%
+thealgorithms/sorts/bogosort.py                                                                  21     17     10      1    16%
+thealgorithms/sorts/bubble_sort.py                                                               19     16     10      1    14%
+thealgorithms/sorts/bucket_sort.py                                                               29     23     18      1    15%
+thealgorithms/sorts/cocktail_shaker_sort.py                                                      23     20     14      1    11%
+thealgorithms/sorts/comb_sort.py                                                                 23     21      8      1    10%
+thealgorithms/sorts/counting_sort.py                                                             29     25     10      1    13%
+thealgorithms/sorts/cyclesort.py                                                                 37     33     22      1     8%
+thealgorithms/sorts/external-sort.py                                                            102     75     34      1    21%
+thealgorithms/sorts/gnome_sort.py                                                                21     18     10      1    13%
+thealgorithms/sorts/heap_sort.py                                                                 28     24     12      1    13%
+thealgorithms/sorts/insertion_sort.py                                                            15     12      6      1    19%
+thealgorithms/sorts/merge_sort.py                                                                36     33     12      1     8%
+thealgorithms/sorts/merge_sort_fastest.py                                                        13     12      2      0     7%
+thealgorithms/sorts/pancake_sort.py                                                               9      0      2      0   100%
+thealgorithms/sorts/quick_sort.py                                                                17     14      4      1    19%
+thealgorithms/sorts/quick_sort_3_partition.py                                                    27     24     10      1    11%
+thealgorithms/sorts/radix_sort.py                                                                16     15      8      0     4%
+thealgorithms/sorts/random_normal_distribution_quicksort.py                                      46     42      6      0     8%
+thealgorithms/sorts/selection_sort.py                                                            18     15      8      1    15%
+thealgorithms/sorts/shell_sort.py                                                                22     19      8      1    13%
+thealgorithms/sorts/timsort.py                                                                   57     50     32      1     9%
+thealgorithms/sorts/topological_sort.py                                                          18      0     10      0   100%
+thealgorithms/sorts/tree_sort.py                                                                 31      2     16      3    89%
+thealgorithms/strings/__init__.py                                                                 0      0      0      0   100%
+thealgorithms/strings/knuth_morris_pratt.py                                                      42     39     16      1     7%
+thealgorithms/strings/levenshtein_distance.py                                                    24     22     10      1     9%
+thealgorithms/strings/manacher.py                                                                23     23     14      0     0%
+thealgorithms/strings/min_cost_string_conversion.py                                              84     78     30      1     6%
+thealgorithms/strings/rabin_karp.py                                                              22     20      6      1    11%
+thealgorithms/traversals/__init__.py                                                              0      0      0      0   100%
+thealgorithms/traversals/binary_tree_traversals.py                                              152    150     58      0     1%
+-------------------------------------------------------------------------------------------------------------------------------
+TOTAL                                                                                          7885   6148   3012    134    20%
+
+==================== 106 failed, 150 passed in 6.49 seconds ====================

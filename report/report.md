@@ -34,9 +34,26 @@ there is no need to write much here.)
 
 ## Test logs
 
-Overall results with link to a copy of the logs (before/after refactoring).
+Before we started our refactoring, the repository did contain a few proper unit
+tests, but many were simply print statements. Before we started modifying the
+code, we set up a `pytest` test suite and added a test to see how many modules
+could be imported without errors in Python 2 and Python 3. The results were as
+follows:
 
-The refactoring itself is documented by the git log.
+* [Python 2](before/py2_cov)
+  - 150 tests passed
+  - 106 tests failed
+    - 14 IOErrors
+    - 4 timeouts
+    - 81 ImportErrors
+  - 20 % code coverage
+* [Python 3](before/py3_cov)
+  - 171 tests passed
+  - 85 tests failed
+    - 32 OSErrors
+    - 11 timeouts
+    - 33 ModuleNotFoundErrors
+  - 22 % code coverage
 
 ## Effort spent
 
