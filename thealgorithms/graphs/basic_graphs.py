@@ -10,43 +10,6 @@ try:
 except NameError:
     xrange = range  # Python 3
 
-# Accept No. of Nodes and edges
-n, m = map(int, raw_input().split(" "))
-
-# Initialising Dictionary of edges
-g = {}
-for i in xrange(n):
-    g[i + 1] = []
-
-"""
---------------------------------------------------------------------------------
-    Accepting edges of Unweighted Directed Graphs
---------------------------------------------------------------------------------
-"""
-for _ in xrange(m):
-    x, y = map(int, raw_input().split(" "))
-    g[x].append(y)
-
-"""
---------------------------------------------------------------------------------
-    Accepting edges of Unweighted Undirected Graphs
---------------------------------------------------------------------------------
-"""
-for _ in xrange(m):
-    x, y = map(int, raw_input().split(" "))
-    g[x].append(y)
-    g[y].append(x)
-
-"""
---------------------------------------------------------------------------------
-    Accepting edges of Weighted Undirected Graphs
---------------------------------------------------------------------------------
-"""
-for _ in xrange(m):
-    x, y, r = map(int, raw_input().split(" "))
-    g[x].append([y, r])
-    g[y].append([x, r])
-
 """
 --------------------------------------------------------------------------------
     Depth First Search.
@@ -288,3 +251,46 @@ def find_isolated_nodes(graph):
         if not graph[node]:
             isolated.append(node)
     return isolated
+
+
+def main():
+    # Accept No. of Nodes and edges
+    n, m = map(int, raw_input().split(" "))
+
+    # Initialising Dictionary of edges
+    g = {}
+    for i in xrange(n):
+        g[i + 1] = []
+
+    """
+    --------------------------------------------------------------------------------
+        Accepting edges of Unweighted Directed Graphs
+    --------------------------------------------------------------------------------
+    """
+    for _ in xrange(m):
+        x, y = map(int, raw_input().split(" "))
+        g[x].append(y)
+
+    """
+    --------------------------------------------------------------------------------
+        Accepting edges of Unweighted Undirected Graphs
+    --------------------------------------------------------------------------------
+    """
+    for _ in xrange(m):
+        x, y = map(int, raw_input().split(" "))
+        g[x].append(y)
+        g[y].append(x)
+
+    """
+    --------------------------------------------------------------------------------
+        Accepting edges of Weighted Undirected Graphs
+    --------------------------------------------------------------------------------
+    """
+    for _ in xrange(m):
+        x, y, r = map(int, raw_input().split(" "))
+        g[x].append([y, r])
+        g[y].append([x, r])
+
+
+if __name__ == "main":
+    main()
