@@ -2,8 +2,12 @@
 This is pure python implementation of tree traversal algorithms
 """
 from __future__ import print_function
+import sys
 
-import queue
+if sys.version_info.major < 3:
+    import Queue
+else:
+    import queue
 
 try:
     raw_input  # Python 2
