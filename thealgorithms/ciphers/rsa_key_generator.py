@@ -1,6 +1,6 @@
 from __future__ import print_function
 import random, sys, os
-import rabin_miller as rabinMiller, cryptomath_module as cryptoMath
+from . import rabin_miller as rabinMiller, cryptomath_module as cryptoMath
 
 def main():
     print('Making key files...')
