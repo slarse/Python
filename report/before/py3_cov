@@ -1,0 +1,3697 @@
+============================= test session starts ==============================
+platform linux -- Python 3.7.2, pytest-4.3.0, py-1.7.0, pluggy-0.8.1
+rootdir: /home/slarse/Documents/github/cdate/dd2480/Python, inifile:
+plugins: timeout-1.3.3, cov-2.6.1
+collected 256 items
+
+tests/test_imports.py ...FF.F.......F.....F.FFF..F.FF..F...FF.FF.F.FFF.F [ 19%]
+.F.F.FF.FFFFF....FF......FFF.......F......FFF.F.........F...F.F......... [ 47%]
+....F..FF....F.F....F..........F.....F......F....F.FFF..F.F....F..F.F... [ 75%]
+....F....F.F............FFFFFF...F.....FFFFFFFFF.F.F.F..F...F.           [100%]
+
+=================================== FAILURES ===================================
+__ test_import_module[thealgorithms.file_transfer_protocol.ftp_send_receive] ___
+
+module = 'thealgorithms.file_transfer_protocol.ftp_send_receive'
+
+    @pytest.mark.parametrize("module", _gather_modules())
+    @pytest.mark.timeout(1)
+    def test_import_module(module):
+        """Test that all modules from project root can be imported"""
+>       mod = importlib.import_module(module)
+
+tests/test_imports.py:40: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+/usr/lib/python3.7/importlib/__init__.py:127: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+<frozen importlib._bootstrap>:1006: in _gcd_import
+    ???
+<frozen importlib._bootstrap>:983: in _find_and_load
+    ???
+<frozen importlib._bootstrap>:967: in _find_and_load_unlocked
+    ???
+<frozen importlib._bootstrap>:677: in _load_unlocked
+    ???
+<frozen importlib._bootstrap_external>:728: in exec_module
+    ???
+<frozen importlib._bootstrap>:219: in _call_with_frames_removed
+    ???
+thealgorithms/file_transfer_protocol/ftp_send_receive.py:12: in <module>
+    ftp = FTP('xxx.xxx.x.x')  # Enter the ip address or the domain name here
+/usr/lib/python3.7/ftplib.py:117: in __init__
+    self.connect(host)
+/usr/lib/python3.7/ftplib.py:152: in connect
+    source_address=self.source_address)
+/usr/lib/python3.7/socket.py:707: in create_connection
+    for res in getaddrinfo(host, port, 0, SOCK_STREAM):
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+host = 'xxx.xxx.x.x', port = 21, family = 0, type = <SocketKind.SOCK_STREAM: 1>
+proto = 0, flags = 0
+
+    def getaddrinfo(host, port, family=0, type=0, proto=0, flags=0):
+        """Resolve host and port into list of address info entries.
+    
+        Translate the host/port argument into a sequence of 5-tuples that contain
+        all the necessary arguments for creating a socket connected to that service.
+        host is a domain name, a string representation of an IPv4/v6 address or
+        None. port is a string service name such as 'http', a numeric port number or
+        None. By passing None as the value of host and port, you can pass NULL to
+        the underlying C API.
+    
+        The family, type and proto arguments can be optionally specified in order to
+        narrow the list of addresses returned. Passing zero as a value for each of
+        these arguments selects the full range of results.
+        """
+        # We override this function since we want to translate the numeric family
+        # and socket type values to enum constants.
+        addrlist = []
+>       for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+E       socket.gaierror: [Errno -2] Name or service not known
+
+/usr/lib/python3.7/socket.py:748: gaierror
+__ test_import_module[thealgorithms.file_transfer_protocol.ftp_client_server] __
+
+module = 'thealgorithms.file_transfer_protocol.ftp_client_server'
+
+    @pytest.mark.parametrize("module", _gather_modules())
+    @pytest.mark.timeout(1)
+    def test_import_module(module):
+        """Test that all modules from project root can be imported"""
+>       mod = importlib.import_module(module)
+
+tests/test_imports.py:40: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+/usr/lib/python3.7/importlib/__init__.py:127: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+<frozen importlib._bootstrap>:1006: in _gcd_import
+    ???
+<frozen importlib._bootstrap>:983: in _find_and_load
+    ???
+<frozen importlib._bootstrap>:967: in _find_and_load_unlocked
+    ???
+<frozen importlib._bootstrap>:677: in _load_unlocked
+    ???
+<frozen importlib._bootstrap_external>:728: in exec_module
+    ???
+<frozen importlib._bootstrap>:219: in _call_with_frames_removed
+    ???
+thealgorithms/file_transfer_protocol/ftp_client_server.py:14: in <module>
+    conn, addr = s.accept()     # Establish connection with client.
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <socket.socket fd=8, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.1.1', 60000)>
+
+    def accept(self):
+        """accept() -> (socket object, address info)
+    
+        Wait for an incoming connection.  Return a new socket
+        representing the connection, and the address of the client.
+        For IP sockets, the address info is a pair (hostaddr, port).
+        """
+>       fd, addr = self._accept()
+E       Failed: Timeout >1.0s
+
+/usr/lib/python3.7/socket.py:212: Failed
+----------------------------- Captured stdout call -----------------------------
+Server listening....
+_________ test_import_module[thealgorithms.searches.test_tabu_search] __________
+
+module = 'thealgorithms.searches.test_tabu_search'
+
+    @pytest.mark.parametrize("module", _gather_modules())
+    @pytest.mark.timeout(1)
+    def test_import_module(module):
+        """Test that all modules from project root can be imported"""
+>       mod = importlib.import_module(module)
+
+tests/test_imports.py:40: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+/usr/lib/python3.7/importlib/__init__.py:127: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+<frozen importlib._bootstrap>:1006: in _gcd_import
+    ???
+<frozen importlib._bootstrap>:983: in _find_and_load
+    ???
+<frozen importlib._bootstrap>:967: in _find_and_load_unlocked
+    ???
+<frozen importlib._bootstrap>:668: in _load_unlocked
+    ???
+<frozen importlib._bootstrap>:638: in _load_backward_compatible
+    ???
+/home/slarse/.local/lib/python3.7/site-packages/_pytest/assertion/rewrite.py:296: in load_module
+    six.exec_(co, mod.__dict__)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    import unittest
+    import os
+>   from tabu_search import generate_neighbours, generate_first_solution, find_neighborhood, tabu_search
+E   ModuleNotFoundError: No module named 'tabu_search'
+
+thealgorithms/searches/test_tabu_search.py:3: ModuleNotFoundError
+ test_import_module[thealgorithms.digital_image_processing.filters.median_filter] 
+
+module = 'thealgorithms.digital_image_processing.filters.median_filter'
+
+    @pytest.mark.parametrize("module", _gather_modules())
+    @pytest.mark.timeout(1)
+    def test_import_module(module):
+        """Test that all modules from project root can be imported"""
+>       mod = importlib.import_module(module)
+
+tests/test_imports.py:40: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+/usr/lib/python3.7/importlib/__init__.py:127: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+<frozen importlib._bootstrap>:1006: in _gcd_import
+    ???
+<frozen importlib._bootstrap>:983: in _find_and_load
+    ???
+<frozen importlib._bootstrap>:967: in _find_and_load_unlocked
+    ???
+<frozen importlib._bootstrap>:677: in _load_unlocked
+    ???
+<frozen importlib._bootstrap_external>:728: in exec_module
+    ???
+<frozen importlib._bootstrap>:219: in _call_with_frames_removed
+    ???
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    """
+    
+>   from cv2 import imread, cvtColor, COLOR_BGR2GRAY, imshow, waitKey
+E   ImportError: libhdf5.so.103: cannot open shared object file: No such file or directory
+
+thealgorithms/digital_image_processing/filters/median_filter.py:5: ImportError
+_______ test_import_module[thealgorithms.project_euler.problem_07.sol1] ________
+
+module = 'thealgorithms.project_euler.problem_07.sol1'
+
+    @pytest.mark.parametrize("module", _gather_modules())
+    @pytest.mark.timeout(1)
+    def test_import_module(module):
+        """Test that all modules from project root can be imported"""
+>       mod = importlib.import_module(module)
+
+tests/test_imports.py:40: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+/usr/lib/python3.7/importlib/__init__.py:127: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+<frozen importlib._bootstrap>:1006: in _gcd_import
+    ???
+<frozen importlib._bootstrap>:983: in _find_and_load
+    ???
+<frozen importlib._bootstrap>:967: in _find_and_load_unlocked
+    ???
+<frozen importlib._bootstrap>:677: in _load_unlocked
+    ???
+<frozen importlib._bootstrap_external>:728: in exec_module
+    ???
+<frozen importlib._bootstrap>:219: in _call_with_frames_removed
+    ???
+thealgorithms/project_euler/problem_07/sol1.py:19: in <module>
+    n = int(input())
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <_pytest.capture.DontReadFromInput object at 0x7f6aa6372208>, args = ()
+
+    def read(self, *args):
+>       raise IOError("reading from stdin while output is captured")
+E       OSError: reading from stdin while output is captured
+
+/home/slarse/.local/lib/python3.7/site-packages/_pytest/capture.py:656: OSError
+_______ test_import_module[thealgorithms.project_euler.problem_07.sol2] ________
+
+module = 'thealgorithms.project_euler.problem_07.sol2'
+
+    @pytest.mark.parametrize("module", _gather_modules())
+    @pytest.mark.timeout(1)
+    def test_import_module(module):
+        """Test that all modules from project root can be imported"""
+>       mod = importlib.import_module(module)
+
+tests/test_imports.py:40: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+/usr/lib/python3.7/importlib/__init__.py:127: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+<frozen importlib._bootstrap>:1006: in _gcd_import
+    ???
+<frozen importlib._bootstrap>:983: in _find_and_load
+    ???
+<frozen importlib._bootstrap>:967: in _find_and_load_unlocked
+    ???
+<frozen importlib._bootstrap>:677: in _load_unlocked
+    ???
+<frozen importlib._bootstrap_external>:728: in exec_module
+    ???
+<frozen importlib._bootstrap>:219: in _call_with_frames_removed
+    ???
+thealgorithms/project_euler/problem_07/sol2.py:7: in <module>
+    n = int(input('Enter The N\'th Prime Number You Want To Get: ')) # Ask For The N'th Prime Number Wanted
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <_pytest.capture.DontReadFromInput object at 0x7f6aa6372208>, args = ()
+
+    def read(self, *args):
+>       raise IOError("reading from stdin while output is captured")
+E       OSError: reading from stdin while output is captured
+
+/home/slarse/.local/lib/python3.7/site-packages/_pytest/capture.py:656: OSError
+----------------------------- Captured stdout call -----------------------------
+Enter The N'th Prime Number You Want To Get: 
+_______ test_import_module[thealgorithms.project_euler.problem_02.sol1] ________
+
+module = 'thealgorithms.project_euler.problem_02.sol1'
+
+    @pytest.mark.parametrize("module", _gather_modules())
+    @pytest.mark.timeout(1)
+    def test_import_module(module):
+        """Test that all modules from project root can be imported"""
+>       mod = importlib.import_module(module)
+
+tests/test_imports.py:40: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+/usr/lib/python3.7/importlib/__init__.py:127: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+<frozen importlib._bootstrap>:1006: in _gcd_import
+    ???
+<frozen importlib._bootstrap>:983: in _find_and_load
+    ???
+<frozen importlib._bootstrap>:967: in _find_and_load_unlocked
+    ???
+<frozen importlib._bootstrap>:677: in _load_unlocked
+    ???
+<frozen importlib._bootstrap_external>:728: in exec_module
+    ???
+<frozen importlib._bootstrap>:219: in _call_with_frames_removed
+    ???
+thealgorithms/project_euler/problem_02/sol1.py:16: in <module>
+    n = int(raw_input().strip())
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <_pytest.capture.DontReadFromInput object at 0x7f6aa6372208>, args = ()
+
+    def read(self, *args):
+>       raise IOError("reading from stdin while output is captured")
+E       OSError: reading from stdin while output is captured
+
+/home/slarse/.local/lib/python3.7/site-packages/_pytest/capture.py:656: OSError
+_______ test_import_module[thealgorithms.project_euler.problem_02.sol3] ________
+
+module = 'thealgorithms.project_euler.problem_02.sol3'
+
+    @pytest.mark.parametrize("module", _gather_modules())
+    @pytest.mark.timeout(1)
+    def test_import_module(module):
+        """Test that all modules from project root can be imported"""
+>       mod = importlib.import_module(module)
+
+tests/test_imports.py:40: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+/usr/lib/python3.7/importlib/__init__.py:127: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+<frozen importlib._bootstrap>:1006: in _gcd_import
+    ???
+<frozen importlib._bootstrap>:983: in _find_and_load
+    ???
+<frozen importlib._bootstrap>:967: in _find_and_load_unlocked
+    ???
+<frozen importlib._bootstrap>:677: in _load_unlocked
+    ???
+<frozen importlib._bootstrap_external>:728: in exec_module
+    ???
+<frozen importlib._bootstrap>:219: in _call_with_frames_removed
+    ???
+thealgorithms/project_euler/problem_02/sol3.py:10: in <module>
+    n = int(input())
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <_pytest.capture.DontReadFromInput object at 0x7f6aa6372208>, args = ()
+
+    def read(self, *args):
+>       raise IOError("reading from stdin while output is captured")
+E       OSError: reading from stdin while output is captured
+
+/home/slarse/.local/lib/python3.7/site-packages/_pytest/capture.py:656: OSError
+_______ test_import_module[thealgorithms.project_euler.problem_22.sol1] ________
+
+module = 'thealgorithms.project_euler.problem_22.sol1'
+
+    @pytest.mark.parametrize("module", _gather_modules())
+    @pytest.mark.timeout(1)
+    def test_import_module(module):
+        """Test that all modules from project root can be imported"""
+>       mod = importlib.import_module(module)
+
+tests/test_imports.py:40: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+/usr/lib/python3.7/importlib/__init__.py:127: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+<frozen importlib._bootstrap>:1006: in _gcd_import
+    ???
+<frozen importlib._bootstrap>:983: in _find_and_load
+    ???
+<frozen importlib._bootstrap>:967: in _find_and_load_unlocked
+    ???
+<frozen importlib._bootstrap>:677: in _load_unlocked
+    ???
+<frozen importlib._bootstrap_external>:728: in exec_module
+    ???
+<frozen importlib._bootstrap>:219: in _call_with_frames_removed
+    ???
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    from __future__ import print_function
+    '''
+    Name scores
+    Problem 22
+    
+    Using names.txt (right click and 'Save Link/Target As...'), a 46K text file containing over five-thousand first names, begin by sorting it
+    into alphabetical order. Then working out the alphabetical value for each name, multiply this value by its alphabetical position in the list
+    to obtain a name score.
+    
+    For example, when the list is sorted into alphabetical order, COLIN, which is worth 3 + 15 + 12 + 9 + 14 = 53, is the 938th name in the list.
+    So, COLIN would obtain a score of 938 Ã 53 = 49714.
+    
+    What is the total of all the name scores in the file?
+    '''
+    try:
+    	xrange		#Python 2
+    except NameError:
+    	xrange = range	#Python 3
+    
+>   with open('p022_names.txt') as file:
+E   FileNotFoundError: [Errno 2] No such file or directory: 'p022_names.txt'
+
+thealgorithms/project_euler/problem_22/sol1.py:21: FileNotFoundError
+_______ test_import_module[thealgorithms.project_euler.problem_13.sol1] ________
+
+module = 'thealgorithms.project_euler.problem_13.sol1'
+
+    @pytest.mark.parametrize("module", _gather_modules())
+    @pytest.mark.timeout(1)
+    def test_import_module(module):
+        """Test that all modules from project root can be imported"""
+>       mod = importlib.import_module(module)
+
+tests/test_imports.py:40: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+/usr/lib/python3.7/importlib/__init__.py:127: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+<frozen importlib._bootstrap>:1006: in _gcd_import
+    ???
+<frozen importlib._bootstrap>:983: in _find_and_load
+    ???
+<frozen importlib._bootstrap>:967: in _find_and_load_unlocked
+    ???
+<frozen importlib._bootstrap>:677: in _load_unlocked
+    ???
+<frozen importlib._bootstrap_external>:728: in exec_module
+    ???
+<frozen importlib._bootstrap>:219: in _call_with_frames_removed
+    ???
+thealgorithms/project_euler/problem_13/sol1.py:7: in <module>
+    n = int(input().strip())
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <_pytest.capture.DontReadFromInput object at 0x7f6aa6372208>, args = ()
+
+    def read(self, *args):
+>       raise IOError("reading from stdin while output is captured")
+E       OSError: reading from stdin while output is captured
+
+/home/slarse/.local/lib/python3.7/site-packages/_pytest/capture.py:656: OSError
+_______ test_import_module[thealgorithms.project_euler.problem_16.sol1] ________
+
+module = 'thealgorithms.project_euler.problem_16.sol1'
+
+    @pytest.mark.parametrize("module", _gather_modules())
+    @pytest.mark.timeout(1)
+    def test_import_module(module):
+        """Test that all modules from project root can be imported"""
+>       mod = importlib.import_module(module)
+
+tests/test_imports.py:40: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+/usr/lib/python3.7/importlib/__init__.py:127: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+<frozen importlib._bootstrap>:1006: in _gcd_import
+    ???
+<frozen importlib._bootstrap>:983: in _find_and_load
+    ???
+<frozen importlib._bootstrap>:967: in _find_and_load_unlocked
+    ???
+<frozen importlib._bootstrap>:677: in _load_unlocked
+    ???
+<frozen importlib._bootstrap_external>:728: in exec_module
+    ???
+<frozen importlib._bootstrap>:219: in _call_with_frames_removed
+    ???
+thealgorithms/project_euler/problem_16/sol1.py:1: in <module>
+    power = int(input("Enter the power of 2: "))
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <_pytest.capture.DontReadFromInput object at 0x7f6aa6372208>, args = ()
+
+    def read(self, *args):
+>       raise IOError("reading from stdin while output is captured")
+E       OSError: reading from stdin while output is captured
+
+/home/slarse/.local/lib/python3.7/site-packages/_pytest/capture.py:656: OSError
+----------------------------- Captured stdout call -----------------------------
+Enter the power of 2: 
+_______ test_import_module[thealgorithms.project_euler.problem_20.sol1] ________
+
+module = 'thealgorithms.project_euler.problem_20.sol1'
+
+    @pytest.mark.parametrize("module", _gather_modules())
+    @pytest.mark.timeout(1)
+    def test_import_module(module):
+        """Test that all modules from project root can be imported"""
+>       mod = importlib.import_module(module)
+
+tests/test_imports.py:40: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+/usr/lib/python3.7/importlib/__init__.py:127: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+<frozen importlib._bootstrap>:1006: in _gcd_import
+    ???
+<frozen importlib._bootstrap>:983: in _find_and_load
+    ???
+<frozen importlib._bootstrap>:967: in _find_and_load_unlocked
+    ???
+<frozen importlib._bootstrap>:677: in _load_unlocked
+    ???
+<frozen importlib._bootstrap_external>:728: in exec_module
+    ???
+<frozen importlib._bootstrap>:219: in _call_with_frames_removed
+    ???
+thealgorithms/project_euler/problem_20/sol1.py:18: in <module>
+    number = int(input("Enter the Number: "))
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <_pytest.capture.DontReadFromInput object at 0x7f6aa6372208>, args = ()
+
+    def read(self, *args):
+>       raise IOError("reading from stdin while output is captured")
+E       OSError: reading from stdin while output is captured
+
+/home/slarse/.local/lib/python3.7/site-packages/_pytest/capture.py:656: OSError
+----------------------------- Captured stdout call -----------------------------
+Enter the Number: 
+_______ test_import_module[thealgorithms.project_euler.problem_14.sol1] ________
+
+module = 'thealgorithms.project_euler.problem_14.sol1'
+
+    @pytest.mark.parametrize("module", _gather_modules())
+    @pytest.mark.timeout(1)
+    def test_import_module(module):
+        """Test that all modules from project root can be imported"""
+>       mod = importlib.import_module(module)
+
+tests/test_imports.py:40: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+/usr/lib/python3.7/importlib/__init__.py:127: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+<frozen importlib._bootstrap>:1006: in _gcd_import
+    ???
+<frozen importlib._bootstrap>:983: in _find_and_load
+    ???
+<frozen importlib._bootstrap>:967: in _find_and_load_unlocked
+    ???
+<frozen importlib._bootstrap>:677: in _load_unlocked
+    ???
+<frozen importlib._bootstrap_external>:728: in exec_module
+    ???
+<frozen importlib._bootstrap>:219: in _call_with_frames_removed
+    ???
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    from __future__ import print_function
+    largest_number = 0
+    pre_counter = 0
+    
+    for input1 in range(750000,1000000):
+        counter = 1
+        number = input1
+    
+        while number > 1:
+            if number % 2 == 0:
+                number /=2
+                counter += 1
+            else:
+                number = (3*number)+1
+>               counter += 1
+E               Failed: Timeout >1.0s
+
+thealgorithms/project_euler/problem_14/sol1.py:15: Failed
+_______ test_import_module[thealgorithms.project_euler.problem_14.sol2] ________
+
+module = 'thealgorithms.project_euler.problem_14.sol2'
+
+    @pytest.mark.parametrize("module", _gather_modules())
+    @pytest.mark.timeout(1)
+    def test_import_module(module):
+        """Test that all modules from project root can be imported"""
+>       mod = importlib.import_module(module)
+
+tests/test_imports.py:40: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+/usr/lib/python3.7/importlib/__init__.py:127: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+<frozen importlib._bootstrap>:1006: in _gcd_import
+    ???
+<frozen importlib._bootstrap>:983: in _find_and_load
+    ???
+<frozen importlib._bootstrap>:967: in _find_and_load_unlocked
+    ???
+<frozen importlib._bootstrap>:677: in _load_unlocked
+    ???
+<frozen importlib._bootstrap_external>:728: in exec_module
+    ???
+<frozen importlib._bootstrap>:219: in _call_with_frames_removed
+    ???
+thealgorithms/project_euler/problem_14/sol2.py:15: in <module>
+    answer = max([(len(collatz_sequence(i)), i)  for i in range(1,1000000)])
+thealgorithms/project_euler/problem_14/sol2.py:15: in <listcomp>
+    answer = max([(len(collatz_sequence(i)), i)  for i in range(1,1000000)])
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+n = 4067
+
+    def collatz_sequence(n):
+      """Collatz conjecture: start with any positive integer n.Next termis obtained from the previous term as follows:
+      if the previous term is even, the next term is one half the previous term.
+      If the previous term is odd, the next term is 3 times the previous term plus 1.
+      The conjecture states the sequence will always reach 1 regaardess of starting n."""
+      sequence = [n]
+      while n != 1:
+        if n % 2 == 0:# even
+          n //= 2
+        else:
+>         n = 3*n +1
+E         Failed: Timeout >1.0s
+
+thealgorithms/project_euler/problem_14/sol2.py:11: Failed
+_______ test_import_module[thealgorithms.project_euler.problem_03.sol1] ________
+
+module = 'thealgorithms.project_euler.problem_03.sol1'
+
+    @pytest.mark.parametrize("module", _gather_modules())
+    @pytest.mark.timeout(1)
+    def test_import_module(module):
+        """Test that all modules from project root can be imported"""
+>       mod = importlib.import_module(module)
+
+tests/test_imports.py:40: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+/usr/lib/python3.7/importlib/__init__.py:127: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+<frozen importlib._bootstrap>:1006: in _gcd_import
+    ???
+<frozen importlib._bootstrap>:983: in _find_and_load
+    ???
+<frozen importlib._bootstrap>:967: in _find_and_load_unlocked
+    ???
+<frozen importlib._bootstrap>:677: in _load_unlocked
+    ???
+<frozen importlib._bootstrap_external>:728: in exec_module
+    ???
+<frozen importlib._bootstrap>:219: in _call_with_frames_removed
+    ???
+thealgorithms/project_euler/problem_03/sol1.py:22: in <module>
+    n=int(input())
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <_pytest.capture.DontReadFromInput object at 0x7f6aa6372208>, args = ()
+
+    def read(self, *args):
+>       raise IOError("reading from stdin while output is captured")
+E       OSError: reading from stdin while output is captured
+
+/home/slarse/.local/lib/python3.7/site-packages/_pytest/capture.py:656: OSError
+_______ test_import_module[thealgorithms.project_euler.problem_03.sol2] ________
+
+module = 'thealgorithms.project_euler.problem_03.sol2'
+
+    @pytest.mark.parametrize("module", _gather_modules())
+    @pytest.mark.timeout(1)
+    def test_import_module(module):
+        """Test that all modules from project root can be imported"""
+>       mod = importlib.import_module(module)
+
+tests/test_imports.py:40: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+/usr/lib/python3.7/importlib/__init__.py:127: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+<frozen importlib._bootstrap>:1006: in _gcd_import
+    ???
+<frozen importlib._bootstrap>:983: in _find_and_load
+    ???
+<frozen importlib._bootstrap>:967: in _find_and_load_unlocked
+    ???
+<frozen importlib._bootstrap>:677: in _load_unlocked
+    ???
+<frozen importlib._bootstrap_external>:728: in exec_module
+    ???
+<frozen importlib._bootstrap>:219: in _call_with_frames_removed
+    ???
+thealgorithms/project_euler/problem_03/sol2.py:8: in <module>
+    n=int(input())
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <_pytest.capture.DontReadFromInput object at 0x7f6aa6372208>, args = ()
+
+    def read(self, *args):
+>       raise IOError("reading from stdin while output is captured")
+E       OSError: reading from stdin while output is captured
+
+/home/slarse/.local/lib/python3.7/site-packages/_pytest/capture.py:656: OSError
+_______ test_import_module[thealgorithms.project_euler.problem_09.sol1] ________
+
+module = 'thealgorithms.project_euler.problem_09.sol1'
+
+    @pytest.mark.parametrize("module", _gather_modules())
+    @pytest.mark.timeout(1)
+    def test_import_module(module):
+        """Test that all modules from project root can be imported"""
+>       mod = importlib.import_module(module)
+
+tests/test_imports.py:40: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+/usr/lib/python3.7/importlib/__init__.py:127: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+<frozen importlib._bootstrap>:1006: in _gcd_import
+    ???
+<frozen importlib._bootstrap>:983: in _find_and_load
+    ???
+<frozen importlib._bootstrap>:967: in _find_and_load_unlocked
+    ???
+<frozen importlib._bootstrap>:677: in _load_unlocked
+    ???
+<frozen importlib._bootstrap_external>:728: in exec_module
+    ???
+<frozen importlib._bootstrap>:219: in _call_with_frames_removed
+    ???
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    from __future__ import print_function
+    # Program to find the product of a,b,c which are Pythagorean Triplet that satisfice the following:
+    # 1. a < b < c
+    # 2. a**2 + b**2 = c**2
+    # 3. a + b + c = 1000
+    
+    print("Please Wait...")
+    for a in range(300):
+        for b in range(400):
+            for c in range(500):
+                if(a < b < c):
+>                   if((a**2) + (b**2) == (c**2)):
+E                   Failed: Timeout >1.0s
+
+thealgorithms/project_euler/problem_09/sol1.py:12: Failed
+----------------------------- Captured stdout call -----------------------------
+Please Wait...
+_______ test_import_module[thealgorithms.project_euler.problem_09.sol2] ________
+
+module = 'thealgorithms.project_euler.problem_09.sol2'
+
+    @pytest.mark.parametrize("module", _gather_modules())
+    @pytest.mark.timeout(1)
+    def test_import_module(module):
+        """Test that all modules from project root can be imported"""
+>       mod = importlib.import_module(module)
+
+tests/test_imports.py:40: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+/usr/lib/python3.7/importlib/__init__.py:127: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+<frozen importlib._bootstrap>:1006: in _gcd_import
+    ???
+<frozen importlib._bootstrap>:983: in _find_and_load
+    ???
+<frozen importlib._bootstrap>:967: in _find_and_load_unlocked
+    ???
+<frozen importlib._bootstrap>:677: in _load_unlocked
+    ???
+<frozen importlib._bootstrap_external>:728: in exec_module
+    ???
+<frozen importlib._bootstrap>:219: in _call_with_frames_removed
+    ???
+thealgorithms/project_euler/problem_09/sol2.py:9: in <module>
+    N = int(input())
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <_pytest.capture.DontReadFromInput object at 0x7f6aa6372208>, args = ()
+
+    def read(self, *args):
+>       raise IOError("reading from stdin while output is captured")
+E       OSError: reading from stdin while output is captured
+
+/home/slarse/.local/lib/python3.7/site-packages/_pytest/capture.py:656: OSError
+_______ test_import_module[thealgorithms.project_euler.problem_12.sol1] ________
+
+module = 'thealgorithms.project_euler.problem_12.sol1'
+
+    @pytest.mark.parametrize("module", _gather_modules())
+    @pytest.mark.timeout(1)
+    def test_import_module(module):
+        """Test that all modules from project root can be imported"""
+>       mod = importlib.import_module(module)
+
+tests/test_imports.py:40: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+/usr/lib/python3.7/importlib/__init__.py:127: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+<frozen importlib._bootstrap>:1006: in _gcd_import
+    ???
+<frozen importlib._bootstrap>:983: in _find_and_load
+    ???
+<frozen importlib._bootstrap>:967: in _find_and_load_unlocked
+    ???
+<frozen importlib._bootstrap>:677: in _load_unlocked
+    ???
+<frozen importlib._bootstrap_external>:728: in exec_module
+    ???
+<frozen importlib._bootstrap>:219: in _call_with_frames_removed
+    ???
+thealgorithms/project_euler/problem_12/sol1.py:45: in <module>
+    if count_divisors(tNum) > 500:
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+n = 4710915
+
+    def count_divisors(n):
+    	nDivisors = 0
+>   	for i in xrange(1, int(sqrt(n))+1):
+E    Failed: Timeout >1.0s
+
+thealgorithms/project_euler/problem_12/sol1.py:30: Failed
+_______ test_import_module[thealgorithms.project_euler.problem_12.sol2] ________
+
+module = 'thealgorithms.project_euler.problem_12.sol2'
+
+    @pytest.mark.parametrize("module", _gather_modules())
+    @pytest.mark.timeout(1)
+    def test_import_module(module):
+        """Test that all modules from project root can be imported"""
+>       mod = importlib.import_module(module)
+
+tests/test_imports.py:40: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+/usr/lib/python3.7/importlib/__init__.py:127: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+<frozen importlib._bootstrap>:1006: in _gcd_import
+    ???
+<frozen importlib._bootstrap>:983: in _find_and_load
+    ???
+<frozen importlib._bootstrap>:967: in _find_and_load_unlocked
+    ???
+<frozen importlib._bootstrap>:677: in _load_unlocked
+    ???
+<frozen importlib._bootstrap_external>:728: in exec_module
+    ???
+<frozen importlib._bootstrap>:219: in _call_with_frames_removed
+    ???
+thealgorithms/project_euler/problem_12/sol2.py:8: in <module>
+    print(next(i for i in triangle_number_generator() if count_divisors(i) > 500))
+thealgorithms/project_euler/problem_12/sol2.py:8: in <genexpr>
+    print(next(i for i in triangle_number_generator() if count_divisors(i) > 500))
+thealgorithms/project_euler/problem_12/sol2.py:6: in count_divisors
+    return sum([2 for i in range(1,int(n**0.5)+1) if n%i==0 and i*i != n])
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+.0 = <range_iterator object at 0x7f6aa5ed9810>
+
+>   return sum([2 for i in range(1,int(n**0.5)+1) if n%i==0 and i*i != n])
+E   Failed: Timeout >1.0s
+
+thealgorithms/project_euler/problem_12/sol2.py:6: Failed
+_______ test_import_module[thealgorithms.project_euler.problem_06.sol1] ________
+
+module = 'thealgorithms.project_euler.problem_06.sol1'
+
+    @pytest.mark.parametrize("module", _gather_modules())
+    @pytest.mark.timeout(1)
+    def test_import_module(module):
+        """Test that all modules from project root can be imported"""
+>       mod = importlib.import_module(module)
+
+tests/test_imports.py:40: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+/usr/lib/python3.7/importlib/__init__.py:127: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+<frozen importlib._bootstrap>:1006: in _gcd_import
+    ???
+<frozen importlib._bootstrap>:983: in _find_and_load
+    ???
+<frozen importlib._bootstrap>:967: in _find_and_load_unlocked
+    ???
+<frozen importlib._bootstrap>:677: in _load_unlocked
+    ???
+<frozen importlib._bootstrap_external>:728: in exec_module
+    ???
+<frozen importlib._bootstrap>:219: in _call_with_frames_removed
+    ???
+thealgorithms/project_euler/problem_06/sol1.py:15: in <module>
+    n = int(input())
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <_pytest.capture.DontReadFromInput object at 0x7f6aa6372208>, args = ()
+
+    def read(self, *args):
+>       raise IOError("reading from stdin while output is captured")
+E       OSError: reading from stdin while output is captured
+
+/home/slarse/.local/lib/python3.7/site-packages/_pytest/capture.py:656: OSError
+_______ test_import_module[thealgorithms.project_euler.problem_06.sol2] ________
+
+module = 'thealgorithms.project_euler.problem_06.sol2'
+
+    @pytest.mark.parametrize("module", _gather_modules())
+    @pytest.mark.timeout(1)
+    def test_import_module(module):
+        """Test that all modules from project root can be imported"""
+>       mod = importlib.import_module(module)
+
+tests/test_imports.py:40: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+/usr/lib/python3.7/importlib/__init__.py:127: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+<frozen importlib._bootstrap>:1006: in _gcd_import
+    ???
+<frozen importlib._bootstrap>:983: in _find_and_load
+    ???
+<frozen importlib._bootstrap>:967: in _find_and_load_unlocked
+    ???
+<frozen importlib._bootstrap>:677: in _load_unlocked
+    ???
+<frozen importlib._bootstrap_external>:728: in exec_module
+    ???
+<frozen importlib._bootstrap>:219: in _call_with_frames_removed
+    ???
+thealgorithms/project_euler/problem_06/sol2.py:12: in <module>
+    n = int(input())
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <_pytest.capture.DontReadFromInput object at 0x7f6aa6372208>, args = ()
+
+    def read(self, *args):
+>       raise IOError("reading from stdin while output is captured")
+E       OSError: reading from stdin while output is captured
+
+/home/slarse/.local/lib/python3.7/site-packages/_pytest/capture.py:656: OSError
+_______ test_import_module[thealgorithms.project_euler.problem_36.sol1] ________
+
+module = 'thealgorithms.project_euler.problem_36.sol1'
+
+    @pytest.mark.parametrize("module", _gather_modules())
+    @pytest.mark.timeout(1)
+    def test_import_module(module):
+        """Test that all modules from project root can be imported"""
+>       mod = importlib.import_module(module)
+
+tests/test_imports.py:40: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+/usr/lib/python3.7/importlib/__init__.py:127: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+<frozen importlib._bootstrap>:1006: in _gcd_import
+    ???
+<frozen importlib._bootstrap>:983: in _find_and_load
+    ???
+<frozen importlib._bootstrap>:967: in _find_and_load_unlocked
+    ???
+<frozen importlib._bootstrap>:677: in _load_unlocked
+    ???
+<frozen importlib._bootstrap_external>:728: in exec_module
+    ???
+<frozen importlib._bootstrap>:219: in _call_with_frames_removed
+    ???
+thealgorithms/project_euler/problem_36/sol1.py:27: in <module>
+    if is_palindrome(i) and is_palindrome(bin(i).split('b')[1]):
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+n = 808335
+
+    def is_palindrome(n):
+>   	n = str(n)
+E    Failed: Timeout >1.0s
+
+thealgorithms/project_euler/problem_36/sol1.py:17: Failed
+_______ test_import_module[thealgorithms.project_euler.problem_05.sol1] ________
+
+module = 'thealgorithms.project_euler.problem_05.sol1'
+
+    @pytest.mark.parametrize("module", _gather_modules())
+    @pytest.mark.timeout(1)
+    def test_import_module(module):
+        """Test that all modules from project root can be imported"""
+>       mod = importlib.import_module(module)
+
+tests/test_imports.py:40: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+/usr/lib/python3.7/importlib/__init__.py:127: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+<frozen importlib._bootstrap>:1006: in _gcd_import
+    ???
+<frozen importlib._bootstrap>:983: in _find_and_load
+    ???
+<frozen importlib._bootstrap>:967: in _find_and_load_unlocked
+    ???
+<frozen importlib._bootstrap>:677: in _load_unlocked
+    ???
+<frozen importlib._bootstrap_external>:728: in exec_module
+    ???
+<frozen importlib._bootstrap>:219: in _call_with_frames_removed
+    ???
+thealgorithms/project_euler/problem_05/sol1.py:8: in <module>
+    n = int(input())
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <_pytest.capture.DontReadFromInput object at 0x7f6aa6372208>, args = ()
+
+    def read(self, *args):
+>       raise IOError("reading from stdin while output is captured")
+E       OSError: reading from stdin while output is captured
+
+/home/slarse/.local/lib/python3.7/site-packages/_pytest/capture.py:656: OSError
+_______ test_import_module[thealgorithms.project_euler.problem_05.sol2] ________
+
+module = 'thealgorithms.project_euler.problem_05.sol2'
+
+    @pytest.mark.parametrize("module", _gather_modules())
+    @pytest.mark.timeout(1)
+    def test_import_module(module):
+        """Test that all modules from project root can be imported"""
+>       mod = importlib.import_module(module)
+
+tests/test_imports.py:40: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+/usr/lib/python3.7/importlib/__init__.py:127: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+<frozen importlib._bootstrap>:1006: in _gcd_import
+    ???
+<frozen importlib._bootstrap>:983: in _find_and_load
+    ???
+<frozen importlib._bootstrap>:967: in _find_and_load_unlocked
+    ???
+<frozen importlib._bootstrap>:677: in _load_unlocked
+    ???
+<frozen importlib._bootstrap_external>:728: in exec_module
+    ???
+<frozen importlib._bootstrap>:219: in _call_with_frames_removed
+    ???
+thealgorithms/project_euler/problem_05/sol2.py:16: in <module>
+    n = int(input())
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <_pytest.capture.DontReadFromInput object at 0x7f6aa6372208>, args = ()
+
+    def read(self, *args):
+>       raise IOError("reading from stdin while output is captured")
+E       OSError: reading from stdin while output is captured
+
+/home/slarse/.local/lib/python3.7/site-packages/_pytest/capture.py:656: OSError
+_______ test_import_module[thealgorithms.project_euler.problem_17.sol1] ________
+
+module = 'thealgorithms.project_euler.problem_17.sol1'
+
+    @pytest.mark.parametrize("module", _gather_modules())
+    @pytest.mark.timeout(1)
+    def test_import_module(module):
+        """Test that all modules from project root can be imported"""
+>       mod = importlib.import_module(module)
+
+tests/test_imports.py:40: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+/usr/lib/python3.7/importlib/__init__.py:127: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+<frozen importlib._bootstrap>:1006: in _gcd_import
+    ???
+<frozen importlib._bootstrap>:983: in _find_and_load
+    ???
+<frozen importlib._bootstrap>:967: in _find_and_load_unlocked
+    ???
+<frozen importlib._bootstrap>:677: in _load_unlocked
+    ???
+<frozen importlib._bootstrap_external>:728: in exec_module
+    ???
+<frozen importlib._bootstrap>:219: in _call_with_frames_removed
+    ???
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    from __future__ import print_function
+    '''
+    Number letter counts
+    Problem 17
+    
+    If the numbers 1 to 5 are written out in words: one, two, three, four, five, then there are 3 + 3 + 5 + 4 + 4 = 19 letters used in total.
+    
+    If all the numbers from 1 to 1000 (one thousand) inclusive were written out in words, how many letters would be used?
+    
+    
+    NOTE: Do not count spaces or hyphens. For example, 342 (three hundred and forty-two) contains 23 letters and 115 (one hundred and fifteen)
+    contains 20 letters. The use of "and" when writing out numbers is in compliance with British usage.
+    '''
+    
+    ones_counts = [0, 3, 3, 5, 4, 4, 3, 5, 5, 4, 3, 6, 6, 8, 8, 7, 7, 9, 8, 8] #number of letters in zero, one, two, ..., nineteen (0 for zero since it's never said aloud)
+    tens_counts = [0, 0, 6, 6, 5, 5, 5, 7, 6, 6] #number of letters in twenty, thirty, ..., ninety (0 for numbers less than 20 due to inconsistency in teens)
+    
+    count = 0
+    
+    for i in range(1, 1001):
+    	if i < 1000:
+    		if i >= 100:
+    			count += ones_counts[i/100] + 7 #add number of letters for "n hundred"
+    
+    			if i%100 is not 0:
+    				count += 3 #add number of letters for "and" if number is not multiple of 100
+    
+    		if 0 < i%100 < 20:
+    			count += ones_counts[i%100] #add number of letters for one, two, three, ..., nineteen (could be combined with below if not for inconsistency in teens)
+    		else:
+>   			count += ones_counts[i%10] + tens_counts[(i%100-i%10)/10] #add number of letters for twenty, twenty one, ..., ninety nine
+E      TypeError: list indices must be integers or slices, not float
+
+thealgorithms/project_euler/problem_17/sol1.py:31: TypeError
+_______ test_import_module[thealgorithms.project_euler.problem_01.sol1] ________
+
+module = 'thealgorithms.project_euler.problem_01.sol1'
+
+    @pytest.mark.parametrize("module", _gather_modules())
+    @pytest.mark.timeout(1)
+    def test_import_module(module):
+        """Test that all modules from project root can be imported"""
+>       mod = importlib.import_module(module)
+
+tests/test_imports.py:40: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+/usr/lib/python3.7/importlib/__init__.py:127: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+<frozen importlib._bootstrap>:1006: in _gcd_import
+    ???
+<frozen importlib._bootstrap>:983: in _find_and_load
+    ???
+<frozen importlib._bootstrap>:967: in _find_and_load_unlocked
+    ???
+<frozen importlib._bootstrap>:677: in _load_unlocked
+    ???
+<frozen importlib._bootstrap_external>:728: in exec_module
+    ???
+<frozen importlib._bootstrap>:219: in _call_with_frames_removed
+    ???
+thealgorithms/project_euler/problem_01/sol1.py:12: in <module>
+    n = int(raw_input().strip())
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <_pytest.capture.DontReadFromInput object at 0x7f6aa6372208>, args = ()
+
+    def read(self, *args):
+>       raise IOError("reading from stdin while output is captured")
+E       OSError: reading from stdin while output is captured
+
+/home/slarse/.local/lib/python3.7/site-packages/_pytest/capture.py:656: OSError
+_______ test_import_module[thealgorithms.project_euler.problem_01.sol5] ________
+
+module = 'thealgorithms.project_euler.problem_01.sol5'
+
+    @pytest.mark.parametrize("module", _gather_modules())
+    @pytest.mark.timeout(1)
+    def test_import_module(module):
+        """Test that all modules from project root can be imported"""
+>       mod = importlib.import_module(module)
+
+tests/test_imports.py:40: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+/usr/lib/python3.7/importlib/__init__.py:127: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+<frozen importlib._bootstrap>:1006: in _gcd_import
+    ???
+<frozen importlib._bootstrap>:983: in _find_and_load
+    ???
+<frozen importlib._bootstrap>:967: in _find_and_load_unlocked
+    ???
+<frozen importlib._bootstrap>:677: in _load_unlocked
+    ???
+<frozen importlib._bootstrap_external>:728: in exec_module
+    ???
+<frozen importlib._bootstrap>:219: in _call_with_frames_removed
+    ???
+thealgorithms/project_euler/problem_01/sol5.py:14: in <module>
+    n = int(input().strip())
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <_pytest.capture.DontReadFromInput object at 0x7f6aa6372208>, args = ()
+
+    def read(self, *args):
+>       raise IOError("reading from stdin while output is captured")
+E       OSError: reading from stdin while output is captured
+
+/home/slarse/.local/lib/python3.7/site-packages/_pytest/capture.py:656: OSError
+_______ test_import_module[thealgorithms.project_euler.problem_01.sol3] ________
+
+module = 'thealgorithms.project_euler.problem_01.sol3'
+
+    @pytest.mark.parametrize("module", _gather_modules())
+    @pytest.mark.timeout(1)
+    def test_import_module(module):
+        """Test that all modules from project root can be imported"""
+>       mod = importlib.import_module(module)
+
+tests/test_imports.py:40: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+/usr/lib/python3.7/importlib/__init__.py:127: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+<frozen importlib._bootstrap>:1006: in _gcd_import
+    ???
+<frozen importlib._bootstrap>:983: in _find_and_load
+    ???
+<frozen importlib._bootstrap>:967: in _find_and_load_unlocked
+    ???
+<frozen importlib._bootstrap>:677: in _load_unlocked
+    ???
+<frozen importlib._bootstrap_external>:728: in exec_module
+    ???
+<frozen importlib._bootstrap>:219: in _call_with_frames_removed
+    ???
+thealgorithms/project_euler/problem_01/sol3.py:17: in <module>
+    n = int(raw_input().strip())
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <_pytest.capture.DontReadFromInput object at 0x7f6aa6372208>, args = ()
+
+    def read(self, *args):
+>       raise IOError("reading from stdin while output is captured")
+E       OSError: reading from stdin while output is captured
+
+/home/slarse/.local/lib/python3.7/site-packages/_pytest/capture.py:656: OSError
+_______ test_import_module[thealgorithms.project_euler.problem_01.sol2] ________
+
+module = 'thealgorithms.project_euler.problem_01.sol2'
+
+    @pytest.mark.parametrize("module", _gather_modules())
+    @pytest.mark.timeout(1)
+    def test_import_module(module):
+        """Test that all modules from project root can be imported"""
+>       mod = importlib.import_module(module)
+
+tests/test_imports.py:40: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+/usr/lib/python3.7/importlib/__init__.py:127: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+<frozen importlib._bootstrap>:1006: in _gcd_import
+    ???
+<frozen importlib._bootstrap>:983: in _find_and_load
+    ???
+<frozen importlib._bootstrap>:967: in _find_and_load_unlocked
+    ???
+<frozen importlib._bootstrap>:677: in _load_unlocked
+    ???
+<frozen importlib._bootstrap_external>:728: in exec_module
+    ???
+<frozen importlib._bootstrap>:219: in _call_with_frames_removed
+    ???
+thealgorithms/project_euler/problem_01/sol2.py:12: in <module>
+    n = int(raw_input().strip())
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <_pytest.capture.DontReadFromInput object at 0x7f6aa6372208>, args = ()
+
+    def read(self, *args):
+>       raise IOError("reading from stdin while output is captured")
+E       OSError: reading from stdin while output is captured
+
+/home/slarse/.local/lib/python3.7/site-packages/_pytest/capture.py:656: OSError
+_______ test_import_module[thealgorithms.project_euler.problem_04.sol1] ________
+
+module = 'thealgorithms.project_euler.problem_04.sol1'
+
+    @pytest.mark.parametrize("module", _gather_modules())
+    @pytest.mark.timeout(1)
+    def test_import_module(module):
+        """Test that all modules from project root can be imported"""
+>       mod = importlib.import_module(module)
+
+tests/test_imports.py:40: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+/usr/lib/python3.7/importlib/__init__.py:127: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+<frozen importlib._bootstrap>:1006: in _gcd_import
+    ???
+<frozen importlib._bootstrap>:983: in _find_and_load
+    ???
+<frozen importlib._bootstrap>:967: in _find_and_load_unlocked
+    ???
+<frozen importlib._bootstrap>:677: in _load_unlocked
+    ???
+<frozen importlib._bootstrap_external>:728: in exec_module
+    ???
+<frozen importlib._bootstrap>:219: in _call_with_frames_removed
+    ???
+thealgorithms/project_euler/problem_04/sol1.py:7: in <module>
+    limit = int(input("limit? "))
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <_pytest.capture.DontReadFromInput object at 0x7f6aa6372208>, args = ()
+
+    def read(self, *args):
+>       raise IOError("reading from stdin while output is captured")
+E       OSError: reading from stdin while output is captured
+
+/home/slarse/.local/lib/python3.7/site-packages/_pytest/capture.py:656: OSError
+----------------------------- Captured stdout call -----------------------------
+limit? 
+_______ test_import_module[thealgorithms.project_euler.problem_04.sol2] ________
+
+module = 'thealgorithms.project_euler.problem_04.sol2'
+
+    @pytest.mark.parametrize("module", _gather_modules())
+    @pytest.mark.timeout(1)
+    def test_import_module(module):
+        """Test that all modules from project root can be imported"""
+>       mod = importlib.import_module(module)
+
+tests/test_imports.py:40: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+/usr/lib/python3.7/importlib/__init__.py:127: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+<frozen importlib._bootstrap>:1006: in _gcd_import
+    ???
+<frozen importlib._bootstrap>:983: in _find_and_load
+    ???
+<frozen importlib._bootstrap>:967: in _find_and_load_unlocked
+    ???
+<frozen importlib._bootstrap>:677: in _load_unlocked
+    ???
+<frozen importlib._bootstrap_external>:728: in exec_module
+    ???
+<frozen importlib._bootstrap>:219: in _call_with_frames_removed
+    ???
+thealgorithms/project_euler/problem_04/sol2.py:7: in <module>
+    n = int(input().strip())
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <_pytest.capture.DontReadFromInput object at 0x7f6aa6372208>, args = ()
+
+    def read(self, *args):
+>       raise IOError("reading from stdin while output is captured")
+E       OSError: reading from stdin while output is captured
+
+/home/slarse/.local/lib/python3.7/site-packages/_pytest/capture.py:656: OSError
+____________ test_import_module[thealgorithms.simple_client.server] ____________
+
+module = 'thealgorithms.simple_client.server'
+
+    @pytest.mark.parametrize("module", _gather_modules())
+    @pytest.mark.timeout(1)
+    def test_import_module(module):
+        """Test that all modules from project root can be imported"""
+>       mod = importlib.import_module(module)
+
+tests/test_imports.py:40: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+/usr/lib/python3.7/importlib/__init__.py:127: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+<frozen importlib._bootstrap>:1006: in _gcd_import
+    ???
+<frozen importlib._bootstrap>:983: in _find_and_load
+    ???
+<frozen importlib._bootstrap>:967: in _find_and_load_unlocked
+    ???
+<frozen importlib._bootstrap>:677: in _load_unlocked
+    ???
+<frozen importlib._bootstrap_external>:728: in exec_module
+    ???
+<frozen importlib._bootstrap>:219: in _call_with_frames_removed
+    ???
+thealgorithms/simple_client/server.py:11: in <module>
+    conn, addr = s.accept()#start the actual data flow
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <socket.socket fd=8, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 1400)>
+
+    def accept(self):
+        """accept() -> (socket object, address info)
+    
+        Wait for an incoming connection.  Return a new socket
+        representing the connection, and the address of the client.
+        For IP sockets, the address info is a pair (hostaddr, port).
+        """
+>       fd, addr = self._accept()
+E       Failed: Timeout >1.0s
+
+/usr/lib/python3.7/socket.py:212: Failed
+____________ test_import_module[thealgorithms.simple_client.client] ____________
+
+module = 'thealgorithms.simple_client.client'
+
+    @pytest.mark.parametrize("module", _gather_modules())
+    @pytest.mark.timeout(1)
+    def test_import_module(module):
+        """Test that all modules from project root can be imported"""
+>       mod = importlib.import_module(module)
+
+tests/test_imports.py:40: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+/usr/lib/python3.7/importlib/__init__.py:127: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+<frozen importlib._bootstrap>:1006: in _gcd_import
+    ???
+<frozen importlib._bootstrap>:983: in _find_and_load
+    ???
+<frozen importlib._bootstrap>:967: in _find_and_load_unlocked
+    ???
+<frozen importlib._bootstrap>:677: in _load_unlocked
+    ???
+<frozen importlib._bootstrap_external>:728: in exec_module
+    ???
+<frozen importlib._bootstrap>:219: in _call_with_frames_removed
+    ???
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    import socket
+    
+    HOST, PORT = '127.0.0.1', 1400
+    
+    s = socket.socket(
+    
+                socket.AF_INET,     #           ADDRESS FAMILIES
+                                    #Name                   Purpose
+                                    #AF_UNIX, AF_LOCAL      Local communication
+                                    #AF_INET                IPv4 Internet protocols
+                                    #AF_INET6               IPv6 Internet protocols
+                                    #AF_APPLETALK           Appletalk
+                                    #AF_BLUETOOTH           Bluetooth
+    
+    
+                socket.SOCK_STREAM  #           SOCKET TYPES
+                                    #Name           Way of Interaction
+                                    #SOCK_STREAM    TCP
+                                    #SOCK_DGRAM     UDP
+    )
+    s.connect((HOST, PORT))
+    
+    s.send('Hello World'.encode('ascii'))#in UDP use sendto()
+>   data = s.recv(1024)#in UDP use recvfrom()
+E   Failed: Timeout >1.0s
+
+thealgorithms/simple_client/client.py:26: Failed
+___________ test_import_module[thealgorithms.maths.segmented_sieve] ____________
+
+module = 'thealgorithms.maths.segmented_sieve'
+
+    @pytest.mark.parametrize("module", _gather_modules())
+    @pytest.mark.timeout(1)
+    def test_import_module(module):
+        """Test that all modules from project root can be imported"""
+>       mod = importlib.import_module(module)
+
+tests/test_imports.py:40: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+/usr/lib/python3.7/importlib/__init__.py:127: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+<frozen importlib._bootstrap>:1006: in _gcd_import
+    ???
+<frozen importlib._bootstrap>:983: in _find_and_load
+    ???
+<frozen importlib._bootstrap>:967: in _find_and_load_unlocked
+    ???
+<frozen importlib._bootstrap>:677: in _load_unlocked
+    ???
+<frozen importlib._bootstrap_external>:728: in exec_module
+    ???
+<frozen importlib._bootstrap>:219: in _call_with_frames_removed
+    ???
+thealgorithms/maths/segmented_sieve.py:46: in <module>
+    print(sieve(10**6))
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+n = 1000000
+
+    def sieve(n):
+        in_prime = []
+        start = 2
+        end   = int(math.sqrt(n)) # Size of every segment
+        temp = [True] * (end + 1)
+        prime = []
+    
+        while(start <= end):
+            if temp[start] == True:
+                in_prime.append(start)
+                for i in range(start*start, end+1, start):
+                    if temp[i] == True:
+                        temp[i] = False
+            start += 1
+        prime += in_prime
+    
+        low = end + 1
+        high = low + end - 1
+        if high > n:
+            high = n
+    
+        while(low <= n):
+            temp = [True] * (high-low+1)
+            for each in in_prime:
+    
+                t = math.floor(low / each) * each
+                if t < low:
+                    t += each
+    
+>               for j in range(t, high+1, each):
+E               Failed: Timeout >1.0s
+
+thealgorithms/maths/segmented_sieve.py:32: Failed
+________ test_import_module[thealgorithms.maths.sieve_of_eratosthenes] _________
+
+module = 'thealgorithms.maths.sieve_of_eratosthenes'
+
+    @pytest.mark.parametrize("module", _gather_modules())
+    @pytest.mark.timeout(1)
+    def test_import_module(module):
+        """Test that all modules from project root can be imported"""
+>       mod = importlib.import_module(module)
+
+tests/test_imports.py:40: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+/usr/lib/python3.7/importlib/__init__.py:127: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+<frozen importlib._bootstrap>:1006: in _gcd_import
+    ???
+<frozen importlib._bootstrap>:983: in _find_and_load
+    ???
+<frozen importlib._bootstrap>:967: in _find_and_load_unlocked
+    ???
+<frozen importlib._bootstrap>:677: in _load_unlocked
+    ???
+<frozen importlib._bootstrap_external>:728: in exec_module
+    ???
+<frozen importlib._bootstrap>:219: in _call_with_frames_removed
+    ???
+thealgorithms/maths/sieve_of_eratosthenes.py:2: in <module>
+    n = int(input("Enter n: "))
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <_pytest.capture.DontReadFromInput object at 0x7f6aa6372208>, args = ()
+
+    def read(self, *args):
+>       raise IOError("reading from stdin while output is captured")
+E       OSError: reading from stdin while output is captured
+
+/home/slarse/.local/lib/python3.7/site-packages/_pytest/capture.py:656: OSError
+----------------------------- Captured stdout call -----------------------------
+Enter n: 
+_ test_import_module[thealgorithms.neural_network.convolution_neural_network] __
+
+module = 'thealgorithms.neural_network.convolution_neural_network'
+
+    @pytest.mark.parametrize("module", _gather_modules())
+    @pytest.mark.timeout(1)
+    def test_import_module(module):
+        """Test that all modules from project root can be imported"""
+>       mod = importlib.import_module(module)
+
+tests/test_imports.py:40: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+/usr/lib/python3.7/importlib/__init__.py:127: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+<frozen importlib._bootstrap>:1006: in _gcd_import
+    ???
+<frozen importlib._bootstrap>:983: in _find_and_load
+    ???
+<frozen importlib._bootstrap>:967: in _find_and_load_unlocked
+    ???
+<frozen importlib._bootstrap>:677: in _load_unlocked
+    ???
+<frozen importlib._bootstrap_external>:728: in exec_module
+    ???
+<frozen importlib._bootstrap>:219: in _call_with_frames_removed
+    ???
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+              '''
+    from __future__ import print_function
+    
+>   import numpy as np
+E   ModuleNotFoundError: No module named 'numpy'
+
+thealgorithms/neural_network/convolution_neural_network.py:20: ModuleNotFoundError
+____________ test_import_module[thealgorithms.neural_network.bpnn] _____________
+
+module = 'thealgorithms.neural_network.bpnn'
+
+    @pytest.mark.parametrize("module", _gather_modules())
+    @pytest.mark.timeout(1)
+    def test_import_module(module):
+        """Test that all modules from project root can be imported"""
+>       mod = importlib.import_module(module)
+
+tests/test_imports.py:40: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+/usr/lib/python3.7/importlib/__init__.py:127: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+<frozen importlib._bootstrap>:1006: in _gcd_import
+    ???
+<frozen importlib._bootstrap>:983: in _find_and_load
+    ???
+<frozen importlib._bootstrap>:967: in _find_and_load_unlocked
+    ???
+<frozen importlib._bootstrap>:677: in _load_unlocked
+    ???
+<frozen importlib._bootstrap_external>:728: in exec_module
+    ???
+<frozen importlib._bootstrap>:219: in _call_with_frames_removed
+    ???
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    '''
+    
+>   import numpy as np
+E   ModuleNotFoundError: No module named 'numpy'
+
+thealgorithms/neural_network/bpnn.py:22: ModuleNotFoundError
+_________ test_import_module[thealgorithms.neural_network.perceptron] __________
+
+module = 'thealgorithms.neural_network.perceptron'
+
+    @pytest.mark.parametrize("module", _gather_modules())
+    @pytest.mark.timeout(1)
+    def test_import_module(module):
+        """Test that all modules from project root can be imported"""
+>       mod = importlib.import_module(module)
+
+tests/test_imports.py:40: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+/usr/lib/python3.7/importlib/__init__.py:127: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+<frozen importlib._bootstrap>:1006: in _gcd_import
+    ???
+<frozen importlib._bootstrap>:983: in _find_and_load
+    ???
+<frozen importlib._bootstrap>:967: in _find_and_load_unlocked
+    ???
+<frozen importlib._bootstrap>:677: in _load_unlocked
+    ???
+<frozen importlib._bootstrap_external>:728: in exec_module
+    ???
+<frozen importlib._bootstrap>:219: in _call_with_frames_removed
+    ???
+thealgorithms/neural_network/perceptron.py:123: in <module>
+    sample.insert(i, float(input('value: ')))
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <_pytest.capture.DontReadFromInput object at 0x7f6aa6372208>, args = ()
+
+    def read(self, *args):
+>       raise IOError("reading from stdin while output is captured")
+E       OSError: reading from stdin while output is captured
+
+/home/slarse/.local/lib/python3.7/site-packages/_pytest/capture.py:656: OSError
+----------------------------- Captured stdout call -----------------------------
+('\nEpoch:\n', 359)
+------------------------
+
+value: 
+______ test_import_module[thealgorithms.linear_algebra_python.src.tests] _______
+
+module = 'thealgorithms.linear_algebra_python.src.tests'
+
+    @pytest.mark.parametrize("module", _gather_modules())
+    @pytest.mark.timeout(1)
+    def test_import_module(module):
+        """Test that all modules from project root can be imported"""
+>       mod = importlib.import_module(module)
+
+tests/test_imports.py:40: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+/usr/lib/python3.7/importlib/__init__.py:127: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+<frozen importlib._bootstrap>:1006: in _gcd_import
+    ???
+<frozen importlib._bootstrap>:983: in _find_and_load
+    ???
+<frozen importlib._bootstrap>:967: in _find_and_load_unlocked
+    ???
+<frozen importlib._bootstrap>:677: in _load_unlocked
+    ???
+<frozen importlib._bootstrap_external>:728: in exec_module
+    ???
+<frozen importlib._bootstrap>:219: in _call_with_frames_removed
+    ???
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    """
+    
+    import unittest
+>   from lib import *
+E   ModuleNotFoundError: No module named 'lib'
+
+thealgorithms/linear_algebra_python/src/tests.py:12: ModuleNotFoundError
+________________ test_import_module[thealgorithms.Maths.absMin] ________________
+
+module = 'thealgorithms.Maths.absMin'
+
+    @pytest.mark.parametrize("module", _gather_modules())
+    @pytest.mark.timeout(1)
+    def test_import_module(module):
+        """Test that all modules from project root can be imported"""
+>       mod = importlib.import_module(module)
+
+tests/test_imports.py:40: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+/usr/lib/python3.7/importlib/__init__.py:127: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+<frozen importlib._bootstrap>:1006: in _gcd_import
+    ???
+<frozen importlib._bootstrap>:983: in _find_and_load
+    ???
+<frozen importlib._bootstrap>:967: in _find_and_load_unlocked
+    ???
+<frozen importlib._bootstrap>:677: in _load_unlocked
+    ???
+<frozen importlib._bootstrap_external>:728: in exec_module
+    ???
+<frozen importlib._bootstrap>:219: in _call_with_frames_removed
+    ???
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+>   from Maths.abs import absVal
+E   ModuleNotFoundError: No module named 'Maths'
+
+thealgorithms/Maths/absMin.py:1: ModuleNotFoundError
+____ test_import_module[thealgorithms.arithmetic_analysis.lu_decomposition] ____
+
+module = 'thealgorithms.arithmetic_analysis.lu_decomposition'
+
+    @pytest.mark.parametrize("module", _gather_modules())
+    @pytest.mark.timeout(1)
+    def test_import_module(module):
+        """Test that all modules from project root can be imported"""
+>       mod = importlib.import_module(module)
+
+tests/test_imports.py:40: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+/usr/lib/python3.7/importlib/__init__.py:127: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+<frozen importlib._bootstrap>:1006: in _gcd_import
+    ???
+<frozen importlib._bootstrap>:983: in _find_and_load
+    ???
+<frozen importlib._bootstrap>:967: in _find_and_load_unlocked
+    ???
+<frozen importlib._bootstrap>:677: in _load_unlocked
+    ???
+<frozen importlib._bootstrap_external>:728: in exec_module
+    ???
+<frozen importlib._bootstrap>:219: in _call_with_frames_removed
+    ???
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+>   import numpy
+E   ModuleNotFoundError: No module named 'numpy'
+
+thealgorithms/arithmetic_analysis/lu_decomposition.py:2: ModuleNotFoundError
+_ test_import_module[thealgorithms.arithmetic_analysis.newton_raphson_method] __
+
+module = 'thealgorithms.arithmetic_analysis.newton_raphson_method'
+
+    @pytest.mark.parametrize("module", _gather_modules())
+    @pytest.mark.timeout(1)
+    def test_import_module(module):
+        """Test that all modules from project root can be imported"""
+>       mod = importlib.import_module(module)
+
+tests/test_imports.py:40: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+/usr/lib/python3.7/importlib/__init__.py:127: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+<frozen importlib._bootstrap>:1006: in _gcd_import
+    ???
+<frozen importlib._bootstrap>:983: in _find_and_load
+    ???
+<frozen importlib._bootstrap>:967: in _find_and_load_unlocked
+    ???
+<frozen importlib._bootstrap>:677: in _load_unlocked
+    ???
+<frozen importlib._bootstrap_external>:728: in exec_module
+    ???
+<frozen importlib._bootstrap>:219: in _call_with_frames_removed
+    ???
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+>   from sympy import diff
+E   ModuleNotFoundError: No module named 'sympy'
+
+thealgorithms/arithmetic_analysis/newton_raphson_method.py:4: ModuleNotFoundError
+ test_import_module[thealgorithms.dynamic_programming.k_means_clustering_tensorflow] 
+
+module = 'thealgorithms.dynamic_programming.k_means_clustering_tensorflow'
+
+    @pytest.mark.parametrize("module", _gather_modules())
+    @pytest.mark.timeout(1)
+    def test_import_module(module):
+        """Test that all modules from project root can be imported"""
+>       mod = importlib.import_module(module)
+
+tests/test_imports.py:40: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+/usr/lib/python3.7/importlib/__init__.py:127: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+<frozen importlib._bootstrap>:1006: in _gcd_import
+    ???
+<frozen importlib._bootstrap>:983: in _find_and_load
+    ???
+<frozen importlib._bootstrap>:967: in _find_and_load_unlocked
+    ???
+<frozen importlib._bootstrap>:677: in _load_unlocked
+    ???
+<frozen importlib._bootstrap_external>:728: in exec_module
+    ???
+<frozen importlib._bootstrap>:219: in _call_with_frames_removed
+    ???
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+>   import tensorflow as tf
+E   ModuleNotFoundError: No module named 'tensorflow'
+
+thealgorithms/dynamic_programming/k_means_clustering_tensorflow.py:1: ModuleNotFoundError
+ test_import_module[thealgorithms.dynamic_programming.longest_increasing_subsequence_O(nlogn)] 
+
+module = 'thealgorithms.dynamic_programming.longest_increasing_subsequence_O(nlogn)'
+
+    @pytest.mark.parametrize("module", _gather_modules())
+    @pytest.mark.timeout(1)
+    def test_import_module(module):
+        """Test that all modules from project root can be imported"""
+>       mod = importlib.import_module(module)
+
+tests/test_imports.py:40: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+/usr/lib/python3.7/importlib/__init__.py:127: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+<frozen importlib._bootstrap>:1006: in _gcd_import
+    ???
+<frozen importlib._bootstrap>:983: in _find_and_load
+    ???
+<frozen importlib._bootstrap>:967: in _find_and_load_unlocked
+    ???
+<frozen importlib._bootstrap>:677: in _load_unlocked
+    ???
+<frozen importlib._bootstrap_external>:728: in exec_module
+    ???
+<frozen importlib._bootstrap>:219: in _call_with_frames_removed
+    ???
+thealgorithms/dynamic_programming/longest_increasing_subsequence_O(nlogn).py:41: in <module>
+    print(LongestIncreasingSubsequenceLength(v))
+thealgorithms/dynamic_programming/longest_increasing_subsequence_O(nlogn).py:35: in LongestIncreasingSubsequenceLength
+    tail[CeilIndex(tail,-1,length-1,v[i])] = v[i]
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+v = [2, 5, 0, 0, 0, 0, ...], l = -1, r = 1, key = 3
+
+    def CeilIndex(v,l,r,key):
+    	while r-l > 1:
+    		m = (l + r)/2
+>   		if v[m] >= key:
+E     TypeError: list indices must be integers or slices, not float
+
+thealgorithms/dynamic_programming/longest_increasing_subsequence_O(nlogn).py:11: TypeError
+_____ test_import_module[thealgorithms.dynamic_programming.max_sub_array] ______
+
+module = 'thealgorithms.dynamic_programming.max_sub_array'
+
+    @pytest.mark.parametrize("module", _gather_modules())
+    @pytest.mark.timeout(1)
+    def test_import_module(module):
+        """Test that all modules from project root can be imported"""
+>       mod = importlib.import_module(module)
+
+tests/test_imports.py:40: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+/usr/lib/python3.7/importlib/__init__.py:127: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+<frozen importlib._bootstrap>:1006: in _gcd_import
+    ???
+<frozen importlib._bootstrap>:983: in _find_and_load
+    ???
+<frozen importlib._bootstrap>:967: in _find_and_load_unlocked
+    ???
+<frozen importlib._bootstrap>:677: in _load_unlocked
+    ???
+<frozen importlib._bootstrap_external>:728: in exec_module
+    ???
+<frozen importlib._bootstrap>:219: in _call_with_frames_removed
+    ???
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    """
+    from __future__ import print_function
+    
+    import time
+>   import matplotlib.pyplot as plt
+E   ModuleNotFoundError: No module named 'matplotlib'
+
+thealgorithms/dynamic_programming/max_sub_array.py:7: ModuleNotFoundError
+_____________ test_import_module[thealgorithms.sorts.bucket_sort] ______________
+
+module = 'thealgorithms.sorts.bucket_sort'
+
+    @pytest.mark.parametrize("module", _gather_modules())
+    @pytest.mark.timeout(1)
+    def test_import_module(module):
+        """Test that all modules from project root can be imported"""
+>       mod = importlib.import_module(module)
+
+tests/test_imports.py:40: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+/usr/lib/python3.7/importlib/__init__.py:127: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+<frozen importlib._bootstrap>:1006: in _gcd_import
+    ???
+<frozen importlib._bootstrap>:983: in _find_and_load
+    ???
+<frozen importlib._bootstrap>:967: in _find_and_load_unlocked
+    ???
+<frozen importlib._bootstrap>:677: in _load_unlocked
+    ???
+<frozen importlib._bootstrap_external>:728: in exec_module
+    ???
+<frozen importlib._bootstrap>:219: in _call_with_frames_removed
+    ???
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    from __future__ import print_function
+>   from insertion_sort import insertion_sort
+E   ModuleNotFoundError: No module named 'insertion_sort'
+
+thealgorithms/sorts/bucket_sort.py:17: ModuleNotFoundError
+_ test_import_module[thealgorithms.sorts.random_normal_distribution_quicksort] _
+
+module = 'thealgorithms.sorts.random_normal_distribution_quicksort'
+
+    @pytest.mark.parametrize("module", _gather_modules())
+    @pytest.mark.timeout(1)
+    def test_import_module(module):
+        """Test that all modules from project root can be imported"""
+>       mod = importlib.import_module(module)
+
+tests/test_imports.py:40: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+/usr/lib/python3.7/importlib/__init__.py:127: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+<frozen importlib._bootstrap>:1006: in _gcd_import
+    ???
+<frozen importlib._bootstrap>:983: in _find_and_load
+    ???
+<frozen importlib._bootstrap>:967: in _find_and_load_unlocked
+    ???
+<frozen importlib._bootstrap>:677: in _load_unlocked
+    ???
+<frozen importlib._bootstrap_external>:728: in exec_module
+    ???
+<frozen importlib._bootstrap>:219: in _call_with_frames_removed
+    ???
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    from __future__ import print_function
+    from random import randint
+    from tempfile import TemporaryFile
+>   import numpy as np
+E   ModuleNotFoundError: No module named 'numpy'
+
+thealgorithms/sorts/random_normal_distribution_quicksort.py:4: ModuleNotFoundError
+______________ test_import_module[thealgorithms.sorts.cyclesort] _______________
+
+module = 'thealgorithms.sorts.cyclesort'
+
+    @pytest.mark.parametrize("module", _gather_modules())
+    @pytest.mark.timeout(1)
+    def test_import_module(module):
+        """Test that all modules from project root can be imported"""
+>       mod = importlib.import_module(module)
+
+tests/test_imports.py:40: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+/usr/lib/python3.7/importlib/__init__.py:127: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+<frozen importlib._bootstrap>:1006: in _gcd_import
+    ???
+<frozen importlib._bootstrap>:983: in _find_and_load
+    ???
+<frozen importlib._bootstrap>:967: in _find_and_load_unlocked
+    ???
+<frozen importlib._bootstrap>:677: in _load_unlocked
+    ???
+<frozen importlib._bootstrap_external>:728: in exec_module
+    ???
+<frozen importlib._bootstrap>:219: in _call_with_frames_removed
+    ???
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    from __future__ import print_function
+    
+    
+    def cycle_sort(array):
+        ans = 0
+    
+        # Pass through the array to find cycles to rotate.
+        for cycleStart in range(0, len(array) - 1):
+            item = array[cycleStart]
+    
+            # finding the position for putting the item.
+            pos = cycleStart
+            for i in range(cycleStart + 1, len(array)):
+                if array[i] < item:
+                    pos += 1
+    
+            # If the item is already present-not a cycle.
+            if pos == cycleStart:
+                continue
+    
+            # Otherwise, put the item there or right after any duplicates.
+            while item == array[pos]:
+                pos += 1
+            array[pos], item = item, array[pos]
+            ans += 1
+    
+            # Rotate the rest of the cycle.
+            while pos != cycleStart:
+    
+                # Find where to put the item.
+                pos = cycleStart
+                for i in range(cycleStart + 1, len(array)):
+                    if array[i] < item:
+                        pos += 1
+    
+                # Put the item there or right after any duplicates.
+                while item == array[pos]:
+                    pos += 1
+                array[pos], item = item, array[pos]
+                ans += 1
+    
+        return ans
+    
+    
+    #  Main Code starts here
+    if __name__ == '__main__':
+        try:
+            raw_input          # Python 2
+        except NameError:
+            raw_input = input  # Python 3
+    
+>   user_input = raw_input('Enter numbers separated by a comma:\n')
+E   NameError: name 'raw_input' is not defined
+
+thealgorithms/sorts/cyclesort.py:53: NameError
+_____________ test_import_module[thealgorithms.sorts.BitonicSort] ______________
+
+module = 'thealgorithms.sorts.BitonicSort'
+
+    @pytest.mark.parametrize("module", _gather_modules())
+    @pytest.mark.timeout(1)
+    def test_import_module(module):
+        """Test that all modules from project root can be imported"""
+>       mod = importlib.import_module(module)
+
+tests/test_imports.py:40: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+/usr/lib/python3.7/importlib/__init__.py:127: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+<frozen importlib._bootstrap>:1006: in _gcd_import
+    ???
+<frozen importlib._bootstrap>:983: in _find_and_load
+    ???
+<frozen importlib._bootstrap>:967: in _find_and_load_unlocked
+    ???
+<frozen importlib._bootstrap>:677: in _load_unlocked
+    ???
+<frozen importlib._bootstrap_external>:728: in exec_module
+    ???
+<frozen importlib._bootstrap>:219: in _call_with_frames_removed
+    ???
+thealgorithms/sorts/BitonicSort.py:48: in <module>
+    n = int(input())
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <_pytest.capture.DontReadFromInput object at 0x7f6aa6372208>, args = ()
+
+    def read(self, *args):
+>       raise IOError("reading from stdin while output is captured")
+E       OSError: reading from stdin while output is captured
+
+/home/slarse/.local/lib/python3.7/site-packages/_pytest/capture.py:656: OSError
+_______________ test_import_module[thealgorithms.other.anagrams] _______________
+
+module = 'thealgorithms.other.anagrams'
+
+    @pytest.mark.parametrize("module", _gather_modules())
+    @pytest.mark.timeout(1)
+    def test_import_module(module):
+        """Test that all modules from project root can be imported"""
+>       mod = importlib.import_module(module)
+
+tests/test_imports.py:40: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+/usr/lib/python3.7/importlib/__init__.py:127: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+<frozen importlib._bootstrap>:1006: in _gcd_import
+    ???
+<frozen importlib._bootstrap>:983: in _find_and_load
+    ???
+<frozen importlib._bootstrap>:967: in _find_and_load_unlocked
+    ???
+<frozen importlib._bootstrap>:677: in _load_unlocked
+    ???
+<frozen importlib._bootstrap_external>:728: in exec_module
+    ???
+<frozen importlib._bootstrap>:219: in _call_with_frames_removed
+    ???
+thealgorithms/other/anagrams.py:22: in <module>
+    for word in word_list if len(anagram(word)) > 1}
+thealgorithms/other/anagrams.py:22: in <dictcomp>
+    for word in word_list if len(anagram(word)) > 1}
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+myword = 'martynia'
+
+    def anagram(myword):
+>       return word_bysig[signature(myword)]
+E       Failed: Timeout >1.0s
+
+thealgorithms/other/anagrams.py:18: Failed
+----------------------------- Captured stdout call -----------------------------
+creating word list...
+finding anagrams...
+__ test_import_module[thealgorithms.other.detecting_english_programmatically] __
+
+module = 'thealgorithms.other.detecting_english_programmatically'
+
+    @pytest.mark.parametrize("module", _gather_modules())
+    @pytest.mark.timeout(1)
+    def test_import_module(module):
+        """Test that all modules from project root can be imported"""
+>       mod = importlib.import_module(module)
+
+tests/test_imports.py:40: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+/usr/lib/python3.7/importlib/__init__.py:127: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+<frozen importlib._bootstrap>:1006: in _gcd_import
+    ???
+<frozen importlib._bootstrap>:983: in _find_and_load
+    ???
+<frozen importlib._bootstrap>:967: in _find_and_load_unlocked
+    ???
+<frozen importlib._bootstrap>:677: in _load_unlocked
+    ???
+<frozen importlib._bootstrap_external>:728: in exec_module
+    ???
+<frozen importlib._bootstrap>:219: in _call_with_frames_removed
+    ???
+thealgorithms/other/detecting_english_programmatically.py:14: in <module>
+    ENGLISH_WORDS = loadDictionary()
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    def loadDictionary():
+        path = os.path.split(os.path.realpath(__file__))
+        englishWords = {}
+>       with open(path[0] + '/Dictionary.txt') as dictionaryFile:
+E       FileNotFoundError: [Errno 2] No such file or directory: '/home/slarse/Documents/github/cdate/dd2480/Python/thealgorithms/other/Dictionary.txt'
+
+thealgorithms/other/detecting_english_programmatically.py:9: FileNotFoundError
+_________ test_import_module[thealgorithms.other.sierpinski_triangle] __________
+
+module = 'thealgorithms.other.sierpinski_triangle'
+
+    @pytest.mark.parametrize("module", _gather_modules())
+    @pytest.mark.timeout(1)
+    def test_import_module(module):
+        """Test that all modules from project root can be imported"""
+>       mod = importlib.import_module(module)
+
+tests/test_imports.py:40: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+/usr/lib/python3.7/importlib/__init__.py:127: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+<frozen importlib._bootstrap>:1006: in _gcd_import
+    ???
+<frozen importlib._bootstrap>:983: in _find_and_load
+    ???
+<frozen importlib._bootstrap>:967: in _find_and_load_unlocked
+    ???
+<frozen importlib._bootstrap>:677: in _load_unlocked
+    ???
+<frozen importlib._bootstrap_external>:728: in exec_module
+    ???
+<frozen importlib._bootstrap>:219: in _call_with_frames_removed
+    ???
+thealgorithms/other/sierpinski_triangle.py:27: in <module>
+    import turtle
+/usr/lib/python3.7/turtle.py:107: in <module>
+    import tkinter as TK
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    """
+    
+    import enum
+    import sys
+    
+>   import _tkinter # If this fails your Python may not be configured for Tk
+E   ImportError: libtk8.6.so: cannot open shared object file: No such file or directory
+
+/usr/lib/python3.7/tkinter/__init__.py:36: ImportError
+_______ test_import_module[thealgorithms.other.game_of_life.game_o_life] _______
+
+module = 'thealgorithms.other.game_of_life.game_o_life'
+
+    @pytest.mark.parametrize("module", _gather_modules())
+    @pytest.mark.timeout(1)
+    def test_import_module(module):
+        """Test that all modules from project root can be imported"""
+>       mod = importlib.import_module(module)
+
+tests/test_imports.py:40: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+/usr/lib/python3.7/importlib/__init__.py:127: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+<frozen importlib._bootstrap>:1006: in _gcd_import
+    ???
+<frozen importlib._bootstrap>:983: in _find_and_load
+    ???
+<frozen importlib._bootstrap>:967: in _find_and_load_unlocked
+    ???
+<frozen importlib._bootstrap>:677: in _load_unlocked
+    ???
+<frozen importlib._bootstrap_external>:728: in exec_module
+    ???
+<frozen importlib._bootstrap>:219: in _call_with_frames_removed
+    ???
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+     '''
+>   import numpy as np
+E   ModuleNotFoundError: No module named 'numpy'
+
+thealgorithms/other/game_of_life/game_o_life.py:30: ModuleNotFoundError
+_____ test_import_module[thealgorithms.analysis.compression_analysis.psnr] _____
+
+module = 'thealgorithms.analysis.compression_analysis.psnr'
+
+    @pytest.mark.parametrize("module", _gather_modules())
+    @pytest.mark.timeout(1)
+    def test_import_module(module):
+        """Test that all modules from project root can be imported"""
+>       mod = importlib.import_module(module)
+
+tests/test_imports.py:40: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+/usr/lib/python3.7/importlib/__init__.py:127: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+<frozen importlib._bootstrap>:1006: in _gcd_import
+    ???
+<frozen importlib._bootstrap>:983: in _find_and_load
+    ???
+<frozen importlib._bootstrap>:967: in _find_and_load_unlocked
+    ???
+<frozen importlib._bootstrap>:677: in _load_unlocked
+    ???
+<frozen importlib._bootstrap_external>:728: in exec_module
+    ???
+<frozen importlib._bootstrap>:219: in _call_with_frames_removed
+    ???
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    """
+    
+    import math
+    import os
+    
+>   import cv2
+E   ImportError: libhdf5.so.103: cannot open shared object file: No such file or directory
+
+thealgorithms/analysis/compression_analysis/psnr.py:9: ImportError
+___________ test_import_module[thealgorithms.ciphers.affine_cipher] ____________
+
+module = 'thealgorithms.ciphers.affine_cipher'
+
+    @pytest.mark.parametrize("module", _gather_modules())
+    @pytest.mark.timeout(1)
+    def test_import_module(module):
+        """Test that all modules from project root can be imported"""
+>       mod = importlib.import_module(module)
+
+tests/test_imports.py:40: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+/usr/lib/python3.7/importlib/__init__.py:127: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+<frozen importlib._bootstrap>:1006: in _gcd_import
+    ???
+<frozen importlib._bootstrap>:983: in _find_and_load
+    ???
+<frozen importlib._bootstrap>:967: in _find_and_load_unlocked
+    ???
+<frozen importlib._bootstrap>:677: in _load_unlocked
+    ???
+<frozen importlib._bootstrap_external>:728: in exec_module
+    ???
+<frozen importlib._bootstrap>:219: in _call_with_frames_removed
+    ???
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    from __future__ import print_function
+>   import sys, random, cryptomath_module as cryptoMath
+E   ModuleNotFoundError: No module named 'cryptomath_module'
+
+thealgorithms/ciphers/affine_cipher.py:2: ModuleNotFoundError
+ test_import_module[thealgorithms.ciphers.transposition_cipher_encrypt_decrypt_file] 
+
+module = 'thealgorithms.ciphers.transposition_cipher_encrypt_decrypt_file'
+
+    @pytest.mark.parametrize("module", _gather_modules())
+    @pytest.mark.timeout(1)
+    def test_import_module(module):
+        """Test that all modules from project root can be imported"""
+>       mod = importlib.import_module(module)
+
+tests/test_imports.py:40: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+/usr/lib/python3.7/importlib/__init__.py:127: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+<frozen importlib._bootstrap>:1006: in _gcd_import
+    ???
+<frozen importlib._bootstrap>:983: in _find_and_load
+    ???
+<frozen importlib._bootstrap>:967: in _find_and_load_unlocked
+    ???
+<frozen importlib._bootstrap>:677: in _load_unlocked
+    ???
+<frozen importlib._bootstrap_external>:728: in exec_module
+    ???
+<frozen importlib._bootstrap>:219: in _call_with_frames_removed
+    ???
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    from __future__ import print_function
+    import time, os, sys
+>   import transposition_cipher as transCipher
+E   ModuleNotFoundError: No module named 'transposition_cipher'
+
+thealgorithms/ciphers/transposition_cipher_encrypt_decrypt_file.py:3: ModuleNotFoundError
+_____________ test_import_module[thealgorithms.ciphers.rsa_cipher] _____________
+
+module = 'thealgorithms.ciphers.rsa_cipher'
+
+    @pytest.mark.parametrize("module", _gather_modules())
+    @pytest.mark.timeout(1)
+    def test_import_module(module):
+        """Test that all modules from project root can be imported"""
+>       mod = importlib.import_module(module)
+
+tests/test_imports.py:40: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+/usr/lib/python3.7/importlib/__init__.py:127: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+<frozen importlib._bootstrap>:1006: in _gcd_import
+    ???
+<frozen importlib._bootstrap>:983: in _find_and_load
+    ???
+<frozen importlib._bootstrap>:967: in _find_and_load_unlocked
+    ???
+<frozen importlib._bootstrap>:677: in _load_unlocked
+    ???
+<frozen importlib._bootstrap_external>:728: in exec_module
+    ???
+<frozen importlib._bootstrap>:219: in _call_with_frames_removed
+    ???
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    from __future__ import print_function
+>   import sys, rsa_key_generator as rkg, os
+E   ModuleNotFoundError: No module named 'rsa_key_generator'
+
+thealgorithms/ciphers/rsa_cipher.py:2: ModuleNotFoundError
+_______ test_import_module[thealgorithms.ciphers.elgamal_key_generator] ________
+
+module = 'thealgorithms.ciphers.elgamal_key_generator'
+
+    @pytest.mark.parametrize("module", _gather_modules())
+    @pytest.mark.timeout(1)
+    def test_import_module(module):
+        """Test that all modules from project root can be imported"""
+>       mod = importlib.import_module(module)
+
+tests/test_imports.py:40: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+/usr/lib/python3.7/importlib/__init__.py:127: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+<frozen importlib._bootstrap>:1006: in _gcd_import
+    ???
+<frozen importlib._bootstrap>:983: in _find_and_load
+    ???
+<frozen importlib._bootstrap>:967: in _find_and_load_unlocked
+    ???
+<frozen importlib._bootstrap>:677: in _load_unlocked
+    ???
+<frozen importlib._bootstrap_external>:728: in exec_module
+    ???
+<frozen importlib._bootstrap>:219: in _call_with_frames_removed
+    ???
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    import os
+    import random
+    import sys
+>   import rabin_miller as rabinMiller, cryptomath_module as cryptoMath
+E   ModuleNotFoundError: No module named 'rabin_miller'
+
+thealgorithms/ciphers/elgamal_key_generator.py:4: ModuleNotFoundError
+___________ test_import_module[thealgorithms.ciphers.caesar_cipher] ____________
+
+module = 'thealgorithms.ciphers.caesar_cipher'
+
+    @pytest.mark.parametrize("module", _gather_modules())
+    @pytest.mark.timeout(1)
+    def test_import_module(module):
+        """Test that all modules from project root can be imported"""
+>       mod = importlib.import_module(module)
+
+tests/test_imports.py:40: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+/usr/lib/python3.7/importlib/__init__.py:127: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+<frozen importlib._bootstrap>:1006: in _gcd_import
+    ???
+<frozen importlib._bootstrap>:983: in _find_and_load
+    ???
+<frozen importlib._bootstrap>:967: in _find_and_load_unlocked
+    ???
+<frozen importlib._bootstrap>:677: in _load_unlocked
+    ???
+<frozen importlib._bootstrap_external>:728: in exec_module
+    ???
+<frozen importlib._bootstrap>:219: in _call_with_frames_removed
+    ???
+thealgorithms/ciphers/caesar_cipher.py:63: in <module>
+    main()
+thealgorithms/ciphers/caesar_cipher.py:43: in main
+    choice = input("What would you like to do?: ")
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <_pytest.capture.DontReadFromInput object at 0x7f6aa6372208>, args = ()
+
+    def read(self, *args):
+>       raise IOError("reading from stdin while output is captured")
+E       OSError: reading from stdin while output is captured
+
+/home/slarse/.local/lib/python3.7/site-packages/_pytest/capture.py:656: OSError
+----------------------------- Captured stdout call -----------------------------
+----------
+**Menu**
+----------
+1.Encrpyt
+2.Decrypt
+3.BruteForce
+4.Quit
+What would you like to do?: 
+_________ test_import_module[thealgorithms.ciphers.rsa_key_generator] __________
+
+module = 'thealgorithms.ciphers.rsa_key_generator'
+
+    @pytest.mark.parametrize("module", _gather_modules())
+    @pytest.mark.timeout(1)
+    def test_import_module(module):
+        """Test that all modules from project root can be imported"""
+>       mod = importlib.import_module(module)
+
+tests/test_imports.py:40: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+/usr/lib/python3.7/importlib/__init__.py:127: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+<frozen importlib._bootstrap>:1006: in _gcd_import
+    ???
+<frozen importlib._bootstrap>:983: in _find_and_load
+    ???
+<frozen importlib._bootstrap>:967: in _find_and_load_unlocked
+    ???
+<frozen importlib._bootstrap>:677: in _load_unlocked
+    ???
+<frozen importlib._bootstrap_external>:728: in exec_module
+    ???
+<frozen importlib._bootstrap>:219: in _call_with_frames_removed
+    ???
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    from __future__ import print_function
+    import random, sys, os
+>   import rabin_miller as rabinMiller, cryptomath_module as cryptoMath
+E   ModuleNotFoundError: No module named 'rabin_miller'
+
+thealgorithms/ciphers/rsa_key_generator.py:3: ModuleNotFoundError
+_______ test_import_module[thealgorithms.data_structures.graph.dijkstra] _______
+
+module = 'thealgorithms.data_structures.graph.dijkstra'
+
+    @pytest.mark.parametrize("module", _gather_modules())
+    @pytest.mark.timeout(1)
+    def test_import_module(module):
+        """Test that all modules from project root can be imported"""
+>       mod = importlib.import_module(module)
+
+tests/test_imports.py:40: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+/usr/lib/python3.7/importlib/__init__.py:127: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+<frozen importlib._bootstrap>:1006: in _gcd_import
+    ???
+<frozen importlib._bootstrap>:983: in _find_and_load
+    ???
+<frozen importlib._bootstrap>:967: in _find_and_load_unlocked
+    ???
+<frozen importlib._bootstrap>:677: in _load_unlocked
+    ???
+<frozen importlib._bootstrap_external>:728: in exec_module
+    ???
+<frozen importlib._bootstrap>:219: in _call_with_frames_removed
+    ???
+thealgorithms/data_structures/graph/dijkstra.py:41: in <module>
+    V = int(input("Enter number of vertices: "))
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <_pytest.capture.DontReadFromInput object at 0x7f6aa6372208>, args = ()
+
+    def read(self, *args):
+>       raise IOError("reading from stdin while output is captured")
+E       OSError: reading from stdin while output is captured
+
+/home/slarse/.local/lib/python3.7/site-packages/_pytest/capture.py:656: OSError
+----------------------------- Captured stdout call -----------------------------
+Enter number of vertices: 
+_____ test_import_module[thealgorithms.data_structures.graph.bellman_ford] _____
+
+module = 'thealgorithms.data_structures.graph.bellman_ford'
+
+    @pytest.mark.parametrize("module", _gather_modules())
+    @pytest.mark.timeout(1)
+    def test_import_module(module):
+        """Test that all modules from project root can be imported"""
+>       mod = importlib.import_module(module)
+
+tests/test_imports.py:40: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+/usr/lib/python3.7/importlib/__init__.py:127: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+<frozen importlib._bootstrap>:1006: in _gcd_import
+    ???
+<frozen importlib._bootstrap>:983: in _find_and_load
+    ???
+<frozen importlib._bootstrap>:967: in _find_and_load_unlocked
+    ???
+<frozen importlib._bootstrap>:677: in _load_unlocked
+    ???
+<frozen importlib._bootstrap_external>:728: in exec_module
+    ???
+<frozen importlib._bootstrap>:219: in _call_with_frames_removed
+    ???
+thealgorithms/data_structures/graph/bellman_ford.py:38: in <module>
+    V = int(input("Enter number of vertices: "))
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <_pytest.capture.DontReadFromInput object at 0x7f6aa6372208>, args = ()
+
+    def read(self, *args):
+>       raise IOError("reading from stdin while output is captured")
+E       OSError: reading from stdin while output is captured
+
+/home/slarse/.local/lib/python3.7/site-packages/_pytest/capture.py:656: OSError
+----------------------------- Captured stdout call -----------------------------
+Enter number of vertices: 
+____ test_import_module[thealgorithms.data_structures.graph.floyd_warshall] ____
+
+module = 'thealgorithms.data_structures.graph.floyd_warshall'
+
+    @pytest.mark.parametrize("module", _gather_modules())
+    @pytest.mark.timeout(1)
+    def test_import_module(module):
+        """Test that all modules from project root can be imported"""
+>       mod = importlib.import_module(module)
+
+tests/test_imports.py:40: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+/usr/lib/python3.7/importlib/__init__.py:127: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+<frozen importlib._bootstrap>:1006: in _gcd_import
+    ???
+<frozen importlib._bootstrap>:983: in _find_and_load
+    ???
+<frozen importlib._bootstrap>:967: in _find_and_load_unlocked
+    ???
+<frozen importlib._bootstrap>:677: in _load_unlocked
+    ???
+<frozen importlib._bootstrap_external>:728: in exec_module
+    ???
+<frozen importlib._bootstrap>:219: in _call_with_frames_removed
+    ???
+thealgorithms/data_structures/graph/floyd_warshall.py:33: in <module>
+    V = int(input("Enter number of vertices: "))
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <_pytest.capture.DontReadFromInput object at 0x7f6aa6372208>, args = ()
+
+    def read(self, *args):
+>       raise IOError("reading from stdin while output is captured")
+E       OSError: reading from stdin while output is captured
+
+/home/slarse/.local/lib/python3.7/site-packages/_pytest/capture.py:656: OSError
+----------------------------- Captured stdout call -----------------------------
+Enter number of vertices: 
+_____ test_import_module[thealgorithms.data_structures.hashing.hash_table] _____
+
+module = 'thealgorithms.data_structures.hashing.hash_table'
+
+    @pytest.mark.parametrize("module", _gather_modules())
+    @pytest.mark.timeout(1)
+    def test_import_module(module):
+        """Test that all modules from project root can be imported"""
+>       mod = importlib.import_module(module)
+
+tests/test_imports.py:40: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+/usr/lib/python3.7/importlib/__init__.py:127: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+<frozen importlib._bootstrap>:1006: in _gcd_import
+    ???
+<frozen importlib._bootstrap>:983: in _find_and_load
+    ???
+<frozen importlib._bootstrap>:953: in _find_and_load_unlocked
+    ???
+<frozen importlib._bootstrap>:219: in _call_with_frames_removed
+    ???
+<frozen importlib._bootstrap>:1006: in _gcd_import
+    ???
+<frozen importlib._bootstrap>:983: in _find_and_load
+    ???
+<frozen importlib._bootstrap>:967: in _find_and_load_unlocked
+    ???
+<frozen importlib._bootstrap>:677: in _load_unlocked
+    ???
+<frozen importlib._bootstrap_external>:728: in exec_module
+    ???
+<frozen importlib._bootstrap>:219: in _call_with_frames_removed
+    ???
+thealgorithms/data_structures/hashing/__init__.py:1: in <module>
+    from .hash_table import HashTable
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+>   from number_theory.prime_numbers import next_prime
+E   ModuleNotFoundError: No module named 'number_theory'
+
+thealgorithms/data_structures/hashing/hash_table.py:2: ModuleNotFoundError
+____ test_import_module[thealgorithms.data_structures.hashing.double_hash] _____
+
+module = 'thealgorithms.data_structures.hashing.double_hash'
+
+    @pytest.mark.parametrize("module", _gather_modules())
+    @pytest.mark.timeout(1)
+    def test_import_module(module):
+        """Test that all modules from project root can be imported"""
+>       mod = importlib.import_module(module)
+
+tests/test_imports.py:40: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+/usr/lib/python3.7/importlib/__init__.py:127: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+<frozen importlib._bootstrap>:1006: in _gcd_import
+    ???
+<frozen importlib._bootstrap>:983: in _find_and_load
+    ???
+<frozen importlib._bootstrap>:953: in _find_and_load_unlocked
+    ???
+<frozen importlib._bootstrap>:219: in _call_with_frames_removed
+    ???
+<frozen importlib._bootstrap>:1006: in _gcd_import
+    ???
+<frozen importlib._bootstrap>:983: in _find_and_load
+    ???
+<frozen importlib._bootstrap>:967: in _find_and_load_unlocked
+    ???
+<frozen importlib._bootstrap>:677: in _load_unlocked
+    ???
+<frozen importlib._bootstrap_external>:728: in exec_module
+    ???
+<frozen importlib._bootstrap>:219: in _call_with_frames_removed
+    ???
+thealgorithms/data_structures/hashing/__init__.py:1: in <module>
+    from .hash_table import HashTable
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+>   from number_theory.prime_numbers import next_prime
+E   ModuleNotFoundError: No module named 'number_theory'
+
+thealgorithms/data_structures/hashing/hash_table.py:2: ModuleNotFoundError
+ test_import_module[thealgorithms.data_structures.hashing.hash_table_with_linked_list] 
+
+module = 'thealgorithms.data_structures.hashing.hash_table_with_linked_list'
+
+    @pytest.mark.parametrize("module", _gather_modules())
+    @pytest.mark.timeout(1)
+    def test_import_module(module):
+        """Test that all modules from project root can be imported"""
+>       mod = importlib.import_module(module)
+
+tests/test_imports.py:40: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+/usr/lib/python3.7/importlib/__init__.py:127: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+<frozen importlib._bootstrap>:1006: in _gcd_import
+    ???
+<frozen importlib._bootstrap>:983: in _find_and_load
+    ???
+<frozen importlib._bootstrap>:953: in _find_and_load_unlocked
+    ???
+<frozen importlib._bootstrap>:219: in _call_with_frames_removed
+    ???
+<frozen importlib._bootstrap>:1006: in _gcd_import
+    ???
+<frozen importlib._bootstrap>:983: in _find_and_load
+    ???
+<frozen importlib._bootstrap>:967: in _find_and_load_unlocked
+    ???
+<frozen importlib._bootstrap>:677: in _load_unlocked
+    ???
+<frozen importlib._bootstrap_external>:728: in exec_module
+    ???
+<frozen importlib._bootstrap>:219: in _call_with_frames_removed
+    ???
+thealgorithms/data_structures/hashing/__init__.py:1: in <module>
+    from .hash_table import HashTable
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+>   from number_theory.prime_numbers import next_prime
+E   ModuleNotFoundError: No module named 'number_theory'
+
+thealgorithms/data_structures/hashing/hash_table.py:2: ModuleNotFoundError
+_ test_import_module[thealgorithms.data_structures.hashing.quadratic_probing] __
+
+module = 'thealgorithms.data_structures.hashing.quadratic_probing'
+
+    @pytest.mark.parametrize("module", _gather_modules())
+    @pytest.mark.timeout(1)
+    def test_import_module(module):
+        """Test that all modules from project root can be imported"""
+>       mod = importlib.import_module(module)
+
+tests/test_imports.py:40: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+/usr/lib/python3.7/importlib/__init__.py:127: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+<frozen importlib._bootstrap>:1006: in _gcd_import
+    ???
+<frozen importlib._bootstrap>:983: in _find_and_load
+    ???
+<frozen importlib._bootstrap>:953: in _find_and_load_unlocked
+    ???
+<frozen importlib._bootstrap>:219: in _call_with_frames_removed
+    ???
+<frozen importlib._bootstrap>:1006: in _gcd_import
+    ???
+<frozen importlib._bootstrap>:983: in _find_and_load
+    ???
+<frozen importlib._bootstrap>:967: in _find_and_load_unlocked
+    ???
+<frozen importlib._bootstrap>:677: in _load_unlocked
+    ???
+<frozen importlib._bootstrap_external>:728: in exec_module
+    ???
+<frozen importlib._bootstrap>:219: in _call_with_frames_removed
+    ???
+thealgorithms/data_structures/hashing/__init__.py:1: in <module>
+    from .hash_table import HashTable
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+>   from number_theory.prime_numbers import next_prime
+E   ModuleNotFoundError: No module named 'number_theory'
+
+thealgorithms/data_structures/hashing/hash_table.py:2: ModuleNotFoundError
+ test_import_module[thealgorithms.data_structures.hashing.number_theory.prime_numbers] 
+
+module = 'thealgorithms.data_structures.hashing.number_theory.prime_numbers'
+
+    @pytest.mark.parametrize("module", _gather_modules())
+    @pytest.mark.timeout(1)
+    def test_import_module(module):
+        """Test that all modules from project root can be imported"""
+>       mod = importlib.import_module(module)
+
+tests/test_imports.py:40: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+/usr/lib/python3.7/importlib/__init__.py:127: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+<frozen importlib._bootstrap>:1006: in _gcd_import
+    ???
+<frozen importlib._bootstrap>:983: in _find_and_load
+    ???
+<frozen importlib._bootstrap>:953: in _find_and_load_unlocked
+    ???
+<frozen importlib._bootstrap>:219: in _call_with_frames_removed
+    ???
+<frozen importlib._bootstrap>:1006: in _gcd_import
+    ???
+<frozen importlib._bootstrap>:983: in _find_and_load
+    ???
+<frozen importlib._bootstrap>:953: in _find_and_load_unlocked
+    ???
+<frozen importlib._bootstrap>:219: in _call_with_frames_removed
+    ???
+<frozen importlib._bootstrap>:1006: in _gcd_import
+    ???
+<frozen importlib._bootstrap>:983: in _find_and_load
+    ???
+<frozen importlib._bootstrap>:967: in _find_and_load_unlocked
+    ???
+<frozen importlib._bootstrap>:677: in _load_unlocked
+    ???
+<frozen importlib._bootstrap_external>:728: in exec_module
+    ???
+<frozen importlib._bootstrap>:219: in _call_with_frames_removed
+    ???
+thealgorithms/data_structures/hashing/__init__.py:1: in <module>
+    from .hash_table import HashTable
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+>   from number_theory.prime_numbers import next_prime
+E   ModuleNotFoundError: No module named 'number_theory'
+
+thealgorithms/data_structures/hashing/hash_table.py:2: ModuleNotFoundError
+ test_import_module[thealgorithms.data_structures.stacks.balanced_parentheses] _
+
+module = 'thealgorithms.data_structures.stacks.balanced_parentheses'
+
+    @pytest.mark.parametrize("module", _gather_modules())
+    @pytest.mark.timeout(1)
+    def test_import_module(module):
+        """Test that all modules from project root can be imported"""
+>       mod = importlib.import_module(module)
+
+tests/test_imports.py:40: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+/usr/lib/python3.7/importlib/__init__.py:127: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+<frozen importlib._bootstrap>:1006: in _gcd_import
+    ???
+<frozen importlib._bootstrap>:983: in _find_and_load
+    ???
+<frozen importlib._bootstrap>:967: in _find_and_load_unlocked
+    ???
+<frozen importlib._bootstrap>:677: in _load_unlocked
+    ???
+<frozen importlib._bootstrap_external>:728: in exec_module
+    ???
+<frozen importlib._bootstrap>:219: in _call_with_frames_removed
+    ???
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    from __future__ import print_function
+    from __future__ import absolute_import
+>   from stack import Stack
+E   ModuleNotFoundError: No module named 'stack'
+
+thealgorithms/data_structures/stacks/balanced_parentheses.py:3: ModuleNotFoundError
+ test_import_module[thealgorithms.data_structures.stacks.infix_to_postfix_conversion] 
+
+module = 'thealgorithms.data_structures.stacks.infix_to_postfix_conversion'
+
+    @pytest.mark.parametrize("module", _gather_modules())
+    @pytest.mark.timeout(1)
+    def test_import_module(module):
+        """Test that all modules from project root can be imported"""
+>       mod = importlib.import_module(module)
+
+tests/test_imports.py:40: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+/usr/lib/python3.7/importlib/__init__.py:127: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+<frozen importlib._bootstrap>:1006: in _gcd_import
+    ???
+<frozen importlib._bootstrap>:983: in _find_and_load
+    ???
+<frozen importlib._bootstrap>:967: in _find_and_load_unlocked
+    ???
+<frozen importlib._bootstrap>:677: in _load_unlocked
+    ???
+<frozen importlib._bootstrap_external>:728: in exec_module
+    ???
+<frozen importlib._bootstrap>:219: in _call_with_frames_removed
+    ???
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    from __future__ import print_function
+    from __future__ import absolute_import
+    import string
+    
+>   from .Stack import Stack
+E   ModuleNotFoundError: No module named 'thealgorithms.data_structures.stacks.Stack'
+
+thealgorithms/data_structures/stacks/infix_to_postfix_conversion.py:5: ModuleNotFoundError
+_____ test_import_module[thealgorithms.machine_learning.linear_regression] _____
+
+module = 'thealgorithms.machine_learning.linear_regression'
+
+    @pytest.mark.parametrize("module", _gather_modules())
+    @pytest.mark.timeout(1)
+    def test_import_module(module):
+        """Test that all modules from project root can be imported"""
+>       mod = importlib.import_module(module)
+
+tests/test_imports.py:40: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+/usr/lib/python3.7/importlib/__init__.py:127: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+<frozen importlib._bootstrap>:1006: in _gcd_import
+    ???
+<frozen importlib._bootstrap>:983: in _find_and_load
+    ???
+<frozen importlib._bootstrap>:967: in _find_and_load_unlocked
+    ???
+<frozen importlib._bootstrap>:677: in _load_unlocked
+    ???
+<frozen importlib._bootstrap_external>:728: in exec_module
+    ???
+<frozen importlib._bootstrap>:219: in _call_with_frames_removed
+    ???
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    """
+    from __future__ import print_function
+    
+    import requests
+>   import numpy as np
+E   ModuleNotFoundError: No module named 'numpy'
+
+thealgorithms/machine_learning/linear_regression.py:13: ModuleNotFoundError
+____ test_import_module[thealgorithms.machine_learning.logistic_regression] ____
+
+module = 'thealgorithms.machine_learning.logistic_regression'
+
+    @pytest.mark.parametrize("module", _gather_modules())
+    @pytest.mark.timeout(1)
+    def test_import_module(module):
+        """Test that all modules from project root can be imported"""
+>       mod = importlib.import_module(module)
+
+tests/test_imports.py:40: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+/usr/lib/python3.7/importlib/__init__.py:127: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+<frozen importlib._bootstrap>:1006: in _gcd_import
+    ???
+<frozen importlib._bootstrap>:983: in _find_and_load
+    ???
+<frozen importlib._bootstrap>:967: in _find_and_load_unlocked
+    ???
+<frozen importlib._bootstrap>:677: in _load_unlocked
+    ???
+<frozen importlib._bootstrap_external>:728: in exec_module
+    ???
+<frozen importlib._bootstrap>:219: in _call_with_frames_removed
+    ???
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+         Helpful resources : 1.Coursera ML course    2.https://medium.com/@martinpella/logistic-regression-from-scratch-in-python-124c5636b8ac'''
+    
+>   import numpy as np
+E   ModuleNotFoundError: No module named 'numpy'
+
+thealgorithms/machine_learning/logistic_regression.py:15: ModuleNotFoundError
+_____ test_import_module[thealgorithms.machine_learning.gradient_descent] ______
+
+module = 'thealgorithms.machine_learning.gradient_descent'
+
+    @pytest.mark.parametrize("module", _gather_modules())
+    @pytest.mark.timeout(1)
+    def test_import_module(module):
+        """Test that all modules from project root can be imported"""
+>       mod = importlib.import_module(module)
+
+tests/test_imports.py:40: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+/usr/lib/python3.7/importlib/__init__.py:127: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+<frozen importlib._bootstrap>:1006: in _gcd_import
+    ???
+<frozen importlib._bootstrap>:983: in _find_and_load
+    ???
+<frozen importlib._bootstrap>:967: in _find_and_load_unlocked
+    ???
+<frozen importlib._bootstrap>:677: in _load_unlocked
+    ???
+<frozen importlib._bootstrap_external>:728: in exec_module
+    ???
+<frozen importlib._bootstrap>:219: in _call_with_frames_removed
+    ???
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    """
+    from __future__ import print_function, division
+>   import numpy
+E   ModuleNotFoundError: No module named 'numpy'
+
+thealgorithms/machine_learning/gradient_descent.py:5: ModuleNotFoundError
+_______ test_import_module[thealgorithms.machine_learning.decision_tree] _______
+
+module = 'thealgorithms.machine_learning.decision_tree'
+
+    @pytest.mark.parametrize("module", _gather_modules())
+    @pytest.mark.timeout(1)
+    def test_import_module(module):
+        """Test that all modules from project root can be imported"""
+>       mod = importlib.import_module(module)
+
+tests/test_imports.py:40: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+/usr/lib/python3.7/importlib/__init__.py:127: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+<frozen importlib._bootstrap>:1006: in _gcd_import
+    ???
+<frozen importlib._bootstrap>:983: in _find_and_load
+    ???
+<frozen importlib._bootstrap>:967: in _find_and_load_unlocked
+    ???
+<frozen importlib._bootstrap>:677: in _load_unlocked
+    ???
+<frozen importlib._bootstrap_external>:728: in exec_module
+    ???
+<frozen importlib._bootstrap>:219: in _call_with_frames_removed
+    ???
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    """
+    from __future__ import print_function
+    
+>   import numpy as np
+E   ModuleNotFoundError: No module named 'numpy'
+
+thealgorithms/machine_learning/decision_tree.py:8: ModuleNotFoundError
+_____ test_import_module[thealgorithms.machine_learning.scoring_functions] _____
+
+module = 'thealgorithms.machine_learning.scoring_functions'
+
+    @pytest.mark.parametrize("module", _gather_modules())
+    @pytest.mark.timeout(1)
+    def test_import_module(module):
+        """Test that all modules from project root can be imported"""
+>       mod = importlib.import_module(module)
+
+tests/test_imports.py:40: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+/usr/lib/python3.7/importlib/__init__.py:127: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+<frozen importlib._bootstrap>:1006: in _gcd_import
+    ???
+<frozen importlib._bootstrap>:983: in _find_and_load
+    ???
+<frozen importlib._bootstrap>:967: in _find_and_load_unlocked
+    ???
+<frozen importlib._bootstrap>:677: in _load_unlocked
+    ???
+<frozen importlib._bootstrap_external>:728: in exec_module
+    ???
+<frozen importlib._bootstrap>:219: in _call_with_frames_removed
+    ???
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+>   import numpy as np
+    
+    """ Here I implemented the scoring functions.
+        MAE, MSE, RMSE, RMSLE are included.
+    
+        Those are used for calculating differences between
+        predicted values and actual values.
+    
+        Metrics are slightly differentiated. Sometimes squared, rooted,
+        even log is used.
+    
+        Using log and roots can be perceived as tools for penalizing big
+        erors. However, using appropriate metrics depends on the situations,
+        and types of data
+E       ModuleNotFoundError: No module named 'numpy'
+
+thealgorithms/machine_learning/scoring_functions.py:1: ModuleNotFoundError
+_______ test_import_module[thealgorithms.machine_learning.k_means_clust] _______
+
+module = 'thealgorithms.machine_learning.k_means_clust'
+
+    @pytest.mark.parametrize("module", _gather_modules())
+    @pytest.mark.timeout(1)
+    def test_import_module(module):
+        """Test that all modules from project root can be imported"""
+>       mod = importlib.import_module(module)
+
+tests/test_imports.py:40: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+/usr/lib/python3.7/importlib/__init__.py:127: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+<frozen importlib._bootstrap>:1006: in _gcd_import
+    ???
+<frozen importlib._bootstrap>:983: in _find_and_load
+    ???
+<frozen importlib._bootstrap>:967: in _find_and_load_unlocked
+    ???
+<frozen importlib._bootstrap>:677: in _load_unlocked
+    ???
+<frozen importlib._bootstrap_external>:728: in exec_module
+    ???
+<frozen importlib._bootstrap>:219: in _call_with_frames_removed
+    ???
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    '''
+    from __future__ import print_function
+>   from sklearn.metrics import pairwise_distances
+E   ModuleNotFoundError: No module named 'sklearn'
+
+thealgorithms/machine_learning/k_means_clust.py:50: ModuleNotFoundError
+________ test_import_module[thealgorithms.machine_learning.perceptron] _________
+
+module = 'thealgorithms.machine_learning.perceptron'
+
+    @pytest.mark.parametrize("module", _gather_modules())
+    @pytest.mark.timeout(1)
+    def test_import_module(module):
+        """Test that all modules from project root can be imported"""
+>       mod = importlib.import_module(module)
+
+tests/test_imports.py:40: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+/usr/lib/python3.7/importlib/__init__.py:127: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+<frozen importlib._bootstrap>:1006: in _gcd_import
+    ???
+<frozen importlib._bootstrap>:983: in _find_and_load
+    ???
+<frozen importlib._bootstrap>:967: in _find_and_load_unlocked
+    ???
+<frozen importlib._bootstrap>:677: in _load_unlocked
+    ???
+<frozen importlib._bootstrap_external>:728: in exec_module
+    ???
+<frozen importlib._bootstrap>:219: in _call_with_frames_removed
+    ???
+thealgorithms/machine_learning/perceptron.py:123: in <module>
+    sample.insert(i, float(input('value: ')))
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <_pytest.capture.DontReadFromInput object at 0x7f6aa6372208>, args = ()
+
+    def read(self, *args):
+>       raise IOError("reading from stdin while output is captured")
+E       OSError: reading from stdin while output is captured
+
+/home/slarse/.local/lib/python3.7/site-packages/_pytest/capture.py:656: OSError
+----------------------------- Captured stdout call -----------------------------
+('\nEpoch:\n', 382)
+------------------------
+
+value: 
+ test_import_module[thealgorithms.machine_learning.Random_Forest_Classification.random_forest_classification] 
+
+module = 'thealgorithms.machine_learning.Random_Forest_Classification.random_forest_classification'
+
+    @pytest.mark.parametrize("module", _gather_modules())
+    @pytest.mark.timeout(1)
+    def test_import_module(module):
+        """Test that all modules from project root can be imported"""
+>       mod = importlib.import_module(module)
+
+tests/test_imports.py:40: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+/usr/lib/python3.7/importlib/__init__.py:127: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+<frozen importlib._bootstrap>:1006: in _gcd_import
+    ???
+<frozen importlib._bootstrap>:983: in _find_and_load
+    ???
+<frozen importlib._bootstrap>:967: in _find_and_load_unlocked
+    ???
+<frozen importlib._bootstrap>:677: in _load_unlocked
+    ???
+<frozen importlib._bootstrap_external>:728: in exec_module
+    ???
+<frozen importlib._bootstrap>:219: in _call_with_frames_removed
+    ???
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+>   import numpy as np
+E   ModuleNotFoundError: No module named 'numpy'
+
+thealgorithms/machine_learning/Random_Forest_Classification/random_forest_classification.py:4: ModuleNotFoundError
+ test_import_module[thealgorithms.machine_learning.Random_Forest_Regression.random_forest_regression] 
+
+module = 'thealgorithms.machine_learning.Random_Forest_Regression.random_forest_regression'
+
+    @pytest.mark.parametrize("module", _gather_modules())
+    @pytest.mark.timeout(1)
+    def test_import_module(module):
+        """Test that all modules from project root can be imported"""
+>       mod = importlib.import_module(module)
+
+tests/test_imports.py:40: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+/usr/lib/python3.7/importlib/__init__.py:127: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+<frozen importlib._bootstrap>:1006: in _gcd_import
+    ???
+<frozen importlib._bootstrap>:983: in _find_and_load
+    ???
+<frozen importlib._bootstrap>:967: in _find_and_load_unlocked
+    ???
+<frozen importlib._bootstrap>:677: in _load_unlocked
+    ???
+<frozen importlib._bootstrap_external>:728: in exec_module
+    ???
+<frozen importlib._bootstrap>:219: in _call_with_frames_removed
+    ???
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+>   import numpy as np
+E   ModuleNotFoundError: No module named 'numpy'
+
+thealgorithms/machine_learning/Random_Forest_Regression/random_forest_regression.py:4: ModuleNotFoundError
+____________ test_import_module[thealgorithms.graphs.scc_kosaraju] _____________
+
+module = 'thealgorithms.graphs.scc_kosaraju'
+
+    @pytest.mark.parametrize("module", _gather_modules())
+    @pytest.mark.timeout(1)
+    def test_import_module(module):
+        """Test that all modules from project root can be imported"""
+>       mod = importlib.import_module(module)
+
+tests/test_imports.py:40: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+/usr/lib/python3.7/importlib/__init__.py:127: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+<frozen importlib._bootstrap>:1006: in _gcd_import
+    ???
+<frozen importlib._bootstrap>:983: in _find_and_load
+    ???
+<frozen importlib._bootstrap>:967: in _find_and_load_unlocked
+    ???
+<frozen importlib._bootstrap>:677: in _load_unlocked
+    ???
+<frozen importlib._bootstrap_external>:728: in exec_module
+    ???
+<frozen importlib._bootstrap>:219: in _call_with_frames_removed
+    ???
+thealgorithms/graphs/scc_kosaraju.py:3: in <module>
+    n, m = list(map(int,input().split()))
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <_pytest.capture.DontReadFromInput object at 0x7f6aa6372208>, args = ()
+
+    def read(self, *args):
+>       raise IOError("reading from stdin while output is captured")
+E       OSError: reading from stdin while output is captured
+
+/home/slarse/.local/lib/python3.7/site-packages/_pytest/capture.py:656: OSError
+_____ test_import_module[thealgorithms.graphs.minimum_spanning_tree_prims] _____
+
+module = 'thealgorithms.graphs.minimum_spanning_tree_prims'
+
+    @pytest.mark.parametrize("module", _gather_modules())
+    @pytest.mark.timeout(1)
+    def test_import_module(module):
+        """Test that all modules from project root can be imported"""
+>       mod = importlib.import_module(module)
+
+tests/test_imports.py:40: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+/usr/lib/python3.7/importlib/__init__.py:127: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+<frozen importlib._bootstrap>:1006: in _gcd_import
+    ???
+<frozen importlib._bootstrap>:983: in _find_and_load
+    ???
+<frozen importlib._bootstrap>:967: in _find_and_load_unlocked
+    ???
+<frozen importlib._bootstrap>:677: in _load_unlocked
+    ???
+<frozen importlib._bootstrap_external>:728: in exec_module
+    ???
+<frozen importlib._bootstrap>:219: in _call_with_frames_removed
+    ???
+thealgorithms/graphs/minimum_spanning_tree_prims.py:104: in <module>
+    n = int(input("Enter number of vertices: "))
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <_pytest.capture.DontReadFromInput object at 0x7f6aa6372208>, args = ()
+
+    def read(self, *args):
+>       raise IOError("reading from stdin while output is captured")
+E       OSError: reading from stdin while output is captured
+
+/home/slarse/.local/lib/python3.7/site-packages/_pytest/capture.py:656: OSError
+----------------------------- Captured stdout call -----------------------------
+Enter number of vertices: 
+____ test_import_module[thealgorithms.graphs.minimum_spanning_tree_kruskal] ____
+
+module = 'thealgorithms.graphs.minimum_spanning_tree_kruskal'
+
+    @pytest.mark.parametrize("module", _gather_modules())
+    @pytest.mark.timeout(1)
+    def test_import_module(module):
+        """Test that all modules from project root can be imported"""
+>       mod = importlib.import_module(module)
+
+tests/test_imports.py:40: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+/usr/lib/python3.7/importlib/__init__.py:127: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+<frozen importlib._bootstrap>:1006: in _gcd_import
+    ???
+<frozen importlib._bootstrap>:983: in _find_and_load
+    ???
+<frozen importlib._bootstrap>:967: in _find_and_load_unlocked
+    ???
+<frozen importlib._bootstrap>:677: in _load_unlocked
+    ???
+<frozen importlib._bootstrap_external>:728: in exec_module
+    ???
+<frozen importlib._bootstrap>:219: in _call_with_frames_removed
+    ???
+thealgorithms/graphs/minimum_spanning_tree_kruskal.py:2: in <module>
+    num_nodes, num_edges = list(map(int,input().split()))
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <_pytest.capture.DontReadFromInput object at 0x7f6aa6372208>, args = ()
+
+    def read(self, *args):
+>       raise IOError("reading from stdin while output is captured")
+E       OSError: reading from stdin while output is captured
+
+/home/slarse/.local/lib/python3.7/site-packages/_pytest/capture.py:656: OSError
+________ test_import_module[thealgorithms.graphs.multi_hueristic_astar] ________
+
+module = 'thealgorithms.graphs.multi_hueristic_astar'
+
+    @pytest.mark.parametrize("module", _gather_modules())
+    @pytest.mark.timeout(1)
+    def test_import_module(module):
+        """Test that all modules from project root can be imported"""
+>       mod = importlib.import_module(module)
+
+tests/test_imports.py:40: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+/usr/lib/python3.7/importlib/__init__.py:127: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+<frozen importlib._bootstrap>:1006: in _gcd_import
+    ???
+<frozen importlib._bootstrap>:983: in _find_and_load
+    ???
+<frozen importlib._bootstrap>:967: in _find_and_load_unlocked
+    ???
+<frozen importlib._bootstrap>:677: in _load_unlocked
+    ???
+<frozen importlib._bootstrap_external>:728: in exec_module
+    ???
+<frozen importlib._bootstrap>:219: in _call_with_frames_removed
+    ???
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    from __future__ import print_function
+    import heapq
+>   import numpy as np
+E   ModuleNotFoundError: No module named 'numpy'
+
+thealgorithms/graphs/multi_hueristic_astar.py:3: ModuleNotFoundError
+____________ test_import_module[thealgorithms.graphs.basic_graphs] _____________
+
+module = 'thealgorithms.graphs.basic_graphs'
+
+    @pytest.mark.parametrize("module", _gather_modules())
+    @pytest.mark.timeout(1)
+    def test_import_module(module):
+        """Test that all modules from project root can be imported"""
+>       mod = importlib.import_module(module)
+
+tests/test_imports.py:40: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+/usr/lib/python3.7/importlib/__init__.py:127: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+<frozen importlib._bootstrap>:1006: in _gcd_import
+    ???
+<frozen importlib._bootstrap>:983: in _find_and_load
+    ???
+<frozen importlib._bootstrap>:967: in _find_and_load_unlocked
+    ???
+<frozen importlib._bootstrap>:677: in _load_unlocked
+    ???
+<frozen importlib._bootstrap_external>:728: in exec_module
+    ???
+<frozen importlib._bootstrap>:219: in _call_with_frames_removed
+    ???
+thealgorithms/graphs/basic_graphs.py:14: in <module>
+    n, m = map(int, raw_input().split(" "))
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <_pytest.capture.DontReadFromInput object at 0x7f6aa6372208>, args = ()
+
+    def read(self, *args):
+>       raise IOError("reading from stdin while output is captured")
+E       OSError: reading from stdin while output is captured
+
+/home/slarse/.local/lib/python3.7/site-packages/_pytest/capture.py:656: OSError
+
+----------- coverage: platform linux, python 3.7.2-final-0 -----------
+Name                                                                                          Stmts   Miss Branch BrPart  Cover
+-------------------------------------------------------------------------------------------------------------------------------
+thealgorithms/Graphs/BFS.py                                                                      13      0      6      0   100%
+thealgorithms/Graphs/DFS.py                                                                      12      0      6      0   100%
+thealgorithms/Graphs/__init__.py                                                                  0      0      0      0   100%
+thealgorithms/Maths/3n+1.py                                                                      17     15      8      1    12%
+thealgorithms/Maths/FindMax.py                                                                   10      7      6      1    25%
+thealgorithms/Maths/FindMin.py                                                                   10      8      6      1    19%
+thealgorithms/Maths/__init__.py                                                                   0      0      0      0   100%
+thealgorithms/Maths/abs.py                                                                        8      5      4      1    33%
+thealgorithms/Maths/absMax.py                                                                    12      8      6      1    28%
+thealgorithms/Maths/absMin.py                                                                    12     11      6      0     6%
+thealgorithms/Maths/average.py                                                                   12      9      4      1    25%
+thealgorithms/Maths/find_hcf.py                                                                  16     13     10      1    15%
+thealgorithms/Maths/find_lcm.py                                                                  14     11      4      1    22%
+thealgorithms/__init__.py                                                                         0      0      0      0   100%
+thealgorithms/analysis/compression_analysis/__init__.py                                           0      0      0      0   100%
+thealgorithms/analysis/compression_analysis/psnr.py                                              23     20      4      0    11%
+thealgorithms/arithmetic_analysis/__init__.py                                                     0      0      0      0   100%
+thealgorithms/arithmetic_analysis/bisection.py                                                   24     20     14      1    13%
+thealgorithms/arithmetic_analysis/intersection.py                                                14     10      4      1    28%
+thealgorithms/arithmetic_analysis/lu_decomposition.py                                            25     24     14      0     3%
+thealgorithms/arithmetic_analysis/newton_method.py                                               13      9      4      1    29%
+thealgorithms/arithmetic_analysis/newton_raphson_method.py                                       13     12      4      0     6%
+thealgorithms/binary_tree/__init__.py                                                             0      0      0      0   100%
+thealgorithms/binary_tree/basic_binary_tree.py                                                   35     29     12      1    15%
+thealgorithms/boolean_algebra/__init__.py                                                         0      0      0      0   100%
+thealgorithms/boolean_algebra/quine_mc_cluskey.py                                               101     93     70      1     5%
+thealgorithms/ciphers/__init__.py                                                                 0      0      0      0   100%
+thealgorithms/ciphers/affine_cipher.py                                                           58     56     24      0     2%
+thealgorithms/ciphers/base16.py                                                                   9      6      2      1    36%
+thealgorithms/ciphers/base32.py                                                                   9      6      2      1    36%
+thealgorithms/ciphers/base64_cipher.py                                                           45     41     18      1     8%
+thealgorithms/ciphers/base85.py                                                                   9      6      2      1    36%
+thealgorithms/ciphers/brute_force_caesar_cipher.py                                               22     18     10      1    16%
+thealgorithms/ciphers/caesar_cipher.py                                                           58     45     28      0    15%
+thealgorithms/ciphers/cryptomath_module.py                                                       13     11      6      0    11%
+thealgorithms/ciphers/elgamal_key_generator.py                                                   41     37      8      0     8%
+thealgorithms/ciphers/onepad_cipher.py                                                           24     18     10      1    21%
+thealgorithms/ciphers/playfair_cipher.py                                                         63     56     32      0     7%
+thealgorithms/ciphers/rabin_miller.py                                                            38     32     22      1    12%
+thealgorithms/ciphers/rot13.py                                                                   18     14      8      1    19%
+thealgorithms/ciphers/rsa_cipher.py                                                              93     91     34      0     2%
+thealgorithms/ciphers/rsa_key_generator.py                                                       37     34      6      0     7%
+thealgorithms/ciphers/simple_substitution_cipher.py                                              46     36     16      1    18%
+thealgorithms/ciphers/transposition_cipher.py                                                    36     30     14      1    14%
+thealgorithms/ciphers/transposition_cipher_encrypt_decrypt_file.py                               31     28     12      0     7%
+thealgorithms/ciphers/vigenere_cipher.py                                                         41     34     20      1    13%
+thealgorithms/ciphers/xor_cipher.py                                                              59     51     20      0    10%
+thealgorithms/data_structures/__init__.py                                                         0      0      0      0   100%
+thealgorithms/data_structures/arrays.py                                                           3      0      0      0   100%
+thealgorithms/data_structures/avl.py                                                            121     55     38      5    50%
+thealgorithms/data_structures/binary_tree/AVLtree.py                                            202    163     64      1    15%
+thealgorithms/data_structures/binary_tree/__init__.py                                             0      0      0      0   100%
+thealgorithms/data_structures/binary_tree/binary_search_tree.py                                 153    125     64      1    13%
+thealgorithms/data_structures/binary_tree/fenwick_tree.py                                        25     19      8      1    21%
+thealgorithms/data_structures/binary_tree/lazy_segment_tree.py                                   77     66     30      1    11%
+thealgorithms/data_structures/binary_tree/segment_tree.py                                        58     45     14      1    19%
+thealgorithms/data_structures/graph/__init__.py                                                   0      0      0      0   100%
+thealgorithms/data_structures/graph/bellman_ford.py                                              39     35     22      0     7%
+thealgorithms/data_structures/graph/breadth_first_search.py                                      35     27     14      1    18%
+thealgorithms/data_structures/graph/depth_first_search.py                                        35     26     16      1    20%
+thealgorithms/data_structures/graph/dijkstra.py                                                  40     35     24      0     8%
+thealgorithms/data_structures/graph/dijkstra_algorithm.py                                       130    108     44      1    13%
+thealgorithms/data_structures/graph/even_tree.py                                                 25     20     10      1    17%
+thealgorithms/data_structures/graph/floyd_warshall.py                                            32     28     26      0     7%
+thealgorithms/data_structures/graph/graph.py                                                     24     18      8      1    22%
+thealgorithms/data_structures/graph/graph_list.py                                                20      0      6      0   100%
+thealgorithms/data_structures/graph/graph_matrix.py                                              20      0      6      0   100%
+thealgorithms/data_structures/hashing/__init__.py                                                 4      3      0      0    25%
+thealgorithms/data_structures/hashing/double_hash.py                                             18     18      4      0     0%
+thealgorithms/data_structures/hashing/hash_table.py                                              54     53     18      0     1%
+thealgorithms/data_structures/hashing/hash_table_with_linked_list.py                             15     15      4      0     0%
+thealgorithms/data_structures/hashing/number_theory/__init__.py                                   0      0      0      0   100%
+thealgorithms/data_structures/hashing/number_theory/prime_numbers.py                             16     16     10      0     0%
+thealgorithms/data_structures/hashing/quadratic_probing.py                                       13     13      4      0     0%
+thealgorithms/data_structures/heap/__init__.py                                                    0      0      0      0   100%
+thealgorithms/data_structures/heap/heap.py                                                       74     57     22      1    19%
+thealgorithms/data_structures/linked_list/__init__.py                                            17     10      2      0    37%
+thealgorithms/data_structures/linked_list/doubly_linked_list.py                                  55     40     12      0    22%
+thealgorithms/data_structures/linked_list/singly_linked_list.py                                  76     62     20      1    16%
+thealgorithms/data_structures/linked_list/swapNodes.py                                           51     43     16      1    13%
+thealgorithms/data_structures/queue/__init__.py                                                   0      0      0      0   100%
+thealgorithms/data_structures/queue/deqeue.py                                                    15      0      0      0   100%
+thealgorithms/data_structures/queue/queue_on_list.py                                             24     16      2      0    31%
+thealgorithms/data_structures/queue/queue_on_pseudo_stack.py                                     30     22      2      0    25%
+thealgorithms/data_structures/stacks/__init__.py                                                 16     11      4      0    25%
+thealgorithms/data_structures/stacks/balanced_parentheses.py                                     19     16     12      0    10%
+thealgorithms/data_structures/stacks/infix_to_postfix_conversion.py                              36     32     20      0     7%
+thealgorithms/data_structures/stacks/next.py                                                     11      0      6      0   100%
+thealgorithms/data_structures/stacks/stack.py                                                    40     26     10      1    30%
+thealgorithms/data_structures/stacks/stock_span_problem.py                                       18      0      8      0   100%
+thealgorithms/data_structures/trie/__init__.py                                                    0      0      0      0   100%
+thealgorithms/data_structures/trie/trie.py                                                       35      4     14      0    84%
+thealgorithms/data_structures/union_find/__init__.py                                              0      0      0      0   100%
+thealgorithms/data_structures/union_find/tests_union_find.py                                     56     45     12      1    18%
+thealgorithms/data_structures/union_find/union_find.py                                           33     27     16      0    12%
+thealgorithms/digital_image_processing/__init__.py                                                0      0      0      0   100%
+thealgorithms/digital_image_processing/filters/__init__.py                                        0      0      0      0   100%
+thealgorithms/digital_image_processing/filters/median_filter.py                                  19     18      6      0     4%
+thealgorithms/dynamic_programming/FractionalKnapsack.py                                           9      0      4      0   100%
+thealgorithms/dynamic_programming/__init__.py                                                     0      0      0      0   100%
+thealgorithms/dynamic_programming/abbreviation.py                                                15     13     14      1    10%
+thealgorithms/dynamic_programming/coin_change.py                                                 11      8      6      1    24%
+thealgorithms/dynamic_programming/edit_distance.py                                               42     35     16      1    14%
+thealgorithms/dynamic_programming/fastfibonacci.py                                               27     21     10      1    19%
+thealgorithms/dynamic_programming/fibonacci.py                                                   41     36     14      1    11%
+thealgorithms/dynamic_programming/floyd_warshall.py                                              31     24     12      1    19%
+thealgorithms/dynamic_programming/integer_partition.py                                           32     21     14      1    26%
+thealgorithms/dynamic_programming/k_means_clustering_tensorflow.py                               45     44     18      0     2%
+thealgorithms/dynamic_programming/knapsack.py                                                    23     20     16      1    10%
+thealgorithms/dynamic_programming/longest_common_subsequence.py                                  23     16     12      1    23%
+thealgorithms/dynamic_programming/longest_increasing_subsequence.py                              24      0     14      1    97%
+thealgorithms/dynamic_programming/longest_increasing_subsequence_O(nlogn).py                     24      6     12      6    67%
+thealgorithms/dynamic_programming/longest_sub_array.py                                           17     12      4      1    29%
+thealgorithms/dynamic_programming/matrix_chain_order.py                                          31     25     16      1    15%
+thealgorithms/dynamic_programming/max_sub_array.py                                               47     44     22      0     4%
+thealgorithms/dynamic_programming/minimum_partition.py                                           18     17     16      0     3%
+thealgorithms/dynamic_programming/rod_cutting.py                                                 20      1     14      1    94%
+thealgorithms/factorial_python.py                                                                 9      2      6      2    73%
+thealgorithms/file_transfer_protocol/__init__.py                                                  0      0      0      0   100%
+thealgorithms/file_transfer_protocol/ftp_client_server.py                                        41     32      4      0    20%
+thealgorithms/file_transfer_protocol/ftp_send_receive.py                                         14     12      0      0    14%
+thealgorithms/graphs/Directed_and_Undirected_Weighted_Graph.py                                  364    332    196      0     6%
+thealgorithms/graphs/__init__.py                                                                  0      0      0      0   100%
+thealgorithms/graphs/a_star.py                                                                   66      2     32      1    97%
+thealgorithms/graphs/articulation_points.py                                                      33      0     20      0   100%
+thealgorithms/graphs/basic_graphs.py                                                            151    141    100      0     4%
+thealgorithms/graphs/check_bipartite_graph_bfs.py                                                26      3     16      3    86%
+thealgorithms/graphs/dijkstra.py                                                                 20      2     10      2    87%
+thealgorithms/graphs/finding_bridges.py                                                          25      0     12      0   100%
+thealgorithms/graphs/kahns_algorithm_long.py                                                     21      0     16      0   100%
+thealgorithms/graphs/kahns_algorithm_topo.py                                                     24      1     16      1    95%
+thealgorithms/graphs/minimum_spanning_tree_kruskal.py                                            24     22     14      0     5%
+thealgorithms/graphs/minimum_spanning_tree_prims.py                                              86     82     36      0     3%
+thealgorithms/graphs/multi_hueristic_astar.py                                                   197    194    102      0     1%
+thealgorithms/graphs/scc_kosaraju.py                                                             35     33     20      0     4%
+thealgorithms/graphs/tarjans_scc.py                                                              47     43     26      1     7%
+thealgorithms/hashes/__init__.py                                                                  0      0      0      0   100%
+thealgorithms/hashes/chaos_machine.py                                                            47     18      8      1    62%
+thealgorithms/hashes/md5.py                                                                      87     75     30      1    11%
+thealgorithms/hashes/sha1.py                                                                     60     45     20      1    20%
+thealgorithms/linear_algebra_python/src/__init__.py                                               0      0      0      0   100%
+thealgorithms/linear_algebra_python/src/lib.py                                                  134    103     62      0    16%
+thealgorithms/linear_algebra_python/src/tests.py                                                 84     81      2      0     3%
+thealgorithms/machine_learning/Random_Forest_Classification/__init__.py                           0      0      0      0   100%
+thealgorithms/machine_learning/Random_Forest_Classification/random_forest_classification.py      44     43      4      0     2%
+thealgorithms/machine_learning/Random_Forest_Regression/__init__.py                               0      0      0      0   100%
+thealgorithms/machine_learning/Random_Forest_Regression/random_forest_regression.py              18     17      0      0     6%
+thealgorithms/machine_learning/__init__.py                                                        0      0      0      0   100%
+thealgorithms/machine_learning/decision_tree.py                                                  77     75     32      0     2%
+thealgorithms/machine_learning/gradient_descent.py                                               57     55     22      0     3%
+thealgorithms/machine_learning/k_means_clust.py                                                  63     61     20      0     2%
+thealgorithms/machine_learning/linear_regression.py                                              49     46      8      0     5%
+thealgorithms/machine_learning/logistic_regression.py                                            45     43      6      0     4%
+thealgorithms/machine_learning/perceptron.py                                                     57     11     20      1    79%
+thealgorithms/machine_learning/scoring_functions.py                                              42     41      0      0     2%
+thealgorithms/maths/PrimeCheck.py                                                                11      7      6      1    29%
+thealgorithms/maths/__init__.py                                                                   0      0      0      0   100%
+thealgorithms/maths/basic_maths.py                                                               57     50     28      1     9%
+thealgorithms/maths/fibonacci_sequence_recursion.py                                              14     10      8      1    23%
+thealgorithms/maths/greater_common_divisor.py                                                    11      8      2      1    31%
+thealgorithms/maths/modular_exponential.py                                                       15     12      8      1    17%
+thealgorithms/maths/newton_raphson.py                                                            30     26     18      1    10%
+thealgorithms/maths/segmented_sieve.py                                                           36      3     24      3    90%
+thealgorithms/maths/sieve_of_eratosthenes.py                                                     19     17     12      0     6%
+thealgorithms/maths/simpson_rule.py                                                              32     25      6      1    21%
+thealgorithms/maths/trapezoidal_rule.py                                                          29     23      6      1    20%
+thealgorithms/matrix/__init__.py                                                                  0      0      0      0   100%
+thealgorithms/matrix/matrix_multiplication_addition.py                                           30     26     12      1    12%
+thealgorithms/networking_flow/__init__.py                                                         0      0      0      0   100%
+thealgorithms/networking_flow/ford_fulkerson.py                                                  34      0     12      0   100%
+thealgorithms/networking_flow/minimum_cut.py                                                     39      0     20      0   100%
+thealgorithms/neural_network/__init__.py                                                          0      0      0      0   100%
+thealgorithms/neural_network/bpnn.py                                                            113    111     28      0     1%
+thealgorithms/neural_network/convolution_neural_network.py                                      195    192     46      0     1%
+thealgorithms/neural_network/perceptron.py                                                       57     11     20      1    79%
+thealgorithms/other/__init__.py                                                                   0      0      0      0   100%
+thealgorithms/other/anagrams.py                                                                  22      6      6      1    75%
+thealgorithms/other/binary_exponentiation.py                                                     17     14      8      0    12%
+thealgorithms/other/binary_exponentiation_2.py                                                   17     14      8      0    12%
+thealgorithms/other/detecting_english_programmatically.py                                        36     28     12      0    17%
+thealgorithms/other/euclidean_gcd.py                                                             15     11      4      1    26%
+thealgorithms/other/findingPrimes.py                                                             12      9     12      0    12%
+thealgorithms/other/fischer_yates_shuffle.py                                                     14     10      4      1    28%
+thealgorithms/other/frequency_finder.py                                                          40     32     22      1    15%
+thealgorithms/other/game_of_life/__init__.py                                                      0      0      0      0   100%
+thealgorithms/other/game_of_life/game_o_life.py                                                  59     58     30      0     1%
+thealgorithms/other/linear_congruential_generator.py                                             16      9      2      1    44%
+thealgorithms/other/nested_brackets.py                                                           20     16     12      1    16%
+thealgorithms/other/palindrome.py                                                                21     17     10      1    16%
+thealgorithms/other/password_generator.py                                                        21      4      8      0    86%
+thealgorithms/other/primelib.py                                                                 190    171     74      0     7%
+thealgorithms/other/sierpinski_triangle.py                                                       25     23      4      0     7%
+thealgorithms/other/tower_of_hanoi.py                                                            13      8      4      1    35%
+thealgorithms/other/two_sum.py                                                                   11      9      4      0    13%
+thealgorithms/other/word_patterns.py                                                             29     24     10      1    15%
+thealgorithms/project_euler/problem_01/__init__.py                                                0      0      0      0   100%
+thealgorithms/project_euler/problem_01/sol1.py                                                   11      5      4      0    40%
+thealgorithms/project_euler/problem_01/sol2.py                                                   14      8      0      0    43%
+thealgorithms/project_euler/problem_01/sol3.py                                                   38     32     14      0    12%
+thealgorithms/project_euler/problem_01/sol4.py                                                   22      0      4      0   100%
+thealgorithms/project_euler/problem_01/sol5.py                                                    7      1      2      0    67%
+thealgorithms/project_euler/problem_02/__init__.py                                                0      0      0      0   100%
+thealgorithms/project_euler/problem_02/sol1.py                                                   14      8      4      0    33%
+thealgorithms/project_euler/problem_02/sol2.py                                                   11      9      6      1    18%
+thealgorithms/project_euler/problem_02/sol3.py                                                    8      7      2      0    10%
+thealgorithms/project_euler/problem_03/__init__.py                                                0      0      0      0   100%
+thealgorithms/project_euler/problem_03/sol1.py                                                   29     24     22      0    10%
+thealgorithms/project_euler/problem_03/sol2.py                                                   12     10      6      0    11%
+thealgorithms/project_euler/problem_04/__init__.py                                                0      0      0      0   100%
+thealgorithms/project_euler/problem_04/sol1.py                                                   11      9      8      0    11%
+thealgorithms/project_euler/problem_04/sol2.py                                                   10      8      6      0    12%
+thealgorithms/project_euler/problem_05/__init__.py                                                0      0      0      0   100%
+thealgorithms/project_euler/problem_05/sol1.py                                                   15     13      8      0     9%
+thealgorithms/project_euler/problem_05/sol2.py                                                   10      6      2      0    33%
+thealgorithms/project_euler/problem_06/__init__.py                                                0      0      0      0   100%
+thealgorithms/project_euler/problem_06/sol1.py                                                   10      5      2      0    42%
+thealgorithms/project_euler/problem_06/sol2.py                                                    7      4      0      0    43%
+thealgorithms/project_euler/problem_06/sol3.py                                                   10      5      4      1    43%
+thealgorithms/project_euler/problem_07/__init__.py                                                0      0      0      0   100%
+thealgorithms/project_euler/problem_07/sol1.py                                                   24     20     16      0    10%
+thealgorithms/project_euler/problem_07/sol2.py                                                   14     12      8      0     9%
+thealgorithms/project_euler/problem_07/sol3.py                                                   18     11      8      1    31%
+thealgorithms/project_euler/problem_08/__init__.py                                                0      0      0      0   100%
+thealgorithms/project_euler/problem_08/sol1.py                                                   13     10      8      1    19%
+thealgorithms/project_euler/problem_08/sol2.py                                                    6      3      4      1    40%
+thealgorithms/project_euler/problem_09/__init__.py                                                0      0      0      0   100%
+thealgorithms/project_euler/problem_09/sol1.py                                                   10      2     12      2    82%
+thealgorithms/project_euler/problem_09/sol2.py                                                   11      8      6      0    18%
+thealgorithms/project_euler/problem_09/sol3.py                                                    4      2      4      1    38%
+thealgorithms/project_euler/problem_10/__init__.py                                                0      0      0      0   100%
+thealgorithms/project_euler/problem_10/sol1.py                                                   28     19     14      1    24%
+thealgorithms/project_euler/problem_10/sol2.py                                                   17     11     10      1    26%
+thealgorithms/project_euler/problem_11/__init__.py                                                0      0      0      0   100%
+thealgorithms/project_euler/problem_11/sol1.py                                                   30     23     16      1    17%
+thealgorithms/project_euler/problem_11/sol2.py                                                   29     27     30      1     5%
+thealgorithms/project_euler/problem_12/__init__.py                                                0      0      0      0   100%
+thealgorithms/project_euler/problem_12/sol1.py                                                   22      2      8      1    90%
+thealgorithms/project_euler/problem_12/sol2.py                                                    6      0      6      1    92%
+thealgorithms/project_euler/problem_13/__init__.py                                                0      0      0      0   100%
+thealgorithms/project_euler/problem_13/sol1.py                                                    6      4      2      0    25%
+thealgorithms/project_euler/problem_14/__init__.py                                                0      0      0      0   100%
+thealgorithms/project_euler/problem_14/sol1.py                                                   16      1      8      1    92%
+thealgorithms/project_euler/problem_14/sol2.py                                                   10      1      6      1    88%
+thealgorithms/project_euler/problem_15/__init__.py                                                0      0      0      0   100%
+thealgorithms/project_euler/problem_15/sol1.py                                                   15     11      4      1    26%
+thealgorithms/project_euler/problem_16/__init__.py                                                0      0      0      0   100%
+thealgorithms/project_euler/problem_16/sol1.py                                                    9      8      2      0     9%
+thealgorithms/project_euler/problem_17/__init__.py                                                0      0      0      0   100%
+thealgorithms/project_euler/problem_17/sol1.py                                                   15      5     10      3    60%
+thealgorithms/project_euler/problem_19/__init__.py                                                0      0      0      0   100%
+thealgorithms/project_euler/problem_19/sol1.py                                                   24      0     14      0   100%
+thealgorithms/project_euler/problem_20/__init__.py                                                0      0      0      0   100%
+thealgorithms/project_euler/problem_20/sol1.py                                                   16     13      4      0    15%
+thealgorithms/project_euler/problem_20/sol2.py                                                    5      2      4      1    44%
+thealgorithms/project_euler/problem_21/__init__.py                                                0      0      0      0   100%
+thealgorithms/project_euler/problem_21/sol1.py                                                   23      0     12      0   100%
+thealgorithms/project_euler/problem_22/__init__.py                                                0      0      0      0   100%
+thealgorithms/project_euler/problem_22/sol1.py                                                   17     11      4      0    29%
+thealgorithms/project_euler/problem_22/sol2.py                                                   13     11      6      1    16%
+thealgorithms/project_euler/problem_24/__init__.py                                                0      0      0      0   100%
+thealgorithms/project_euler/problem_24/sol1.py                                                    6      3      2      1    50%
+thealgorithms/project_euler/problem_25/__init__.py                                                0      0      0      0   100%
+thealgorithms/project_euler/problem_25/sol1.py                                                   23     15     10      1    27%
+thealgorithms/project_euler/problem_25/sol2.py                                                   10      0      2      0   100%
+thealgorithms/project_euler/problem_28/__init__.py                                                0      0      0      0   100%
+thealgorithms/project_euler/problem_28/sol1.py                                                   22     14      6      1    32%
+thealgorithms/project_euler/problem_29/__init__.py                                                0      0      0      0   100%
+thealgorithms/project_euler/problem_29/solution.py                                               11      9      6      1    18%
+thealgorithms/project_euler/problem_31/__init__.py                                                0      0      0      0   100%
+thealgorithms/project_euler/problem_31/sol1.py                                                   22      0      0      0   100%
+thealgorithms/project_euler/problem_36/__init__.py                                                0      0      0      0   100%
+thealgorithms/project_euler/problem_36/sol1.py                                                   15      1      6      1    90%
+thealgorithms/project_euler/problem_40/__init__.py                                                0      0      0      0   100%
+thealgorithms/project_euler/problem_40/sol1.py                                                    8      0      2      0   100%
+thealgorithms/project_euler/problem_48/__init__.py                                                0      0      0      0   100%
+thealgorithms/project_euler/problem_48/sol1.py                                                    9      0      2      0   100%
+thealgorithms/project_euler/problem_52/__init__.py                                                0      0      0      0   100%
+thealgorithms/project_euler/problem_52/sol1.py                                                    7      0      2      0   100%
+thealgorithms/project_euler/problem_53/__init__.py                                                0      0      0      0   100%
+thealgorithms/project_euler/problem_53/sol1.py                                                   14      0      6      0   100%
+thealgorithms/project_euler/problem_76/__init__.py                                                0      0      0      0   100%
+thealgorithms/project_euler/problem_76/sol1.py                                                   16      0     10      0   100%
+thealgorithms/searches/__init__.py                                                                0      0      0      0   100%
+thealgorithms/searches/binary_search.py                                                          50     39     22      1    17%
+thealgorithms/searches/interpolation_search.py                                                   46     37     22      1    15%
+thealgorithms/searches/jump_search.py                                                            22      3     10      3    81%
+thealgorithms/searches/linear_search.py                                                          19     12     10      1    28%
+thealgorithms/searches/quick_select.py                                                           24     21     10      0     9%
+thealgorithms/searches/sentinel_linear_search.py                                                 22     20     10      1     9%
+thealgorithms/searches/tabu_search.py                                                           110    101     48      1     6%
+thealgorithms/searches/ternary_search.py                                                         66     54     36      1    13%
+thealgorithms/searches/test_tabu_search.py                                                       23     20      0      0    13%
+thealgorithms/simple_client/__init__.py                                                           0      0      0      0   100%
+thealgorithms/simple_client/client.py                                                             8      2      0      0    75%
+thealgorithms/simple_client/server.py                                                            13      7      2      0    40%
+thealgorithms/sorts/BitonicSort.py                                                               27     21     12      0    15%
+thealgorithms/sorts/__init__.py                                                                   0      0      0      0   100%
+thealgorithms/sorts/bogosort.py                                                                  21     17     12      1    15%
+thealgorithms/sorts/bubble_sort.py                                                               19     16     12      1    13%
+thealgorithms/sorts/bucket_sort.py                                                               29     27     18      0     4%
+thealgorithms/sorts/cocktail_shaker_sort.py                                                      23     20     16      1    10%
+thealgorithms/sorts/comb_sort.py                                                                 23     21     10      1     9%
+thealgorithms/sorts/counting_sort.py                                                             29     25     14      1    12%
+thealgorithms/sorts/cyclesort.py                                                                 37     33     24      1     8%
+thealgorithms/sorts/external-sort.py                                                            102     75     34      1    21%
+thealgorithms/sorts/gnome_sort.py                                                                21     18     12      1    12%
+thealgorithms/sorts/heap_sort.py                                                                 28     24     14      1    12%
+thealgorithms/sorts/insertion_sort.py                                                            15     12      8      1    17%
+thealgorithms/sorts/merge_sort.py                                                                36     33     14      1     8%
+thealgorithms/sorts/merge_sort_fastest.py                                                        13     12      2      0     7%
+thealgorithms/sorts/pancake_sort.py                                                               9      0      2      0   100%
+thealgorithms/sorts/quick_sort.py                                                                17     14     10      1    15%
+thealgorithms/sorts/quick_sort_3_partition.py                                                    27     24     12      1    10%
+thealgorithms/sorts/radix_sort.py                                                                16     15     10      0     4%
+thealgorithms/sorts/random_normal_distribution_quicksort.py                                      46     42      6      0     8%
+thealgorithms/sorts/selection_sort.py                                                            18     15     10      1    14%
+thealgorithms/sorts/shell_sort.py                                                                22     19     10      1    12%
+thealgorithms/sorts/timsort.py                                                                   57     50     32      1     9%
+thealgorithms/sorts/topological_sort.py                                                          18      0     10      0   100%
+thealgorithms/sorts/tree_sort.py                                                                 31      2     16      3    89%
+thealgorithms/strings/__init__.py                                                                 0      0      0      0   100%
+thealgorithms/strings/knuth_morris_pratt.py                                                      42     39     16      1     7%
+thealgorithms/strings/levenshtein_distance.py                                                    24     22     10      1     9%
+thealgorithms/strings/manacher.py                                                                23     20     14      1    11%
+thealgorithms/strings/min_cost_string_conversion.py                                              84     76     34      1     8%
+thealgorithms/strings/rabin_karp.py                                                              22     20      6      1    11%
+thealgorithms/traversals/__init__.py                                                              0      0      0      0   100%
+thealgorithms/traversals/binary_tree_traversals.py                                              152    134     58      1     9%
+-------------------------------------------------------------------------------------------------------------------------------
+TOTAL                                                                                          8982   6788   3690    160    22%
+
+==================== 85 failed, 171 passed in 16.13 seconds ====================
