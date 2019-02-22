@@ -14,7 +14,9 @@ def _split_path_rec(path):
 
 
 def _gather_modules():
-    """Gather all modules that should be imported."""
+    """Gather all modules that should be imported, but exclude __init__
+    modules.
+    """
     testdir = os.path.dirname(__file__)
     root = os.path.dirname(testdir)
     algos_root = os.path.dirname(thealgorithms.__file__)
@@ -22,7 +24,7 @@ def _gather_modules():
 
     for dirpath, dirnames, filenames in os.walk(algos_root):
         for filename in filenames:
-            if not filename.endswith(".py"):
+            if not filename.endswith(".py") or filename.endswith("__init__.py"):
                 continue
             reldirpath = os.path.relpath(dirpath, root)
             path_nodes = _split_path_rec(os.path.join(reldirpath, filename))
