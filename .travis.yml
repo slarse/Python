@@ -2,11 +2,6 @@ language: python
 cache: pip
 python:
     - 3.6
-matrix:
-    allow_failures:
-        - python: nightly
-        - python: pypy
-        - python: pypy3
 install:
     - pip install flake8
     - pip install -e .[TEST]
