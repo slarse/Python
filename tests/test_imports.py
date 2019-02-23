@@ -21,10 +21,12 @@ def _gather_modules():
     testdir = os.path.abspath(os.path.dirname(__file__))
     root = os.path.dirname(testdir)
     modules = []
-    exclude_dirs = [os.path.abspath(p) for p in ("tests")]
+    exclude_dirs = [os.path.abspath(p) for p in (testdir, root)]
 
     for dirpath, dirnames, filenames in os.walk(root):
         dirnames[:] = [d for d in dirnames if os.path.abspath(d) not in exclude_dirs]
+        if dirpath == root: # skip root to avoid scripts
+            continue
         for filename in filenames:
             if not filename.endswith(".py") or filename.endswith("__init__.py"):
                 continue
@@ -41,3 +43,6 @@ def test_import_module(module):
     """Test that all modules from project root can be imported"""
     mod = importlib.import_module(module)
     assert mod
+
+if __name__ == "__main__":
+    print(_gather_modules())
