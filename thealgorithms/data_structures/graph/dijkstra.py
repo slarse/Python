@@ -38,20 +38,23 @@ def Dijkstra(graph, V, src):
 			
 
 #MAIN
-V = int(input("Enter number of vertices: "))
-E = int(input("Enter number of edges: "))
+if __name__ == '__main__':
+	V = int(input("Enter number of vertices: "))
+	E = int(input("Enter number of edges: "))
 
-graph = [[float('inf') for i in range(V)] for j in range(V)]
+	graph = [[float('inf') for i in range(V)] for j in range(V)]
 
-for i in range(V):
-	graph[i][i] = 0.0
+	for i in range(V):
+		graph[i][i] = 0.0
 
-for i in range(E):
-	print("\nEdge ",i+1)
-	src = int(input("Enter source:"))
-	dst = int(input("Enter destination:"))
-	weight = float(input("Enter weight:"))
-	graph[src][dst] = weight
+	for i in range(E):
+		print("\nEdge ",i+1)
+		src = int(input("Enter source:"))
+		dst = int(input("Enter destination:"))
+		weight = float(input("Enter weight:"))
+		graph[src][dst] = weight
 
-gsrc = int(input("\nEnter shortest path source:"))
-Dijkstra(graph, V, gsrc)
+
+	gsrc = int(input("\nEnter shortest path source:"))
+
+	Dijkstra(graph, V, gsrc)

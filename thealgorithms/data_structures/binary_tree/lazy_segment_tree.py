@@ -62,7 +62,7 @@ class SegmentTree:
                 self.flag[self.left(idx)] = True
                 self.flag[self.right(idx)] = True
         if r < a or l > b:
-            return -math.inf
+            return float('-inf')
         if l >= a and r <= b:
             return self.st[idx]
         mid = (l+r)//2
