@@ -18,7 +18,7 @@ def _gather_modules():
     ``exclude_dirs``, will be searched. This means that, for example,
     virtual environments in the project directory will be "teste".
     """
-    testdir = os.path.dirname(__file__)
+    testdir = os.path.abspath(os.path.dirname(__file__))
     root = os.path.dirname(testdir)
     modules = []
     exclude_dirs = [os.path.abspath(p) for p in ("tests")]
@@ -36,7 +36,7 @@ def _gather_modules():
 
 
 @pytest.mark.parametrize("module", _gather_modules())
-@pytest.mark.timeout(5)
+@pytest.mark.timeout(2)
 def test_import_module(module):
     """Test that all modules from project root can be imported"""
     mod = importlib.import_module(module)
