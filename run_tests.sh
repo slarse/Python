@@ -1,7 +1,6 @@
 #! /bin/bash
 #
-# Script for running the test suite.
-# Requires bash>=3.2
+# Script for running the test suite with branch coverage.
 
 # Coverage.py caches interfere with subsequent runs for some reason
 rm -f .coverage*
