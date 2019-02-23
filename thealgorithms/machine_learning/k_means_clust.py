@@ -111,8 +111,8 @@ def compute_heterogeneity(data, k, centroids, cluster_assignment):
         
     return heterogeneity
 
-from matplotlib import pyplot as plt
 def plot_heterogeneity(heterogeneity, k):
+    from matplotlib import pyplot as plt
     plt.figure(figsize=(7,4))
     plt.plot(heterogeneity, linewidth=4)
     plt.xlabel('# Iterations')
