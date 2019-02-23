@@ -34,7 +34,7 @@ def _gather_modules():
 
 
 @pytest.mark.parametrize("module", _gather_modules())
-@pytest.mark.timeout(1)
+@pytest.mark.timeout(5)
 def test_import_module(module):
     """Test that all modules from project root can be imported"""
     mod = importlib.import_module(module)
