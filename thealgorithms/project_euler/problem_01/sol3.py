@@ -9,42 +9,45 @@ Find the sum of all the multiples of 3 or 5 below N.
 '''
 This solution is based on the pattern that the successive numbers in the series follow: 0+3,+2,+1,+3,+1,+2,+3.
 '''
+def main():
+    try:
+        raw_input          # Python 2
+    except NameError:
+        raw_input = input  # Python 3
+    n = int(raw_input().strip())
+    sum=0
+    num=0
+    while(1):
+        num+=3
+        if(num>=n):
+            break
+        sum+=num
+        num+=2
+        if(num>=n):
+            break
+        sum+=num
+        num+=1
+        if(num>=n):
+            break
+        sum+=num
+        num+=3
+        if(num>=n):
+            break
+        sum+=num
+        num+=1
+        if(num>=n):
+            break
+        sum+=num
+        num+=2
+        if(num>=n):
+            break
+        sum+=num
+        num+=3
+        if(num>=n):
+            break
+        sum+=num
 
-try:
-    raw_input          # Python 2
-except NameError:
-    raw_input = input  # Python 3
-n = int(raw_input().strip())
-sum=0
-num=0
-while(1):
-    num+=3
-    if(num>=n):
-        break
-    sum+=num
-    num+=2
-    if(num>=n):
-        break
-    sum+=num
-    num+=1
-    if(num>=n):
-        break
-    sum+=num
-    num+=3
-    if(num>=n):
-        break
-    sum+=num
-    num+=1
-    if(num>=n):
-        break
-    sum+=num
-    num+=2
-    if(num>=n):
-        break
-    sum+=num
-    num+=3
-    if(num>=n):
-        break
-    sum+=num
+    print(sum);
 
-print(sum);
+if __name__ == '__main__':
+    main()

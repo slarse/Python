@@ -14,14 +14,18 @@ def split_and_add(number):
         number = int(number/10) # Removing the last_digit from the given number.
     return sum_of_digits
 
-# Taking the user input.
-number = int(input("Enter the Number: "))
+def main():
+    # Taking the user input.
+    number = int(input("Enter the Number: "))
 
-# Assigning the factorial from the factorial function.
-factorial = factorial(number)
+    # Assigning the factorial from the factorial function.
+    f = factorial(number)
 
-# Spliting and adding the factorial into answer.
-answer = split_and_add(factorial)
+    # Spliting and adding the factorial into answer.
+    answer = split_and_add(f)
 
-# Printing the answer.
-print(answer)
+    # Printing the answer.
+    print(answer)
+
+if __name__ == '__main__':
+    main()

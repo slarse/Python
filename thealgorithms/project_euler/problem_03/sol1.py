@@ -18,22 +18,26 @@ def isprime(no):
             return False
     return True
 
-maxNumber = 0
-n=int(input())
-if(isprime(n)):
-    print(n)
-else:
-    while (n%2==0):
-        n=n/2
+def main():
+    maxNumber = 0
+    n=int(input())
     if(isprime(n)):
         print(n)
     else:
-        n1 = int(math.sqrt(n))+1
-        for i in range(3,n1,2):
-            if(n%i==0):
-                if(isprime(n/i)):
-                    maxNumber = n/i
-                    break
-                elif(isprime(i)):
-                    maxNumber = i
-        print(maxNumber)
+        while (n%2==0):
+            n=n/2
+        if(isprime(n)):
+            print(n)
+        else:
+            n1 = int(math.sqrt(n))+1
+            for i in range(3,n1,2):
+                if(n%i==0):
+                    if(isprime(n/i)):
+                        maxNumber = n/i
+                        break
+                    elif(isprime(i)):
+                        maxNumber = i
+            print(maxNumber)
+
+if __name__ == '__main__':
+    main()
