@@ -14,13 +14,17 @@ If dn represents the nth digit of the fractional part, find the value of the fol
 d1 × d10 × d100 × d1000 × d10000 × d100000 × d1000000
 '''
 
-constant = []
-i = 1
+def main():
+	constant = []
+	i = 1
 
-while len(constant) < 1e6:
-	constant.append(str(i))
-	i += 1
+	while len(constant) < 1e6:
+		constant.append(str(i))
+		i += 1
 
-constant = ''.join(constant)
+	constant = ''.join(constant)
 
-print(int(constant[0])*int(constant[9])*int(constant[99])*int(constant[999])*int(constant[9999])*int(constant[99999])*int(constant[999999]))
+	print(int(constant[0])*int(constant[9])*int(constant[99])*int(constant[999])*int(constant[9999])*int(constant[99999])*int(constant[999999]))
+
+if __name__ == '__main__':
+    main()
