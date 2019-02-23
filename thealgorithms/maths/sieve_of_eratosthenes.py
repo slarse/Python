@@ -1,5 +1,5 @@
 import math
-n = int(input("Enter n: "))
+
 
 def sieve(n):
     l = [True] * (n+1)
@@ -13,12 +13,17 @@ def sieve(n):
                 if l[i] == True:
                     l[i] = False
         start += 1
-    
+
     for j in range(end+1,n+1):
         if l[j] == True:
             prime.append(j)
-    
+
     return prime
 
-print(sieve(n))
-        
+def main():
+    n = int(input("Enter n: "))
+    print(sieve(n))
+
+if __name__ == '__main__':
+    main()
+
