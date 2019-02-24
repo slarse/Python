@@ -1,6 +1,6 @@
 import unittest
 import os
-from .tabu_search import generate_neighbours, generate_first_solution, find_neighborhood, tabu_search
+from searches.tabu_search import generate_neighbours, generate_first_solution, find_neighborhood, tabu_search
 
 TEST_FILE = os.path.join(os.path.dirname(__file__), './tabu_test_data.txt')
 
