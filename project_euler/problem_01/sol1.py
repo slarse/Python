@@ -5,13 +5,17 @@ we get 3,5,6 and 9. The sum of these multiples is 23.
 Find the sum of all the multiples of 3 or 5 below N.
 '''
 from __future__ import print_function
-try:
-    raw_input          # Python 2
-except NameError:
-    raw_input = input  # Python 3
-n = int(raw_input().strip())
-sum=0
-for a in range(3,n):
-    if(a%3==0 or a%5==0):
-        sum+=a
-print(sum)
+def main():
+	try:
+	    raw_input          # Python 2
+	except NameError:
+	    raw_input = input  # Python 3
+	n = int(raw_input().strip())
+	sum=0
+	for a in range(3,n):
+	    if(a%3==0 or a%5==0):
+	        sum+=a
+	print(sum)
+
+if __name__ == '__main__':
+	main()

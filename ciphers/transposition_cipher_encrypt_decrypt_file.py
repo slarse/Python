@@ -1,6 +1,6 @@
 from __future__ import print_function
 import time, os, sys
-import transposition_cipher as transCipher
+from . import transposition_cipher as transCipher
 
 def main():
     inputFile = 'Prehistoric Men.txt'

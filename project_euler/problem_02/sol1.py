@@ -8,17 +8,21 @@ e.g. for n=10, we have {2,8}, sum is 10.
 '''
 from __future__ import print_function
 
-try:
-    raw_input          # Python 2
-except NameError:
-    raw_input = input  # Python 3
+def main():
+	try:
+	    raw_input          # Python 2
+	except NameError:
+	    raw_input = input  # Python 3
 
-n = int(raw_input().strip())
-i=1
-j=2 
-sum=0
-while(j<=n):
-    if j%2 == 0:
-        sum+=j
-    i , j = j, i+j
-print(sum)
+	n = int(raw_input().strip())
+	i=1
+	j=2
+	sum=0
+	while(j<=n):
+	    if j%2 == 0:
+	        sum+=j
+	    i , j = j, i+j
+	print(sum)
+
+if __name__ == '__main__':
+	main()

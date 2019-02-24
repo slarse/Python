@@ -13,8 +13,12 @@ def gcd(x,y):
 def lcm(x,y):
     return (x*y)//gcd(x,y)
 
-n = int(input())
-g=1
-for i in range(1,n+1):
-    g=lcm(g,i)
-print(g)
+def main():
+	n = int(input())
+	g=1
+	for i in range(1,n+1):
+	    g=lcm(g,i)
+	print(g)
+
+if __name__ == '__main__':
+	main()

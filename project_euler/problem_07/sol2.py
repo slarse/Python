@@ -4,13 +4,18 @@ def isprime(number):
 		if number%i==0:
 			return False
 	return True
-n = int(input('Enter The N\'th Prime Number You Want To Get: ')) # Ask For The N'th Prime Number Wanted
-primes = []
-num = 2
-while len(primes) < n:
-	if isprime(num):
-		primes.append(num)
-		num += 1
-	else:
-		num += 1
-print(primes[len(primes) - 1])
+
+def main():
+	n = int(input('Enter The N\'th Prime Number You Want To Get: ')) # Ask For The N'th Prime Number Wanted
+	primes = []
+	num = 2
+	while len(primes) < n:
+		if isprime(num):
+			primes.append(num)
+			num += 1
+		else:
+			num += 1
+	print(primes[len(primes) - 1])
+
+if __name__ == '__main__':
+	main()

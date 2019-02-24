@@ -8,11 +8,6 @@ Find the sum of all numbers, less than one million, which are palindromic in bas
 
 (Please note that the palindromic number, in either base, may not include leading zeros.)
 '''
-try:
-	xrange		#Python 2
-except NameError:
-	xrange = range	#Python 3
-
 def is_palindrome(n):
 	n = str(n)
 
@@ -21,10 +16,19 @@ def is_palindrome(n):
 	else:
 		return False
 
-total = 0
+def main():
+	try:
+		xrange			#Python 2
+	except NameError:
+		xrange = range	#Python 3
 
-for i in xrange(1, 1000000):
-	if is_palindrome(i) and is_palindrome(bin(i).split('b')[1]):
-		total += i
+	total = 0
 
-print(total)
+	for i in xrange(1, 1000000):
+		if is_palindrome(i) and is_palindrome(bin(i).split('b')[1]):
+			total += i
+
+	print(total)
+
+if __name__ == '__main__':
+	main()

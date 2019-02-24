@@ -10,11 +10,15 @@ Find the difference between the sum of the squares of the first N natural number
 '''
 from __future__ import print_function
 
-suma = 0
-sumb = 0
-n = int(input())
-for i in range(1,n+1):
-    suma += i**2
-    sumb += i
-sum = sumb**2 - suma
-print(sum)
+def main():
+	suma = 0
+	sumb = 0
+	n = int(input())
+	for i in range(1,n+1):
+	    suma += i**2
+	    sumb += i
+	sum = sumb**2 - suma
+	print(sum)
+
+if __name__ == '__main__':
+	main()

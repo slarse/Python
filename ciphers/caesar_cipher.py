@@ -60,4 +60,6 @@ def main():
         elif choice == '4':
             print ("Goodbye.")
             break
-main()
+
+if __name__ == "__main__":
+    main()

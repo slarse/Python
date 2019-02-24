@@ -5,14 +5,19 @@ e.g. for 10, largest prime factor = 5. For 17, largest prime factor = 17.
 '''
 
 from __future__ import print_function
-n=int(input())
-prime=1
-i=2
-while(i*i<=n):
-    while(n%i==0):
-        prime=i
-        n//=i
-    i+=1
-if(n>1):
-    prime=n
-print(prime)
+
+def main():
+	n=int(input())
+	prime=1
+	i=2
+	while(i*i<=n):
+	    while(n%i==0):
+	        prime=i
+	        n//=i
+	    i+=1
+	if(n>1):
+	    prime=n
+	print(prime)
+
+if __name__ == '__main__':
+	main()

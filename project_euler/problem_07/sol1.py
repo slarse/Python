@@ -16,15 +16,20 @@ def isprime(n):
             if(n%i==0):
                 return False
     return True
-n = int(input())
-i=0
-j=1
-while(i!=n and j<3):
-    j+=1
-    if (isprime(j)):
-        i+=1
-while(i!=n):
-    j+=2
-    if(isprime(j)):
-        i+=1
-print(j)
+
+def main():
+    n = int(input())
+    i=0
+    j=1
+    while(i!=n and j<3):
+        j+=1
+        if (isprime(j)):
+            i+=1
+    while(i!=n):
+        j+=2
+        if(isprime(j)):
+            i+=1
+    print(j)
+
+if __name__ == '__main__':
+    main()

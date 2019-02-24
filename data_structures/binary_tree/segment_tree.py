@@ -43,7 +43,7 @@ class SegmentTree:
 
     def query_recursive(self, idx, l, r, a, b): #query(1, 1, N, a, b) for query max of [a,b]
         if r < a or l > b:
-            return -math.inf
+            return float('-inf')
         if l >= a and r <= b:
             return self.st[idx]
         mid = (l+r)//2

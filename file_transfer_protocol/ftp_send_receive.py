@@ -7,18 +7,19 @@
 	  Use login id and password of the user created 
 	  cwd here stands for current working directory
 """
-
 from ftplib import FTP
-ftp = FTP('xxx.xxx.x.x')  # Enter the ip address or the domain name here
-ftp.login(user='username', passwd='password')
-ftp.cwd('/Enter the directory here/')
+
+def main():
+    ftp = FTP('xxx.xxx.x.x')  # Enter the ip address or the domain name here
+    ftp.login(user='username', passwd='password')
+    ftp.cwd('/Enter the directory here/')
 
 """
 	The file which will be received via the FTP server
 	Enter the location of the file where the file is received
 """
 
-def ReceiveFile():
+def ReceiveFile(ftp):
 	FileName = 'example.txt'   """ Enter the location of the file """
 	with open(FileName, 'wb') as LocalFile:
 		ftp.retrbinary('RETR ' + FileName, LocalFile.write, 1024)
@@ -29,8 +30,11 @@ def ReceiveFile():
 	The file send will be send to the current working directory
 """
 
-def SendFile():
+def SendFile(ftp):
 	FileName = 'example.txt'   """ Enter the name of the file """
 	with open(FileName, 'rb') as LocalFile:
 		ftp.storbinary('STOR ' + FileName, LocalFile)
 	ftp.quit()
+
+if __name__ == "__main__":
+    main()
