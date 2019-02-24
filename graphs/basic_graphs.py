@@ -1,5 +1,15 @@
 from __future__ import print_function
 
+try:
+    raw_input  # Python 2
+except NameError:
+    raw_input = input  # Python 3
+
+try:
+    xrange  # Python 2
+except NameError:
+    xrange = range  # Python 3
+
 """
 --------------------------------------------------------------------------------
     Depth First Search.
@@ -244,16 +254,6 @@ def find_isolated_nodes(graph):
 
 
 def main():
-    try:
-        raw_input  # Python 2
-    except NameError:
-        raw_input = input  # Python 3
-
-    try:
-        xrange  # Python 2
-    except NameError:
-        xrange = range  # Python 3
-
     # Accept No. of Nodes and edges
     n, m = map(int, raw_input().split(" "))
 
