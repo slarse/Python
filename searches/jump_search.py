@@ -20,7 +20,11 @@ def jump_search(arr, x):
 
 
 
-arr = [ 0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, 233, 377, 610]
-x = 55
-index = jump_search(arr, x)
-print("\nNumber " + str(x) +" is at index " + str(index));
+def main():
+    arr = [ 0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, 233, 377, 610]
+    x = 55
+    index = jump_search(arr, x)
+    print("\nNumber " + str(x) +" is at index " + str(index));
+
+if __name__ == "__main__":
+    main()
