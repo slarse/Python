@@ -1,5 +1,7 @@
 # Frequency Finder
 
+import doctest
+
 # frequency taken from http://en.wikipedia.org/wiki/Letter_frequency
 englishLetterFreq = {'E': 12.70, 'T': 9.06, 'A': 8.17, 'O': 7.51, 'I': 6.97,
                      'N': 6.75, 'S': 6.33, 'H': 6.09, 'R': 5.99, 'D': 4.25,
@@ -63,6 +65,10 @@ def englishFreqMatchScore(message):
 
     return matchScore
 
-if __name__ == '__main__':
-    import doctest
+
+def main():
     doctest.testmod()
+
+
+if __name__ == '__main__':
+    main()
