@@ -43,12 +43,22 @@ def test_binary_search_std_lib_returns_none_if_target_not_in_list(sorted_list):
 def test_binary_search_by_recursion(sorted_list, search_items, expected_returns):
     """Test that binary_search_by_recursion returns expected values"""
     for item, expected_return in zip(search_items, expected_returns):
-        assert binary_search.binary_search_by_recursion(sorted_list, item, 0, len(sorted_list) - 1) == expected_return
+        assert (
+            binary_search.binary_search_by_recursion(
+                sorted_list, item, 0, len(sorted_list) - 1
+            )
+            == expected_return
+        )
 
 
 def test_binary_search_by_recursion_returns_none_if_target_not_in_list(sorted_list):
     """Test that binary_search_by_recursion returns None if its target is not in the list"""
-    assert binary_search.binary_search_by_recursion(sorted_list, 6, 0, len(sorted_list) - 1) == None
+    assert (
+        binary_search.binary_search_by_recursion(
+            sorted_list, 6, 0, len(sorted_list) - 1
+        )
+        == None
+    )
 
 
 def test_binary_search_returns_none_if_target_not_in_list(sorted_list):

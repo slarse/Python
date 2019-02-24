@@ -21,7 +21,10 @@ def expected_returns():
 def test_linear_search(sorted_list, search_items, expected_returns):
     """Test that sentinel_linear_search finds its targets in sorted lists that contain them"""
     for item, expected_return in zip(search_items, expected_returns):
-        assert sentinel_linear_search.sentinel_linear_search(sorted_list, item) == expected_return
+        assert (
+            sentinel_linear_search.sentinel_linear_search(sorted_list, item)
+            == expected_return
+        )
 
 
 def test_linear_search_returns_none_if_target_not_in_list(sorted_list):
