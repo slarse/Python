@@ -23,10 +23,19 @@ def topologicalSort(l):
                 queue.append(x)
 
     if cnt != len(l):
-        print("Cycle exists")
-    else:
-        print(topo)
+        return None
+    return topo
 
-# Adjacency List of Graph
-l = {0:[1,2], 1:[3], 2:[3], 3:[4,5], 4:[], 5:[]}
-topologicalSort(l)
+
+def main():
+    # Adjacency List of Graph
+    l = {0:[1,2], 1:[3], 2:[3], 3:[4,5], 4:[], 5:[]}
+    res = topologicalSort(l)
+    if res:
+        print(res)
+    else:
+        print("Cycle exists")
+
+
+if __name__ == "__main__":
+    main()

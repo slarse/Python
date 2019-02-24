@@ -29,11 +29,16 @@ def bfs(graph, start):
     return explored
 
 
-G = {'A': ['B', 'C'],
-     'B': ['A', 'D', 'E'],
-     'C': ['A', 'F'],
-     'D': ['B'],
-     'E': ['B', 'F'],
-     'F': ['C', 'E']}
+def main():
+    G = {'A': ['B', 'C'],
+         'B': ['A', 'D', 'E'],
+         'C': ['A', 'F'],
+         'D': ['B'],
+         'E': ['B', 'F'],
+         'F': ['C', 'E']}
 
-print(bfs(G, 'A'))
+    print(bfs(G, 'A'))
+
+
+if __name__ == "__main__":
+    main()

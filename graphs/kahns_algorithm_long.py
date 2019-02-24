@@ -23,8 +23,14 @@ def longestDistance(l):
             if indegree[x] == 0:
                 queue.append(x)
 
-    print(max(longDist))
+    return max(longDist)
 
-# Adjacency list of Graph
-l = {0:[2,3,4], 1:[2,7], 2:[5], 3:[5,7], 4:[7], 5:[6], 6:[7], 7:[]}
-longestDistance(l)
+
+def main():
+    # Adjacency list of Graph
+    l = {0:[2,3,4], 1:[2,7], 2:[5], 3:[5,7], 4:[7], 5:[6], 6:[7], 7:[]}
+    print(longestDistance(l))
+
+
+if __name__ == "__main__":
+    main()
