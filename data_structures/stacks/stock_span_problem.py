@@ -39,14 +39,3 @@ def calculateSpan(price, S):
 def printArray(arr, n): 
     for i in range(0,n): 
         print (arr[i],end =" ") 
-  
-  
-# Driver program to test above function 
-price = [10, 4, 5, 90, 120, 80] 
-S = [0 for i in range(len(price)+1)] 
-  
-# Fill the span values in array S[] 
-calculateSpan(price, S) 
-  
-# Print the calculated span values 
-printArray(S, len(price)) 

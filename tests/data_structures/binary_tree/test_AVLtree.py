@@ -1,28 +1,28 @@
 from data_structures.binary_tree.AVLtree import AVLtree
 import random
-
-class TestAVLTree:
     
-    def test_AVL_tree(self):
-        t = AVLtree()
+def test_AVL_tree_1():
+    '''Testing height of the tree after multiple insert in tree'''
+    t = AVLtree()
+    t.traversale()
+    l = list(range(10))
+    random.shuffle(l)
+    for i in l:
+        t.insert(i)
         t.traversale()
-        l = list(range(10))
-        random.shuffle(l)
-        for i in l:
-            t.insert(i)
-            t.traversale()
-        assert t.test() == 4
+    assert t.getheight() == 4
     
-    def test_AVL_tree_2(self):
-        t = AVLtree()
+def test_AVL_tree_2():
+    '''Testing height of tree after insertion and deletion in tree'''
+    t = AVLtree()
+    t.traversale()
+    l = list(range(10))
+    random.shuffle(l)
+    for i in l:
+        t.insert(i)
+        t.traversale()   
+    random.shuffle(l)
+    for i in l:
+        t.del_node(i)
         t.traversale()
-        l = list(range(10))
-        random.shuffle(l)
-        for i in l:
-            t.insert(i)
-            t.traversale()   
-        random.shuffle(l)
-        for i in l:
-            t.del_node(i)
-            t.traversale()
-        assert t.test() == 0
+    assert t.getheight() == 0

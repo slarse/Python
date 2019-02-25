@@ -234,23 +234,4 @@ class AVLtree:
         print()
         print("*************************************")
         return
-    
-    def test(self):
-        getheight(None)
-        print("****")
-        return self.getheight()
         
-if __name__ == "__main__":
-    t = AVLtree()
-    t.traversale()
-    l = list(range(10))
-    random.shuffle(l)
-    for i in l:
-        t.insert(i)
-        t.traversale()
-    t.test()    
-    random.shuffle(l)
-    for i in l:
-        t.del_node(i)
-        t.traversale()
-    t.test()

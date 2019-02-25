@@ -17,16 +17,3 @@ class Graph:
             for j in i:
                 print(j, end=' ')
             print(' ')
-
-
-
-if __name__ == '__main__':
-    g = Graph(100)
-
-    g.add_edge(1,4)
-    g.add_edge(4,2)
-    g.add_edge(4,5)
-    g.add_edge(2,5)
-    g.add_edge(5,3)
-    g.show()
-
