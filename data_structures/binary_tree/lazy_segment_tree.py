@@ -75,17 +75,3 @@ class SegmentTree:
         for i in range(1,N+1):
             showList += [self.query(1, 1, self.N, i, i)]
         print (showList)
-            
-
-if __name__ == '__main__':
-    A = [1,2,-4,7,3,-5,6,11,-20,9,14,15,5,2,-8]
-    N = 15
-    segt = SegmentTree(N)
-    segt.build(1,1,N,A)
-    print (segt.query(1,1,N,4,6))
-    print (segt.query(1,1,N,7,11))
-    print (segt.query(1,1,N,7,12))
-    segt.update(1,1,N,1,3,111)
-    print (segt.query(1,1,N,1,15))
-    segt.update(1,1,N,7,8,235)
-    segt.showData()

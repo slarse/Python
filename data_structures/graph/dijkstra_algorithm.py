@@ -165,6 +165,7 @@ class Graph:
                 print('-> ', end='')
 
         print('\nTotal cost of path: ', cost)
+        return cost
 
 
 if __name__ == '__main__':

@@ -56,6 +56,7 @@ if __name__ == '__main__':
     g.printGraph()
     print('DFS:')
     g.DFS()
+    print(g.vertex)
 
     # OUTPUT:
     # 0  ->  1 -> 2

@@ -1,5 +1,5 @@
 #!/usr/bin/python
-# encoding=utf8
+
 
 from __future__ import print_function
 # Author: OMKAR PATHAK
@@ -33,7 +33,6 @@ if __name__ == '__main__':
     al.addEdge(1, 2)
     al.addEdge(2, 3)
     al.addEdge(3, 4)
-
     al.printList()
 
     # OUTPUT:

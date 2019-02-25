@@ -25,7 +25,8 @@ def FloydWarshall(graph, V):
 				if dist[i][k]!=float('inf') and dist[k][j]!=float('inf') and dist[i][k]+dist[k][j] < dist[i][j]:
 					dist[i][j] = dist[i][k] + dist[k][j]
 
-	printDist(dist, V)	
+	printDist(dist, V)
+	return dist	
 
 			
 
