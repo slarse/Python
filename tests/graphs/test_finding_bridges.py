@@ -18,5 +18,5 @@ def adjacency_list_graph():
     }
 
 
-def test_finding_bridges(capsys, adjacency_list_graph):
+def test_finding_bridges(adjacency_list_graph):
     assert sorted(computeBridges(adjacency_list_graph)) == [[2, 3], [2, 5], [3, 4]]
