@@ -1,3 +1,4 @@
+import doctest
 import os
 
 UPPERLETTERS = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
@@ -50,5 +51,9 @@ def isEnglish(message, wordPercentage = 20, letterPercentage = 85):
     return wordsMatch and lettersMatch
 
 
-import doctest
-doctest.testmod()
+def main():
+    doctest.testmod()
+
+
+if __name__ == "__main__":
+    main()

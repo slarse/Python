@@ -28,8 +28,12 @@ class LinearCongruentialGenerator(object):
         self.seed = (self.multiplier * self.seed + self.increment) % self.modulo
         return self.seed
 
-if __name__ == "__main__":
+def main():
     # Show the LCG in action.
     lcg = LinearCongruentialGenerator(1664525, 1013904223, 2<<31)
     while True :
         print(lcg.next_number())
+
+
+if __name__ == "__main__":
+    main()
