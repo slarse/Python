@@ -10,7 +10,7 @@ Example: [10, 22, 9, 33, 21, 50, 41, 60, 80] as input will return [10, 22, 33, 4
 from __future__ import print_function
 
 def longestSub(ARRAY): 			#This function is recursive
-	
+
 	ARRAY_LENGTH = len(ARRAY)
 	if(ARRAY_LENGTH <= 1):  	#If the array contains only one element, we return it (it's the stop condition of recursion)
 		return ARRAY
@@ -37,6 +37,9 @@ def longestSub(ARRAY): 			#This function is recursive
 		return LONGEST_SUB
 
 #Some examples
+def main():
+	print(longestSub([4,8,7,5,1,12,2,3,9]))
+	print(longestSub([9,8,7,6,5,7]))
 
-print(longestSub([4,8,7,5,1,12,2,3,9]))
-print(longestSub([9,8,7,6,5,7]))
+if __name__ == '__main__':
+	main()

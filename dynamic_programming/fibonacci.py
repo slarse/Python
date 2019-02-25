@@ -20,7 +20,7 @@ class Fibonacci:
     def get(self, sequence_no=None):
         if sequence_no != None:
             if sequence_no < len(self.fib_array):
-                return print(self.fib_array[:sequence_no + 1])
+                return self.fib_array[:sequence_no + 1]
             else:
                 print("Out of bound.")
         else:
@@ -47,7 +47,7 @@ if __name__ == '__main__':
                 if i < 0:
                     print("\n********* Good Bye!! ************\n")
                     break
-                fib.get(i)
+                print(fib.get(i))
             except NameError:
                 print("\nInvalid input, please try again.")
     except NameError:

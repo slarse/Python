@@ -1,7 +1,7 @@
 import math
 
 class Graph:
-    
+
     def __init__(self, N = 0): # a graph with Node 0,1,...,N-1
         self.N = N
         self.W = [[math.inf for j in range(0,N)] for i in range(0,N)] # adjacency matrix for weight
@@ -18,7 +18,7 @@ class Graph:
 
     def showMin(self, u, v):
         return self.dp[u][v]
-    
+
 if __name__ == '__main__':
     graph = Graph(5)
     graph.addEdge(0,2,9)
