@@ -29,5 +29,10 @@ def bisection(function, a, b):  # finds where the function becomes 0 in [a,b] us
 def f(x):
     return math.pow(x, 3) - 2*x - 5
 
-if __name__ == "__main__":
+
+def main():
     print(bisection(f, 1, 1000))
+
+
+if __name__ == "__main__":
+    main()

@@ -14,5 +14,10 @@ def f(x):
 def f1(x):
     return 3 * (x**2) -2
 
-if __name__ == "__main__":
+
+def main():
     print(newton(f,f1,3))
+
+
+if __name__ == "__main__":
+    main()

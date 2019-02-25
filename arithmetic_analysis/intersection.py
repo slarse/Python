@@ -13,5 +13,10 @@ def intersection(function,x0,x1): #function is the f we want to find its root an
 def f(x):
     return math.pow(x , 3) - (2 * x) -5
 
+
+def main():
+    print(intersection(f, 3, 3.5))
+
+
 if __name__ == "__main__":
-    print(intersection(f,3,3.5))
+    main()

@@ -23,10 +23,14 @@ def LUDecompose (table):
             U[i][j]=table[i][j]-sum1
     return L,U
 
-if __name__ == "__main__":
+def main():
     matrix =numpy.array([[2,-2,1],
                          [0,1,2],
                          [5,3,1]])
     L,U = LUDecompose(matrix)
     print(L)
     print(U)
+
+
+if __name__ == "__main__":
+    main()

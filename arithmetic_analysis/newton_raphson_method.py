@@ -17,7 +17,7 @@ def NewtonRaphson(func, a):
     
 
 # Let's Execute
-if __name__ == '__main__':
+def main():
     # Find root of trigonometric function
     # Find value of pi
     print ('sin(x) = 0', NewtonRaphson('sin(x)', 2))
@@ -30,7 +30,7 @@ if __name__ == '__main__':
 
     # Exponential Roots
     print ('exp(x) - 1 = 0', NewtonRaphson('exp(x) - 1', 0))
-    
-    
-    
 
+
+if __name__ == '__main__':
+    main()
