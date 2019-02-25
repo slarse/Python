@@ -67,7 +67,7 @@ def create_graph(n, edges):
     return g
 
 
-if __name__ == '__main__':
+def main():
     # Test
     n_vertices = 7
     source = [0, 0, 1, 2, 3, 3, 4, 4, 6]
@@ -76,3 +76,7 @@ if __name__ == '__main__':
     g = create_graph(n_vertices, edges)
 
     assert [[5], [6], [4], [3, 2, 1, 0]] == tarjan(g)
+
+
+if __name__ == '__main__':
+    main()

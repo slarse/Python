@@ -35,10 +35,18 @@ def computeAP(l):
             outEdgeCount = dfs(i, i, -1, outEdgeCount)
             isArt[i] = (outEdgeCount > 1)
 
+    points = []
     for x in range(len(isArt)):
         if isArt[x] == True:
-            print(x)
+            points.append(x)
+    return points
 
-# Adjacency list of graph
-l = {0:[1,2], 1:[0,2], 2:[0,1,3,5], 3:[2,4], 4:[3], 5:[2,6,8], 6:[5,7], 7:[6,8], 8:[5,7]}
-computeAP(l)
+
+def main():
+    # Adjacency list of graph
+    l = {0:[1,2], 1:[0,2], 2:[0,1,3,5], 3:[2,4], 4:[3], 5:[2,6,8], 6:[5,7], 7:[6,8], 8:[5,7]}
+    print(computeAP(l))
+
+
+if __name__ == "__main__":
+    main()

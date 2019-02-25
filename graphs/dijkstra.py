@@ -28,7 +28,7 @@ def dijkstra(graph, start, end):
         visited.append(u)
         if u == end:
             return cost
-        for v, c in G[u]:
+        for v, c in graph[u]:
             if v in visited:
                 continue
             next = cost + c
@@ -36,12 +36,17 @@ def dijkstra(graph, start, end):
     return (-1, -1)
 
 
-G = {'A': [['B', 2], ['C', 5]],
-     'B': [['A', 2], ['D', 3], ['E', 1]],
-     'C': [['A', 5], ['F', 3]],
-     'D': [['B', 3]],
-     'E': [['B', 1], ['F', 3]],
-     'F': [['C', 3], ['E', 3]]}
+def main():
+    G = {'A': [['B', 2], ['C', 5]],
+         'B': [['A', 2], ['D', 3], ['E', 1]],
+         'C': [['A', 5], ['F', 3]],
+         'D': [['B', 3]],
+         'E': [['B', 1], ['F', 3]],
+         'F': [['C', 3], ['E', 3]]}
 
-shortDistance = dijkstra(G, 'E', 'C')
-print(shortDistance)
+    shortDistance = dijkstra(G, 'E', 'C')
+    print(shortDistance)
+
+
+if __name__ == "__main__":
+    main()
