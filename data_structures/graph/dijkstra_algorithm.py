@@ -5,6 +5,7 @@
 from __future__ import print_function
 import math
 import sys
+
 # For storing the vertex set to retreive node with the lowest distance
 
 
@@ -13,7 +14,7 @@ class PriorityQueue:
     def __init__(self):
         self.cur_size = 0
         self.array = []
-        self.pos = {}   # To store the pos of node in array
+        self.pos = {}  # To store the pos of node in array
 
     def isEmpty(self):
         return self.cur_size == 0
@@ -79,8 +80,8 @@ class PriorityQueue:
 
 class Graph:
     def __init__(self, num):
-        self.adjList = {}   # To store graph: u -> (v,w)
-        self.num_nodes = num    # Number of nodes in graph
+        self.adjList = {}  # To store graph: u -> (v,w)
+        self.num_nodes = num  # Number of nodes in graph
         # To store the distance from source vertex
         self.dist = [0] * self.num_nodes
         self.par = [-1] * self.num_nodes  # To store the path
@@ -103,8 +104,11 @@ class Graph:
     def show_graph(self):
         # u -> v(w)
         for u in self.adjList:
-            print(u, '->', ' -> '.join(str("{}({})".format(v, w))
-                                       for v, w in self.adjList[u]))
+            print(
+                u,
+                "->",
+                " -> ".join(str("{}({})".format(v, w)) for v, w in self.adjList[u]),
+            )
 
     def dijkstra(self, src):
         # Flush old junk values in par[]
@@ -138,7 +142,7 @@ class Graph:
     def show_distances(self, src):
         print("Distance from node: {}".format(src))
         for u in range(self.num_nodes):
-            print('Node {} has distance: {}'.format(u, self.dist[u]))
+            print("Node {} has distance: {}".format(u, self.dist[u]))
 
     def show_path(self, src, dest):
         # To show the shortest path from src to dest
@@ -158,11 +162,56 @@ class Graph:
         path.append(src)
         path.reverse()
 
-        print('----Path to reach {} from {}----'.format(dest, src))
+        print("----Path to reach {} from {}----".format(dest, src))
         for u in path:
-            print('{}'.format(u), end=' ')
+            print("{}".format(u), end=" ")
             if u != dest:
-                print('-> ', end='')
+                print("-> ", end="")
 
-        print('\nTotal cost of path: ', cost)
+        print("\nTotal cost of path: ", cost)
         return cost
+
+
+if __name__ == "__main__":
+    graph = Graph(9)
+    graph.add_edge(0, 1, 4)
+    graph.add_edge(0, 7, 8)
+    graph.add_edge(1, 2, 8)
+    graph.add_edge(1, 7, 11)
+    graph.add_edge(2, 3, 7)
+    graph.add_edge(2, 8, 2)
+    graph.add_edge(2, 5, 4)
+    graph.add_edge(3, 4, 9)
+    graph.add_edge(3, 5, 14)
+    graph.add_edge(4, 5, 10)
+    graph.add_edge(5, 6, 2)
+    graph.add_edge(6, 7, 1)
+    graph.add_edge(6, 8, 6)
+    graph.add_edge(7, 8, 7)
+    graph.show_graph()
+    graph.dijkstra(0)
+    graph.show_path(0, 4)
+
+# OUTPUT
+# 0 -> 1(4) -> 7(8)
+# 1 -> 0(4) -> 2(8) -> 7(11)
+# 7 -> 0(8) -> 1(11) -> 6(1) -> 8(7)
+# 2 -> 1(8) -> 3(7) -> 8(2) -> 5(4)
+# 3 -> 2(7) -> 4(9) -> 5(14)
+# 8 -> 2(2) -> 6(6) -> 7(7)
+# 5 -> 2(4) -> 3(14) -> 4(10) -> 6(2)
+# 4 -> 3(9) -> 5(10)
+# 6 -> 5(2) -> 7(1) -> 8(6)
+# Distance from node: 0
+# Node 0 has distance: 0
+# Node 1 has distance: 4
+# Node 2 has distance: 12
+# Node 3 has distance: 19
+# Node 4 has distance: 21
+# Node 5 has distance: 11
+# Node 6 has distance: 9
+# Node 7 has distance: 8
+# Node 8 has distance: 14
+# ----Path to reach 4 from 0----
+# 0 -> 7 -> 6 -> 5 -> 4
+# Total cost of path:  21
