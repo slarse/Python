@@ -1,5 +1,4 @@
 from math import sqrt
-import pytest
 from pytest import approx
 
 from arithmetic_analysis.newton_raphson_method import NewtonRaphson
