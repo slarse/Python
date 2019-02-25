@@ -1,6 +1,6 @@
 from data_structures.graph.depth_first_search import Graph
 
-def test_dfs(self):
+def test_dfs():
     '''Testing depth_first_search for a sample graph'''
     g = Graph()
     g.addEdge(0, 1)

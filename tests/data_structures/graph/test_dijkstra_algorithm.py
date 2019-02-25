@@ -1,6 +1,6 @@
 from data_structures.graph.dijkstra_algorithm import Graph
 
-def test_dijkstra_algorithm(self):
+def test_dijkstra_algorithm():
     '''Testing the dijkstra_algorithms for a sample graph'''
     graph = Graph(9)
     graph.add_edge(0, 1, 4)

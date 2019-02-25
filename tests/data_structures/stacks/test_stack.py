@@ -22,7 +22,7 @@ def test_stack_3():
         stack.push(i)
     assert stack.peek() == 9
     
-def test_stack_4(self):
+def test_stack_4():
     '''Testing the peek function of stack for a recently added element'''
     stack = Stack()
     for i in range(10):
