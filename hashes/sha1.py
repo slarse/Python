@@ -111,23 +111,12 @@ class SHA1Hash:
                  self.h[4] + e & 0xffffffff
         return '%08x%08x%08x%08x%08x' %tuple(self.h)
 
-
-class SHA1HashTest(unittest.TestCase):
-    """
-    Test class for the SHA1Hash class. Inherits the TestCase class from unittest
-    """
-    def testMatchHashes(self):
-        msg = bytes('Test String', 'utf-8')
-        self.assertEqual(SHA1Hash(msg).final_hash(), hashlib.sha1(msg).hexdigest())
-
-
 def main():
     """
     Provides option 'string' or 'file' to take input and prints the calculated SHA1 hash.
     unittest.main() has been commented because we probably dont want to run
     the test each time.
     """
-    # unittest.main()
     parser = argparse.ArgumentParser(description='Process some strings or files')
     parser.add_argument('--string', dest='input_string',
                         default='Hello World!! Welcome to Cryptography',
