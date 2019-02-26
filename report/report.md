@@ -44,7 +44,101 @@ because we thought we could do some real good here.
 
 ## The refactoring carried out
 
-(Link to) a UML diagram and its description
+### Making the modules importable
+The scope of the refactoring blew completely out of proportion. To even be able
+to start refactoring the tests, we realized that we needed to make the modules
+importable from the root of the project in at least one version of Python. This
+essentially consisted of three things:
+
+1. Move top level code (that execute on import) into main functions.
+    - This was important much because a lot of the top level code used blocking
+    I/O, which caused any unit test to just lock up.
+2. Let any functions that used that glodal state take the values as parameters instead.
+3. Creating a `setup.py` which allowed for the whole thing to be installed.
+
+As there was no automated testing at all (becaues many of the modules simply
+could not be imported), we had to figure out a way to get some kind of
+consistent indication that what we were doing had an effect. We came up with the
+idea of _import testing_. This consisted of iterating over all of the
+directories, finding each Python module, generating it's fully qualified name
+and then trying to dynamically import it.
+[The import test can be found here](https://github.com/slarse/Python/blob/refactor_packaged/tests/test_imports.py).
+Just making the modules importable seemed like a harmless enough task to carry
+out withou proper test coverage, but it turned out to be a bit more complicated
+than we thought in some cases. The UML-like image below shows what a part of the
+`graphs` package looked like befor making it importable. Note that, as we did
+not have many classes to deal with, we have modeled each Python module as a UML
+class, where fields represent global state (top level code), and methods
+represent top-level functions.
+
+![Before packaging](diagrams/before_packaging.png)
+
+Note how all of the modules have global state. To make the modules testable, the
+global state needs to be removed, or else one test will affect the next. The
+below, again UML-like, image shows the same part of the `graphs` package, with
+the whole spectrum of typical changes that we had to make to modules.
+
+![After packaging](diagrams/after_packaging.png)
+
+`minimum_spanning_tree_prims.py` shows the ideal scenario, and the one we were
+naively expecting to hold true most of the time. The only thing that has had to
+happen is that global state has been moved into a `main` function, while the
+primary function of the module has been unchanged.
+`minimum_spanning_tree_kruskal.py` and `a_star.py` show the most common
+scenario: much global state has been moved into a `main` function, and the
+primary function of the module has had a single parameter added to it. Both of
+these examples are fairly low-risk, as the most likely error was to forget to add
+a previously global variable to the parameter list. As `flake8` running on
+Travis would flag any undefined variable
+([for example this one](https://travis-ci.com/slarse/Python/jobs/179441422)),
+we felt fairly confident this would not be a problem. The `scc_kosaraju.py`
+file shows a worst-case example of what we had to do to get rid of global state.
+The functions in the module have access to a _lot_ of global state that needs to
+be added to the parameter lists. These were far and few between, but did crop up
+from time to time. What made this particular module even worse was that not all
+of the explicitly declared global state in each function was even used. However,
+rectifying that felt out of scope for just making the module importable.
+
+In summary, we managed to make all of the modules importable in Python 3, but
+can not be certain we did not break any functionality along the way because of
+the non-existent test coverage for many parts. We opened an
+[issue about it here](https://github.com/TheAlgorithms/Python/issues/708),
+and subsequently [a PR here](https://github.com/TheAlgorithms/Python/pull/714).
+
+### Actually getting to the point: moving tests
+Tests were spread about the initial project in various forms. There is no good
+way to show this with a diagram (although we tried, see below), but we will
+attempt to describe the process. There were essentially three types of tests
+strewn about the project:
+
+1. Actual unit tests.
+    - These were far and few between, and translation to `pytest` was trivial.
+2. Doctests.
+    - These were quite numerous in some packages, especially in the
+    [`sorts` package](https://github.com/slarse/Python/tree/master/sorts)
+3. Just running code and printing the results.
+    - These can be considered tests of sorts, but they are not automated in the
+      least.
+
+Please see the
+[Existing test cases](#existing-test-cases-relating-to-refactored-code) section for more
+details on the moved tests.
+
+### Before and after: the big picture
+As we touched so many modules, it was infeasible to manually create diagrams of
+everything. What we turned to was to write a script that creates overarching
+diagrams of the whole architecture by parsing the directory structure into a
+tree, and recursively putting together a graphviz graph of the packages and
+modules. Each module was also inspected for global variables and top-level
+functions using the abstract syntax tree. You can view the
+[before refactor here](diagrams/before_all.pdf), and the
+[after refactor here](diagrams/after_all.pdf). Note that the PDFs are enormous,
+and you will need to download and view them with some competent software to make
+sense of it. The biggest differences between the before and after is that most
+global state has been removed, and that the after has our test suite in it. The
+test suite mirrors the packages, so tests for the `sorts` package are in
+`tests/sorts`, etc.
+
 
 ## Test logs
 
