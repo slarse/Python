@@ -67,7 +67,7 @@ def assemble_transformation(ops, i, j):
 			seq.append(ops[i][j])
 			return seq
 
-def main(sequence,string):
+def replace(sequence,string):
 	i = 0
 	cost = 0
 	with open('min_cost.txt', 'w') as file:
@@ -113,13 +113,16 @@ def main(sequence,string):
 		file.write('\r\nMinimum cost: ' + str(cost))
 		return cost
 
-if __name__ == '__main__':
+def main():
 	_, operations = compute_transform_tables('Python', 'Algorithms', -1, 1, 2, 2)
-
 	m = len(operations)
 	n = len(operations[0])
 	sequence = assemble_transformation(operations, m-1, n-1)
 	string = list('Python')
-	main(sequence,string)
+	replace(sequence,string)
+
+
+if __name__ == '__main__':
+	main()
 
 	
