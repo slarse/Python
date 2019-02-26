@@ -1,0 +1,12 @@
+digraph G {
+    node [shape=record];
+
+    subgraph cluster_graphs {
+        label="graphs";
+        "...";
+        "scc_kosaraju.py" [label="{scc_kosaraju.py|\l|+ dfs(g : list, r : list, scc : list, component : list, visit : list, stack : list, u)\l+ dfs2(g, r, scc, component, visit, stack, u)\l+ kosaraju(g, r, scc, component, visit, stack, n)\l+ main()\l}"];
+        "a_star.py" [label="{a_star.py|\l|+ search(grid, init, goal, cost, heuristic, delta)\l+ main()\l}"];
+        "minimum_spanning_tree_kruskal.py" [label="{minimum_spanning_tree_kruskal.py|\l|+ find_parent(parent : list, i : int) : int\l+ main() : None\l}"];
+        "minimum_spanning_tree_prims.py" [label="{minimum_spanning_tree_prims.py|\l|+ PrimsAlgorithm(l : list) : list\l+ main() : None\l}"];
+    }
+}
