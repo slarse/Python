@@ -42,6 +42,9 @@ because we thought we could do some real good here.
 
 ## Existing test cases relating to refactored code
 
+* [data_structures_analysis](./data_structures_analysis.md)
+* [strings_analysis](./strings_analysis.md)
+
 ## The refactoring carried out
 
 (Link to) a UML diagram and its description
