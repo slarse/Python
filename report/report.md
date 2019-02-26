@@ -190,20 +190,63 @@ including our new tests is 46 %.
 For each team member, how much time was spent in
 
 1. plenary discussions/meetings;
-
 2. discussions within parts of the group;
-
 3. reading documentation;
-
 4. configuration;
-
 5. analyzing code/output;
-
 6. writing documentation;
-
 7. writing code;
-
 8. running code?
+
+### Lars
+1. 12 hours
+2. 0.5 hours
+3. None
+4. 3 hours
+5. 1 hour
+6. 4 hours
+7. 6 hours
+8. 0.5 hours
+
+### Rouwayd
+1. 10 hours
+2. None
+3. None
+4. 2 hours
+5. 2 hour
+6. 5 hours
+7. 7 hours
+8. None
+
+### Martin
+1. 9.5 hours
+2. 3 hours
+3. None
+4. 1 hours
+5. 7.5 hours
+6. 3 hours
+7. 6.5 hours
+8. 1 hours
+
+### Kartik
+1. 10 hours
+2. 1 hour
+3. 0.5 hours
+4. 2.5 hours
+5.  4 hours
+6. 3 hours
+7. 7 hours
+8. 1 hour
+
+### Simon
+1. 12 hours
+2. Didn't keep track of subway Slack messaging
+3. 2 hours
+4. 4 hours
+5. 4 hours
+6. 10 hours
+7. 2 hours
+8. Who just sits and waits for code to run?
 
 ## Overall experience
 
