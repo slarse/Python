@@ -41,6 +41,7 @@ because we thought we could do some real good here.
 ## Requirements affected by functionality being refactored
 
 ## Existing test cases relating to refactored code
+* [`sorts`](sorts_analysis.md)
 
 ## The refactoring carried out
 
