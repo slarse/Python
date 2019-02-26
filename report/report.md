@@ -42,6 +42,12 @@ because we thought we could do some real good here.
 
 ## Existing test cases relating to refactored code
 
+* [arithmetic_analysis](./arithmetic_analysis.md)
+* [binary_tree](./binary_tree.md)
+* [graphs](./graphs.md)
+* [hashes](./hashes.md)
+* [other](./other.md)
+
 ## The refactoring carried out
 
 (Link to) a UML diagram and its description
