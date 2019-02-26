@@ -91,6 +91,12 @@ For each team member, how much time was spent in
 
 ## Overall experience
 
-What are your main take-aways from this project? What did you learn?
+In the assignment description, the goal of this assignment is to teach us "the complexity of refactoring in a real project." This sentence sums up the main takeaway lesson well, and, in that sense, this assignment was a success. In particular, what we planned to do turned out to involve a whole lot more unexpected work. And in the end, it was the unexpected work that took the most time.
 
-Is there something special you want to mention here?
+As with the last assignment, the corollary takeaway is that even popular repos can be slipshod and difficult to maintain. Our chosen repo this time is a very extreme example, however. This repo is extremely difficult to maintain. The repo is not a package, but rather a broad collection of algorithms and solutions for education or demonstration purposes. It is expected, then, for the contents to be at least inconsistent. The problem, however, is that the solutions are mostly untested, or at least tested in an idiosyncratic manner. Consequently, in constructing a centralized testing suite for the repo, we ended up on some level standardizing the entire project.
+
+Note that although one of the most starred python repos on Github, and although comprising about 250 modules, our chosen repo has only about a couple maintainers. As our work revealed, several to most of the modules don't run in any useful way or are downright broken. Unfortunately, we do not have time to fix them all. So, another main takeaway is just how important robust and automated testing really is for the long term.
+
+Another takeaway that somewhat mirrors the last assignment is some frustration with the assignment. While more clear and centralized in its tasks compared to the previous assignment, this assignment nevertheless has some problems.
+
+It seems to us that either the time frame needs to be extended or the project selection requirements need to be relaxed. Probably both. It is incredibly difficult to find a project that satisfies the requirements, that has an already open refactor issue that is not being worked on, and, on top of all that, that can be gotten into quickly. It was said that it is OK to choose a smaller project, but 10k lines seems far from small, especially for the more concise languages. We consider ourselves very lucky in finding a relatively manageable project. For at least the past week, however, many of us have had to treat this course as if it were a full time job.
