@@ -69,6 +69,12 @@ follows:
     - 33 ModuleNotFoundErrors
   - 22 % code coverage
 
+After our refactoring, all modules can be imported in Python 3. We decided to
+drop support for Python 2 due to lack of time. In the test logs produced after
+our refactoring, we also decided to not add a `thealgorithms` top-level
+directory. The test logs can be found [here](after/py3_cov). The code coverage
+including our new tests is 46 %.
+
 ## Effort spent
 
 For each team member, how much time was spent in

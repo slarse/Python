@@ -1,0 +1,709 @@
+============================= test session starts ==============================
+platform darwin -- Python 3.7.2, pytest-4.3.0, py-1.8.0, pluggy-0.8.1
+rootdir: /private/tmp/tmp/Python, inifile:
+plugins: timeout-1.3.3, cov-2.6.1
+collected 551 items
+
+tests/test_imports.py .................................................. [  9%]
+........................................................................ [ 22%]
+........................................................................ [ 35%]
+..........................................................               [ 45%]
+tests/analysis/test_psnr.py .                                            [ 45%]
+tests/arithmetic_analysis/test_bisection.py .                            [ 46%]
+tests/arithmetic_analysis/test_intersection.py .                         [ 46%]
+tests/arithmetic_analysis/test_lu_decomposition.py .                     [ 46%]
+tests/arithmetic_analysis/test_newton_method.py .                        [ 46%]
+tests/arithmetic_analysis/test_newton_raphson_method.py FFFF             [ 47%]
+tests/binary_tree/test_basic_binary_tree.py ..                           [ 47%]
+tests/ciphers/test_affine_cipher.py .                                    [ 47%]
+tests/ciphers/test_base64_cipher.py .                                    [ 48%]
+tests/ciphers/test_brute_force_caesar_cipher.py .                        [ 48%]
+tests/ciphers/test_onepad_cipher.py .                                    [ 48%]
+tests/ciphers/test_rabin_miller.py .                                     [ 48%]
+tests/ciphers/test_rot13.py .                                            [ 48%]
+tests/ciphers/test_simple_substitution_cipher.py ..                      [ 49%]
+tests/ciphers/test_transposition_cipher.py ..                            [ 49%]
+tests/ciphers/test_vigenere_cipher.py ..                                 [ 49%]
+tests/ciphers/test_xor_cipher.py ....                                    [ 50%]
+tests/data_structures/binary_tree/test_AVLtree.py ..                     [ 50%]
+tests/data_structures/binary_tree/test_binary_search_tree.py .....       [ 51%]
+tests/data_structures/binary_tree/test_fenwick_tree.py ..                [ 52%]
+tests/data_structures/binary_tree/test_lazy_segment_tree.py ....         [ 52%]
+tests/data_structures/binary_tree/test_segment_tree.py ..                [ 53%]
+tests/data_structures/graph/test_bellman_ford.py .                       [ 53%]
+tests/data_structures/graph/test_breadth_first_search.py .               [ 53%]
+tests/data_structures/graph/test_data_structures_dijkstra.py .           [ 53%]
+tests/data_structures/graph/test_data_structures_floyd_warshall.py .     [ 54%]
+tests/data_structures/graph/test_depth_first_search.py .                 [ 54%]
+tests/data_structures/graph/test_dijkstra_algorithm.py .                 [ 54%]
+tests/data_structures/graph/test_graph.py .                              [ 54%]
+tests/data_structures/graph/test_graph_list.py .                         [ 54%]
+tests/data_structures/graph/test_graph_matrix.py .                       [ 54%]
+tests/data_structures/heap/test_heap.py .                                [ 55%]
+tests/data_structures/stacks/test_balanced_parentheses.py ...            [ 55%]
+tests/data_structures/stacks/test_infix_to_postfix_conversion.py .       [ 55%]
+tests/data_structures/stacks/test_stack.py .....                         [ 56%]
+tests/data_structures/stacks/test_stock_span_problem.py .                [ 56%]
+tests/data_structures/trie/test_trie.py ..                               [ 57%]
+tests/data_structures/union_find/test_union_find.py ....                 [ 58%]
+tests/dynamic_programming/test_FractionalKnapsack.py .                   [ 58%]
+tests/dynamic_programming/test_abbreviation.py .                         [ 58%]
+tests/dynamic_programming/test_coin_change.py .                          [ 58%]
+tests/dynamic_programming/test_edit_distance.py .                        [ 58%]
+tests/dynamic_programming/test_fastfibonacci.py ..                       [ 59%]
+tests/dynamic_programming/test_fibonacci.py .                            [ 59%]
+tests/dynamic_programming/test_floyd_warshall.py .                       [ 59%]
+tests/dynamic_programming/test_integer_partition.py .                    [ 59%]
+tests/dynamic_programming/test_knapsack.py .                             [ 59%]
+tests/dynamic_programming/test_longest_common_subsequence.py .           [ 60%]
+tests/dynamic_programming/test_longest_increasing_subsequence.py ..      [ 60%]
+tests/dynamic_programming/test_longest_increasing_subsequence_nlogn.py . [ 60%]
+                                                                         [ 60%]
+tests/dynamic_programming/test_longest_sub_array.py .                    [ 60%]
+tests/dynamic_programming/test_matrix_chain_order.py .                   [ 60%]
+tests/dynamic_programming/test_minimum_partition.py .                    [ 61%]
+tests/dynamic_programming/test_rod_cutting.py .                          [ 61%]
+tests/graphs/test_articulation_points.py .                               [ 61%]
+tests/graphs/test_bfs.py .                                               [ 61%]
+tests/graphs/test_check_bipartite_graph_bfs.py .                         [ 61%]
+tests/graphs/test_dfs.py .                                               [ 62%]
+tests/graphs/test_finding_bridges.py .                                   [ 62%]
+tests/graphs/test_graphs_dijkstra.py .                                   [ 62%]
+tests/graphs/test_kahns_algorithm_long.py .                              [ 62%]
+tests/graphs/test_kahns_algorithm_topo.py .                              [ 62%]
+tests/graphs/test_tarjans_scc.py .                                       [ 62%]
+tests/hashes/test_md5.py ..                                              [ 63%]
+tests/hashes/test_sha1.py .                                              [ 63%]
+tests/maths/test_FindMax.py .                                            [ 63%]
+tests/maths/test_PrimeCheck.py ...                                       [ 64%]
+tests/maths/test_abs.py .                                                [ 64%]
+tests/maths/test_absMax.py .                                             [ 64%]
+tests/maths/test_absMin.py .                                             [ 64%]
+tests/maths/test_average.py .                                            [ 64%]
+tests/maths/test_basic_maths.py ....                                     [ 65%]
+tests/maths/test_fibonacci_sequence_recursion.py ..                      [ 66%]
+tests/maths/test_findMin.py .                                            [ 66%]
+tests/maths/test_find_hcf.py .                                           [ 66%]
+tests/maths/test_find_lcm.py .                                           [ 66%]
+tests/maths/test_greater_common_divisor.py .                             [ 66%]
+tests/maths/test_modular_exponential.py .                                [ 66%]
+tests/maths/test_newton_raphson.py ..                                    [ 67%]
+tests/maths/test_segmented_sieve.py .                                    [ 67%]
+tests/maths/test_sieve_of_eratosthenes.py .                              [ 67%]
+tests/maths/test_simpson_rule.py .                                       [ 67%]
+tests/maths/test_three_n_plus_one.py ..                                  [ 68%]
+tests/maths/test_trapezoidal_rule.py .                                   [ 68%]
+tests/matrix/test_matrix_multiplication_addition.py ..                   [ 68%]
+tests/networking_flow/test_ford_fulkerson.py .                           [ 68%]
+tests/networking_flow/test_minimum_cut.py .                              [ 69%]
+tests/other/test_detecting_english_programmatically.py ..                [ 69%]
+tests/other/test_euclidean_gcd.py ...                                    [ 70%]
+tests/other/test_fischer_yates_shuffle.py ..                             [ 70%]
+tests/other/test_frequency_finder.py .                                   [ 70%]
+tests/other/test_linear_congruential_generator.py .                      [ 70%]
+tests/other/test_palindrome.py ..                                        [ 71%]
+tests/other/test_tower_of_hanoi.py .                                     [ 71%]
+tests/searches/test_binary_search.py ........                            [ 72%]
+tests/searches/test_interpolation_search.py ..                           [ 73%]
+tests/searches/test_jump_search.py .                                     [ 73%]
+tests/searches/test_linear_search.py ..                                  [ 73%]
+tests/searches/test_sentinel_linear_search.py ..                         [ 74%]
+tests/searches/test_tabu_search.py ....                                  [ 74%]
+tests/sorts/test_bogosort.py ...                                         [ 75%]
+tests/sorts/test_in_place_sorts.py .........F...........F...........F... [ 82%]
+....................F...........F..                                      [ 88%]
+tests/sorts/test_out_of_place_sorts.py ................................. [ 94%]
+......F......F..                                                         [ 97%]
+tests/strings/test_knuth_morris_pratt.py .....                           [ 98%]
+tests/strings/test_levenshtein_distance.py ..                            [ 98%]
+tests/strings/test_manacher.py ..                                        [ 98%]
+tests/strings/test_min_cost_string_conversion.py .                       [ 99%]
+tests/strings/test_rabin_karp.py ....                                    [ 99%]
+tests/test_dynamic_programming/test_dynamic_programming_floyd_warshall.py . [100%]
+
+=================================== FAILURES ===================================
+_________________________ test_trigonometric_function __________________________
+
+    def test_trigonometric_function():
+>       assert NewtonRaphson("sin(x)", 2) == approx(2)
+
+tests/arithmetic_analysis/test_newton_raphson_method.py:8: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+arithmetic_analysis/newton_raphson_method.py:10: in NewtonRaphson
+    c = Decimal(a) - ( Decimal(eval(func)) / Decimal(eval(str(diff(func)))) )
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+>   ???
+E   NameError: name 'sin' is not defined
+
+<string>:1: NameError
+_____________________________ test_polynomial_root _____________________________
+
+    def test_polynomial_root():
+>       x = NewtonRaphson("x**2 - 5*x + 2", 0.4)
+
+tests/arithmetic_analysis/test_newton_raphson_method.py:12: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+arithmetic_analysis/newton_raphson_method.py:10: in NewtonRaphson
+    c = Decimal(a) - ( Decimal(eval(func)) / Decimal(eval(str(diff(func)))) )
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+>   ???
+E   NameError: name 'x' is not defined
+
+<string>:1: NameError
+____________________________ test_square_root_five _____________________________
+
+    def test_square_root_five():
+>       assert NewtonRaphson("x**2 - 5", 0.1) == approx(sqrt(5))
+
+tests/arithmetic_analysis/test_newton_raphson_method.py:19: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+arithmetic_analysis/newton_raphson_method.py:10: in NewtonRaphson
+    c = Decimal(a) - ( Decimal(eval(func)) / Decimal(eval(str(diff(func)))) )
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+>   ???
+E   NameError: name 'x' is not defined
+
+<string>:1: NameError
+____________________________ test_exponential_root _____________________________
+
+    def test_exponential_root():
+>       assert NewtonRaphson("exp(x) - 1", 0) == approx(0)
+
+tests/arithmetic_analysis/test_newton_raphson_method.py:23: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+arithmetic_analysis/newton_raphson_method.py:10: in NewtonRaphson
+    c = Decimal(a) - ( Decimal(eval(func)) / Decimal(eval(str(diff(func)))) )
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+>   ???
+E   NameError: name 'exp' is not defined
+
+<string>:1: NameError
+_______________ TestInPlaceSort.test_sort_random_list[radixsort] _______________
+
+sort = <function radixsort at 0x104b55b70>
+randlist = <function randlist.<locals>._randlist at 0x12fa52a60>
+
+    @staticmethod
+    def test_sort_random_list(sort, randlist):
+        """Test sorting a list with random elements in random order."""
+        lst = randlist(num_elems=NUM_ELEMENTS, min_=MIN, max_=MAX)
+        expected = list(lst)
+    
+        sort(lst)
+    
+>       assert lst == sorted(expected)
+E       assert [1, 1, 1, 1, 2, 3, ...] == [-166, -166, -165..., -165, -165, ...]
+E         At index 0 diff: 1 != -166
+E         Use -v to get the full diff
+
+tests/sorts/test_in_place_sorts.py:83: AssertionError
+_______________ TestInPlaceSort.test_sort_sorted_list[radixsort] _______________
+
+sort = <function radixsort at 0x104b55b70>
+randlist = <function randlist.<locals>._randlist at 0x12fa52730>
+
+    @staticmethod
+    def test_sort_sorted_list(sort, randlist):
+        """Test sorting a list of random elements which is already sorted in
+        ascending order.
+        """
+        lst = sorted(randlist(num_elems=NUM_ELEMENTS, min_=MIN, max_=MAX))
+        expected = list(lst)
+    
+        sort(lst)
+    
+>       assert lst == expected
+E       assert [1, 1, 1, 1, 2, 3, ...] == [-166, -166, -165..., -165, -165, ...]
+E         At index 0 diff: 1 != -166
+E         Use -v to get the full diff
+
+tests/sorts/test_in_place_sorts.py:95: AssertionError
+______________ TestInPlaceSort.test_sort_reversed_list[radixsort] ______________
+
+sort = <function radixsort at 0x104b55b70>
+randlist = <function randlist.<locals>._randlist at 0x12fa52a60>
+
+    @staticmethod
+    def test_sort_reversed_list(sort, randlist):
+        """Test sorting a list of random elements which is sorted in descending
+        order (reversed).
+        """
+        lst = list(reversed(randlist(num_elems=NUM_ELEMENTS, min_=MIN, max_=MAX)))
+        expected = sorted(lst)
+    
+        sort(lst)
+    
+>       assert lst == expected
+E       assert [1, 1, 1, 1, 2, 3, ...] == [-166, -166, -165..., -165, -165, ...]
+E         At index 0 diff: 1 != -166
+E         Use -v to get the full diff
+
+tests/sorts/test_in_place_sorts.py:107: AssertionError
+____________ TestInPlaceSort.test_sort_negative_numbers[radixsort] _____________
+
+sort = <function radixsort at 0x104b55b70>
+randlist = <function randlist.<locals>._randlist at 0x12fa52b70>
+
+    @staticmethod
+    def test_sort_negative_numbers(sort, randlist):
+        """Test sorting a list containing only negative numbers.
+    
+        NOTE: LEGACY TEST
+        At the time of writing this, I don't see why this test would be
+        important, but it was frequent in the original doctests that this test
+        suite replaces, so we keep it. It can very likely be removed with
+        negligible impact on test performance.
+        """
+        lst = randlist(num_elems=NUM_ELEMENTS, min_=MIN, max_=0)
+        expected = sorted(lst)
+    
+        sort(lst)
+    
+>       assert lst == expected
+E       assert [-104, -84, -...12, -146, ...] == [-166, -166, -...66, -166, ...]
+E         At index 0 diff: -104 != -166
+E         Use -v to get the full diff
+
+tests/sorts/test_in_place_sorts.py:135: AssertionError
+_______________ TestInPlaceSort.test_sort_empty_list[radixsort] ________________
+
+sort = <function radixsort at 0x104b55b70>
+
+    @staticmethod
+    def test_sort_empty_list(sort):
+        """Test sorting an empty list."""
+        empty_list = []
+>       sort(empty_list)
+
+tests/sorts/test_in_place_sorts.py:141: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+lst = []
+
+    def radixsort(lst):
+        RADIX = 10
+        placement = 1
+    
+        # get the maximum number
+>       max_digit = max(lst)
+E       ValueError: max() arg is an empty sequence
+
+sorts/radix_sort.py:6: ValueError
+____________ TestOutOfPlaceSort.test_sort_negative_numbers[timsort] ____________
+
+sort = <function timsort at 0x11395ae18>
+randlist = <function randlist.<locals>._randlist at 0x12fa52f28>
+
+    @staticmethod
+    def test_sort_negative_numbers(sort, randlist):
+        """Test sorting a list containing only negative numbers.
+    
+        NOTE: LEGACY TEST
+        At the time of writing this, I don't see why this test would be
+        important, but it was frequent in the original doctests that this test
+        suite replaces, so we keep it. It can very likely be removed with
+        negligible impact on test performance.
+        """
+        lst = randlist(num_elems=NUM_ELEMENTS, min_=MIN, max_=0)
+        expected = sorted(lst)
+    
+        actual = sort(lst)
+    
+>       assert actual == expected
+E       assert [-166, -166, ...64, -164, ...] == [-166, -166, -...66, -166, ...]
+E         At index 3 diff: -165 != -166
+E         Right contains more items, first extra item: -36
+E         Use -v to get the full diff
+
+tests/sorts/test_out_of_place_sorts.py:137: AssertionError
+_______________ TestOutOfPlaceSort.test_sort_empty_list[timsort] _______________
+
+sort = <function timsort at 0x11395ae18>
+
+    @staticmethod
+    def test_sort_empty_list(sort):
+        """Test sorting an empty list."""
+        empty_list = []
+>       actual = sort(empty_list)
+
+tests/sorts/test_out_of_place_sorts.py:143: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+lst = []
+
+    def timsort(lst):
+        runs, sorted_runs = [], []
+        length = len(lst)
+>       new_run = [lst[0]]
+E       IndexError: list index out of range
+
+sorts/timsort.py:47: IndexError
+=============================== warnings summary ===============================
+tests/test_imports.py::test_import_module[machine_learning.k_means_clust]
+tests/test_imports.py::test_import_module[machine_learning.k_means_clust]
+tests/test_imports.py::test_import_module[machine_learning.k_means_clust]
+tests/test_imports.py::test_import_module[dynamic_programming.k_means_clustering_tensorflow]
+  /Users/Lasse/.local/share/virtualenvs/Python-mNYC8ErP/lib/python3.7/importlib/_bootstrap.py:219: RuntimeWarning: numpy.ufunc size changed, may indicate binary incompatibility. Expected 192 from C header, got 216 from PyObject
+    return f(*args, **kwds)
+
+tests/test_imports.py::test_import_module[machine_learning.k_means_clust]
+tests/test_imports.py::test_import_module[machine_learning.k_means_clust]
+tests/test_imports.py::test_import_module[machine_learning.logistic_regression]
+tests/test_imports.py::test_import_module[machine_learning.Random_Forest_Regression.random_forest_regression]
+tests/test_imports.py::test_import_module[dynamic_programming.k_means_clustering_tensorflow]
+  /Users/Lasse/.local/share/virtualenvs/Python-mNYC8ErP/lib/python3.7/importlib/_bootstrap.py:219: RuntimeWarning: numpy.ufunc size changed, may indicate binary incompatibility. Expected 216, got 192
+    return f(*args, **kwds)
+
+tests/test_imports.py::test_import_module[dynamic_programming.k_means_clustering_tensorflow]
+  /Users/Lasse/.local/share/virtualenvs/Python-mNYC8ErP/lib/python3.7/site-packages/google/protobuf/internal/api_implementation.py:154: DeprecationWarning: Using or importing the ABCs from 'collections' instead of from 'collections.abc' is deprecated, and in 3.8 it will stop working
+    from google.protobuf.pyext import _message
+
+tests/test_imports.py::test_import_module[dynamic_programming.k_means_clustering_tensorflow]
+  /Users/Lasse/.local/share/virtualenvs/Python-mNYC8ErP/lib/python3.7/site-packages/google/protobuf/internal/containers.py:182: DeprecationWarning: Using or importing the ABCs from 'collections' instead of from 'collections.abc' is deprecated, and in 3.8 it will stop working
+    MutableMapping = collections.MutableMapping
+
+tests/test_imports.py::test_import_module[dynamic_programming.k_means_clustering_tensorflow]
+  /Users/Lasse/.local/share/virtualenvs/Python-mNYC8ErP/lib/python3.7/site-packages/tensorflow/python/util/nest.py:823: DeprecationWarning: Using or importing the ABCs from 'collections' instead of from 'collections.abc' is deprecated, and in 3.8 it will stop working
+    _pywrap_tensorflow.RegisterType("Mapping", _collections.Mapping)
+
+tests/test_imports.py::test_import_module[dynamic_programming.k_means_clustering_tensorflow]
+  /Users/Lasse/.local/share/virtualenvs/Python-mNYC8ErP/lib/python3.7/site-packages/tensorflow/python/util/nest.py:824: DeprecationWarning: Using or importing the ABCs from 'collections' instead of from 'collections.abc' is deprecated, and in 3.8 it will stop working
+    _pywrap_tensorflow.RegisterType("Sequence", _collections.Sequence)
+
+tests/test_imports.py::test_import_module[dynamic_programming.k_means_clustering_tensorflow]
+  /Users/Lasse/.local/share/virtualenvs/Python-mNYC8ErP/lib/python3.7/site-packages/tensorflow/python/training/checkpointable/util.py:448: DeprecationWarning: Using or importing the ABCs from 'collections' instead of from 'collections.abc' is deprecated, and in 3.8 it will stop working
+    class _ObjectIdentitySet(collections.MutableSet):
+
+-- Docs: https://docs.pytest.org/en/latest/warnings.html
+
+---------- coverage: platform darwin, python 3.7.2-final-0 -----------
+Name                                                                            Stmts   Miss Branch BrPart  Cover
+-----------------------------------------------------------------------------------------------------------------
+arithmetic_analysis/__init__.py                                                     0      0      0      0   100%
+arithmetic_analysis/bisection.py                                                   26      7     14      5    70%
+arithmetic_analysis/intersection.py                                                16      2      4      1    85%
+arithmetic_analysis/lu_decomposition.py                                            27      7     14      3    76%
+arithmetic_analysis/newton_method.py                                               15      2      4      1    84%
+arithmetic_analysis/newton_raphson_method.py                                       15      8      4      1    42%
+binary_tree/__init__.py                                                             0      0      0      0   100%
+binary_tree/basic_binary_tree.py                                                   35     13     12      2    68%
+boolean_algebra/__init__.py                                                         0      0      0      0   100%
+boolean_algebra/quine_mc_cluskey.py                                               101     93     70      1     5%
+ciphers/__init__.py                                                                 0      0      0      0   100%
+ciphers/affine_cipher.py                                                           59     33     24      6    41%
+ciphers/base16.py                                                                   9      6      2      1    36%
+ciphers/base32.py                                                                   9      6      2      1    36%
+ciphers/base64_cipher.py                                                           45      6     18      4    81%
+ciphers/base85.py                                                                   9      6      2      1    36%
+ciphers/brute_force_caesar_cipher.py                                               22      6     10      1    78%
+ciphers/caesar_cipher.py                                                           59     53     30      1     8%
+ciphers/cryptomath_module.py                                                       13      8      6      0    37%
+ciphers/elgamal_key_generator.py                                                   41     31      8      1    22%
+ciphers/hill_cipher.py                                                             84     68     36      5    18%
+ciphers/onepad_cipher.py                                                           24      3     10      1    88%
+ciphers/playfair_cipher.py                                                         63     56     32      0     7%
+ciphers/rabin_miller.py                                                            38      5     22      3    87%
+ciphers/rot13.py                                                                   18      9      8      2    50%
+ciphers/rsa_cipher.py                                                              94     80     34      1    12%
+ciphers/rsa_key_generator.py                                                       37     30      6      1    19%
+ciphers/simple_substitution_cipher.py                                              46     21     16      1    55%
+ciphers/transposition_cipher.py                                                    36     11     14      1    68%
+ciphers/transposition_cipher_encrypt_decrypt_file.py                               31     26     12      1    14%
+ciphers/vigenere_cipher.py                                                         41     12     20      3    69%
+ciphers/xor_cipher.py                                                              59      8     20      4    85%
+data_structures/__init__.py                                                         0      0      0      0   100%
+data_structures/arrays.py                                                           3      0      0      0   100%
+data_structures/avl.py                                                            121     55     38      5    50%
+data_structures/binary_tree/AVLtree.py                                            198     32     64      8    82%
+data_structures/binary_tree/__init__.py                                             0      0      0      0   100%
+data_structures/binary_tree/binary_search_tree.py                                 121     14     54      9    85%
+data_structures/binary_tree/fenwick_tree.py                                        25      9      8      1    70%
+data_structures/binary_tree/lazy_segment_tree.py                                   77     29     30      3    64%
+data_structures/binary_tree/segment_tree.py                                        59     14     14      1    77%
+data_structures/graph/__init__.py                                                   0      0      0      0   100%
+data_structures/graph/bellman_ford.py                                              41     15     24      2    65%
+data_structures/graph/breadth_first_search.py                                      35     12     14      1    65%
+data_structures/graph/depth_first_search.py                                        35     13     16      1    65%
+data_structures/graph/dijkstra.py                                                  42     13     26      1    71%
+data_structures/graph/dijkstra_algorithm.py                                       131     24     44      6    81%
+data_structures/graph/even_tree.py                                                 25     20     10      1    17%
+data_structures/graph/floyd_warshall.py                                            34     13     28      2    66%
+data_structures/graph/graph.py                                                     24     14      8      1    41%
+data_structures/graph/graph_list.py                                                21     12      8      1    41%
+data_structures/graph/graph_matrix.py                                              21     11      8      1    45%
+data_structures/hashing/__init__.py                                                 4      1      0      0    75%
+data_structures/hashing/double_hash.py                                             18     11      4      0    32%
+data_structures/hashing/hash_table.py                                              54     42     18      0    17%
+data_structures/hashing/hash_table_with_linked_list.py                             15      8      4      0    37%
+data_structures/hashing/number_theory/__init__.py                                   0      0      0      0   100%
+data_structures/hashing/number_theory/prime_numbers.py                             16     13     10      0    12%
+data_structures/hashing/quadratic_probing.py                                       13      9      4      0    24%
+data_structures/heap/__init__.py                                                    0      0      0      0   100%
+data_structures/heap/heap.py                                                       74     24     22      1    70%
+data_structures/linked_list/__init__.py                                            17     10      2      0    37%
+data_structures/linked_list/doubly_linked_list.py                                  55     40     12      0    22%
+data_structures/linked_list/singly_linked_list.py                                  76     62     20      1    16%
+data_structures/linked_list/swapNodes.py                                           51     43     16      1    13%
+data_structures/queue/__init__.py                                                   0      0      0      0   100%
+data_structures/queue/deqeue.py                                                    15      0      0      0   100%
+data_structures/queue/queue_on_list.py                                             24     16      2      0    31%
+data_structures/queue/queue_on_pseudo_stack.py                                     30     22      2      0    25%
+data_structures/stacks/__init__.py                                                  0      0      0      0   100%
+data_structures/stacks/balanced_parentheses.py                                     19      4     12      2    74%
+data_structures/stacks/infix_to_postfix_conversion.py                              36      5     20      3    86%
+data_structures/stacks/next.py                                                     11      0      6      0   100%
+data_structures/stacks/simple_stack.py                                             16     11      4      0    25%
+data_structures/stacks/stack.py                                                    40     16     10      4    56%
+data_structures/stacks/stock_span_problem.py                                       21      7     10      1    61%
+data_structures/trie/__init__.py                                                    0      0      0      0   100%
+data_structures/trie/trie.py                                                       26      4     14      0    80%
+data_structures/union_find/__init__.py                                              0      0      0      0   100%
+data_structures/union_find/union_find.py                                           33      4     16      3    86%
+digital_image_processing/__init__.py                                                0      0      0      0   100%
+digital_image_processing/filters/__init__.py                                        0      0      0      0   100%
+digital_image_processing/filters/median_filter.py                                  19     15      6      1    20%
+dynamic_programming/FractionalKnapsack.py                                           9      0      4      0   100%
+dynamic_programming/__init__.py                                                     0      0      0      0   100%
+dynamic_programming/abbreviation.py                                                15      1     14      1    93%
+dynamic_programming/coin_change.py                                                 11      2      6      1    82%
+dynamic_programming/edit_distance.py                                               42     17     16      3    66%
+dynamic_programming/fastfibonacci.py                                               27     10     10      1    65%
+dynamic_programming/fibonacci.py                                                   41     26     14      4    38%
+dynamic_programming/floyd_warshall.py                                              31     15     12      1    63%
+dynamic_programming/integer_partition.py                                           32     12     14      1    67%
+dynamic_programming/k_means_clustering_tensorflow.py                               45     41     18      0     6%
+dynamic_programming/knapsack.py                                                    23     13     16      1    49%
+dynamic_programming/longest_common_subsequence.py                                  23      3     12      1    89%
+dynamic_programming/longest_increasing_subsequence.py                              27      3     16      2    88%
+dynamic_programming/longest_increasing_subsequence_nlogn.py                        24      2     12      2    89%
+dynamic_programming/longest_sub_array.py                                           17      4      4      1    76%
+dynamic_programming/matrix_chain_order.py                                          31     12     16      2    66%
+dynamic_programming/max_sub_array.py                                               47     40     22      1    12%
+dynamic_programming/minimum_partition.py                                           18      0     16      2    94%
+dynamic_programming/rod_cutting.py                                                 20      1     14      1    94%
+file_transfer_protocol/__init__.py                                                  0      0      0      0   100%
+file_transfer_protocol/ftp_client_server.py                                        43     40      6      1     8%
+file_transfer_protocol/ftp_send_receive.py                                         17     12      2      1    32%
+graphs/BFS.py                                                                      16      3      8      1    83%
+graphs/DFS.py                                                                      15      3      8      1    83%
+graphs/Directed_and_Undirected_Weighted_Graph.py                                  364    332    196      0     6%
+graphs/__init__.py                                                                  0      0      0      0   100%
+graphs/a_star.py                                                                   69     65     34      1     5%
+graphs/articulation_points.py                                                      38      3     22      1    93%
+graphs/basic_graphs.py                                                            154    131    102      1     9%
+graphs/check_bipartite_graph_bfs.py                                                29      6     18      4    79%
+graphs/dijkstra.py                                                                 23      6     12      3    74%
+graphs/finding_bridges.py                                                          28      3     14      1    90%
+graphs/kahns_algorithm_long.py                                                     24      3     18      1    90%
+graphs/kahns_algorithm_topo.py                                                     30      7     20      2    78%
+graphs/minimum_spanning_tree_kruskal.py                                            27     23     16      1    12%
+graphs/minimum_spanning_tree_prims.py                                              89     84     38      1     5%
+graphs/multi_hueristic_astar.py                                                   197     52    102      7    72%
+graphs/scc_kosaraju.py                                                             38     32     22      1    12%
+graphs/tarjans_scc.py                                                              49      7     26      1    87%
+hashes/__init__.py                                                                  0      0      0      0   100%
+hashes/chaos_machine.py                                                            50     41     10      1    17%
+hashes/md5.py                                                                      87      5     30      2    94%
+hashes/sha1.py                                                                     56     11     20      2    80%
+machine_learning/Random_Forest_Classification/__init__.py                           0      0      0      0   100%
+machine_learning/Random_Forest_Classification/random_forest_classification.py      47     42      6      1    11%
+machine_learning/Random_Forest_Regression/__init__.py                               0      0      0      0   100%
+machine_learning/Random_Forest_Regression/random_forest_regression.py              21     16      2      1    26%
+machine_learning/__init__.py                                                        0      0      0      0   100%
+machine_learning/decision_tree.py                                                  77     68     32      1     9%
+machine_learning/gradient_descent.py                                               57     41     22      1    22%
+machine_learning/k_means_clust.py                                                  63     50     20      0    16%
+machine_learning/linear_regression.py                                              49     40      8      1    18%
+machine_learning/logistic_regression.py                                            45     37      6      1    18%
+machine_learning/perceptron.py                                                     60     51     22      1    12%
+machine_learning/scoring_functions.py                                              42     36      0      0    14%
+maths/FindMax.py                                                                   10      2      6      1    81%
+maths/FindMin.py                                                                   10      2      6      1    81%
+maths/PrimeCheck.py                                                                11      4      6      1    71%
+maths/__init__.py                                                                   0      0      0      0   100%
+maths/abs.py                                                                        8      2      4      1    75%
+maths/absMax.py                                                                    12      3      6      1    78%
+maths/absMin.py                                                                    12      3      6      1    78%
+maths/average.py                                                                   12      2      4      1    81%
+maths/basic_maths.py                                                               57      6     28      3    89%
+maths/fibonacci_sequence_recursion.py                                              14      7      8      1    45%
+maths/find_hcf.py                                                                  16      6     10      3    65%
+maths/find_lcm.py                                                                  14      4      4      1    72%
+maths/greater_common_divisor.py                                                    11      7      2      1    38%
+maths/modular_exponential.py                                                       15      3      8      2    78%
+maths/newton_raphson.py                                                            30     11     18      5    58%
+maths/segmented_sieve.py                                                           39      3     26      2    92%
+maths/sieve_of_eratosthenes.py                                                     22      3     14      3    83%
+maths/simpson_rule.py                                                              32      7      6      1    79%
+maths/three_n_plus_one.py                                                          17      4      8      2    76%
+maths/trapezoidal_rule.py                                                          29      7      6      1    77%
+matrix/__init__.py                                                                  0      0      0      0   100%
+matrix/matrix_multiplication_addition.py                                           30      5     12      1    86%
+networking_flow/__init__.py                                                         0      0      0      0   100%
+networking_flow/ford_fulkerson.py                                                  34      0     12      0   100%
+networking_flow/minimum_cut.py                                                     39      0     20      0   100%
+neural_network/__init__.py                                                          0      0      0      0   100%
+neural_network/bpnn.py                                                            113     93     28      1    15%
+neural_network/convolution_neural_network.py                                      195    175     46      1     9%
+neural_network/perceptron.py                                                       60     51     22      1    12%
+other/__init__.py                                                                   0      0      0      0   100%
+other/anagrams.py                                                                  23     18      8      1    19%
+other/binary_exponentiation.py                                                     17     14      8      0    12%
+other/binary_exponentiation_2.py                                                   17     14      8      0    12%
+other/detecting_english_programmatically.py                                        39      3     14      3    89%
+other/euclidean_gcd.py                                                             15      6      4      1    63%
+other/findingPrimes.py                                                             12      9     12      0    12%
+other/fischer_yates_shuffle.py                                                     16      6      4      1    65%
+other/frequency_finder.py                                                          42      3     22      2    92%
+other/game_of_life/__init__.py                                                      0      0      0      0   100%
+other/game_of_life/game_o_life.py                                                  59     47     30      1    15%
+other/linear_congruential_generator.py                                             18      4      2      1    75%
+other/nested_brackets.py                                                           20     16     12      1    16%
+other/palindrome.py                                                                21      6     10      3    71%
+other/password_generator.py                                                        24     15     10      1    29%
+other/primelib.py                                                                 190    171     74      0     7%
+other/sierpinski_triangle.py                                                       28     21      6      1    24%
+other/tower_of_hanoi.py                                                            13      3      4      1    76%
+other/two_sum.py                                                                   11      9      4      0    13%
+other/word_patterns.py                                                             29     24     10      1    15%
+project_euler/__init__.py                                                           0      0      0      0   100%
+project_euler/problem_01/__init__.py                                                0      0      0      0   100%
+project_euler/problem_01/sol1.py                                                   14     11      6      1    20%
+project_euler/problem_01/sol2.py                                                   17     14      2      1    21%
+project_euler/problem_01/sol3.py                                                   41     38     16      1     7%
+project_euler/problem_01/sol4.py                                                   22      0      4      0   100%
+project_euler/problem_01/sol5.py                                                   10      7      4      1    29%
+project_euler/problem_02/__init__.py                                                0      0      0      0   100%
+project_euler/problem_02/sol1.py                                                   17     14      6      1    17%
+project_euler/problem_02/sol2.py                                                   11      9      6      1    18%
+project_euler/problem_02/sol3.py                                                   11      9      4      1    20%
+project_euler/problem_03/__init__.py                                                0      0      0      0   100%
+project_euler/problem_03/sol1.py                                                   32     27     24      1    11%
+project_euler/problem_03/sol2.py                                                   15     12      8      1    17%
+project_euler/problem_04/__init__.py                                                0      0      0      0   100%
+project_euler/problem_04/sol1.py                                                   14     11     10      1    17%
+project_euler/problem_04/sol2.py                                                   13     10      8      1    19%
+project_euler/problem_05/__init__.py                                                0      0      0      0   100%
+project_euler/problem_05/sol1.py                                                   18     15     10      1    14%
+project_euler/problem_05/sol2.py                                                   13      8      4      1    35%
+project_euler/problem_06/__init__.py                                                0      0      0      0   100%
+project_euler/problem_06/sol1.py                                                   13      9      4      1    29%
+project_euler/problem_06/sol2.py                                                   10      6      2      1    42%
+project_euler/problem_06/sol3.py                                                   10      5      4      1    43%
+project_euler/problem_07/__init__.py                                                0      0      0      0   100%
+project_euler/problem_07/sol1.py                                                   27     22     18      1    13%
+project_euler/problem_07/sol2.py                                                   17     14     10      1    15%
+project_euler/problem_07/sol3.py                                                   18     11      8      1    31%
+project_euler/problem_08/__init__.py                                                0      0      0      0   100%
+project_euler/problem_08/sol1.py                                                   13     10      8      1    19%
+project_euler/problem_08/sol2.py                                                    6      3      4      1    40%
+project_euler/problem_09/__init__.py                                                0      0      0      0   100%
+project_euler/problem_09/sol1.py                                                   13     10     14      1    15%
+project_euler/problem_09/sol2.py                                                   14     12      8      1    14%
+project_euler/problem_09/sol3.py                                                    4      2      4      1    38%
+project_euler/problem_10/__init__.py                                                0      0      0      0   100%
+project_euler/problem_10/sol1.py                                                   28     19     14      1    24%
+project_euler/problem_10/sol2.py                                                   17     11     10      1    26%
+project_euler/problem_11/__init__.py                                                0      0      0      0   100%
+project_euler/problem_11/sol1.py                                                   30     23     16      1    17%
+project_euler/problem_11/sol2.py                                                   29     27     30      1     5%
+project_euler/problem_12/__init__.py                                                0      0      0      0   100%
+project_euler/problem_12/sol1.py                                                   25     16     10      1    29%
+project_euler/problem_12/sol2.py                                                    9      5      8      1    29%
+project_euler/problem_13/__init__.py                                                0      0      0      0   100%
+project_euler/problem_13/sol1.py                                                    9      6      4      1    31%
+project_euler/problem_14/__init__.py                                                0      0      0      0   100%
+project_euler/problem_14/sol1.py                                                   19     16     10      1    14%
+project_euler/problem_14/sol2.py                                                   13     10      8      1    19%
+project_euler/problem_15/__init__.py                                                0      0      0      0   100%
+project_euler/problem_15/sol1.py                                                   15     11      4      1    26%
+project_euler/problem_16/__init__.py                                                0      0      0      0   100%
+project_euler/problem_16/sol1.py                                                   12     10      4      1    19%
+project_euler/problem_17/__init__.py                                                0      0      0      0   100%
+project_euler/problem_17/sol1.py                                                   18     15     12      1    13%
+project_euler/problem_19/__init__.py                                                0      0      0      0   100%
+project_euler/problem_19/sol1.py                                                   24      0     14      0   100%
+project_euler/problem_20/__init__.py                                                0      0      0      0   100%
+project_euler/problem_20/sol1.py                                                   19     15      6      1    20%
+project_euler/problem_20/sol2.py                                                    5      2      4      1    44%
+project_euler/problem_21/__init__.py                                                0      0      0      0   100%
+project_euler/problem_21/sol1.py                                                   23      0     12      0   100%
+project_euler/problem_22/__init__.py                                                0      0      0      0   100%
+project_euler/problem_22/sol1.py                                                   20     17      6      1    15%
+project_euler/problem_22/sol2.py                                                   13     11      6      1    16%
+project_euler/problem_24/__init__.py                                                0      0      0      0   100%
+project_euler/problem_24/sol1.py                                                    6      3      2      1    50%
+project_euler/problem_25/__init__.py                                                0      0      0      0   100%
+project_euler/problem_25/sol1.py                                                   23     15     10      1    27%
+project_euler/problem_25/sol2.py                                                   10      0      2      0   100%
+project_euler/problem_28/__init__.py                                                0      0      0      0   100%
+project_euler/problem_28/sol1.py                                                   22     14      6      1    32%
+project_euler/problem_29/__init__.py                                                0      0      0      0   100%
+project_euler/problem_29/solution.py                                               11      9      6      1    18%
+project_euler/problem_31/__init__.py                                                0      0      0      0   100%
+project_euler/problem_31/sol1.py                                                   22      0      0      0   100%
+project_euler/problem_36/__init__.py                                                0      0      0      0   100%
+project_euler/problem_36/sol1.py                                                   18     14      8      1    19%
+project_euler/problem_40/__init__.py                                                0      0      0      0   100%
+project_euler/problem_40/sol1.py                                                   11      8      4      1    27%
+project_euler/problem_48/__init__.py                                                0      0      0      0   100%
+project_euler/problem_48/sol1.py                                                    9      0      2      0   100%
+project_euler/problem_52/__init__.py                                                0      0      0      0   100%
+project_euler/problem_52/sol1.py                                                    7      0      2      0   100%
+project_euler/problem_53/__init__.py                                                0      0      0      0   100%
+project_euler/problem_53/sol1.py                                                   14      0      6      0   100%
+project_euler/problem_76/__init__.py                                                0      0      0      0   100%
+project_euler/problem_76/sol1.py                                                   16      0     10      0   100%
+searches/__init__.py                                                                0      0      0      0   100%
+searches/binary_search.py                                                          50     13     22      1    75%
+searches/interpolation_search.py                                                   46     34     22      1    22%
+searches/jump_search.py                                                            25      4     12      4    78%
+searches/linear_search.py                                                          19      8     10      1    55%
+searches/quick_select.py                                                           24     21     10      0     9%
+searches/sentinel_linear_search.py                                                 22     12     10      1    47%
+searches/tabu_search.py                                                           110     10     48      4    91%
+searches/ternary_search.py                                                         66     54     36      1    13%
+simple_client/__init__.py                                                           0      0      0      0   100%
+simple_client/client.py                                                            11      8      2      1    31%
+simple_client/server.py                                                            16     13      4      1    20%
+sorts/BitonicSort.py                                                               30     24     14      1    16%
+sorts/__init__.py                                                                   0      0      0      0   100%
+sorts/bogosort.py                                                                  21      7     12      1    70%
+sorts/bubble_sort.py                                                               19      7     12      1    68%
+sorts/bucket_sort.py                                                               29      2     18      1    94%
+sorts/cocktail_shaker_sort.py                                                      23      8     16      1    72%
+sorts/comb_sort.py                                                                 25      7     12      1    73%
+sorts/counting_sort.py                                                             29      9     14      1    67%
+sorts/cyclesort.py                                                                 37     11     24      1    74%
+sorts/external-sort.py                                                            102     75     34      1    21%
+sorts/gnome_sort.py                                                                21      8     12      1    67%
+sorts/heap_sort.py                                                                 28      7     14      1    76%
+sorts/insertion_sort.py                                                            15      7      8      1    57%
+sorts/merge_sort.py                                                                36      7     14      1    80%
+sorts/merge_sort_fastest.py                                                        14      0      2      0   100%
+sorts/pancake_sort.py                                                               9      0      2      0   100%
+sorts/quick_sort.py                                                                17      7     10      1    63%
+sorts/quick_sort_3_partition.py                                                    29      8     12      1    73%
+sorts/radix_sort.py                                                                16      0     10      0   100%
+sorts/random_normal_distribution_quicksort.py                                      46      0      6      0   100%
+sorts/selection_sort.py                                                            18      7     10      1    64%
+sorts/shell_sort.py                                                                22      7     10      1    69%
+sorts/timsort.py                                                                   57      5     32      3    91%
+sorts/topological_sort.py                                                          18      0     10      0   100%
+sorts/tree_sort.py                                                                 33      0     16      1    98%
+strings/__init__.py                                                                 0      0      0      0   100%
+strings/knuth_morris_pratt.py                                                      26      0     14      0   100%
+strings/levenshtein_distance.py                                                    24     10     10      3    62%
+strings/manacher.py                                                                23      2     14      1    92%
+strings/min_cost_string_conversion.py                                              89     15     34      3    85%
+strings/rabin_karp.py                                                               8      0      4      0   100%
+traversals/__init__.py                                                              0      0      0      0   100%
+traversals/binary_tree_traversals.py                                              155    135     60      2    10%
+-----------------------------------------------------------------------------------------------------------------
+TOTAL                                                                            8889   4652   3766    325    46%
+
+============= 11 failed, 540 passed, 14 warnings in 27.35 seconds ==============
