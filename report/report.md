@@ -42,6 +42,17 @@ because we thought we could do some real good here.
 
 ## Existing test cases relating to refactored code
 * [`sorts`](sorts_analysis.md)
+* [maths](./maths.md)
+* [dynamic_programming](./dynamic_programming.md)
+* [matrix](./matrix.md)
+* [networking_flow](./networking_flow.md)
+* [arithmetic_analysis](./arithmetic_analysis.md)
+* [binary_tree](./binary_tree.md)
+* [graphs](./graphs.md)
+* [hashes](./hashes.md)
+* [other](./other.md)
+* [data_structures_analysis](./data_structure_analysis.md)
+* [strings_analysis](./strings_analysis.md)
 
 ## The refactoring carried out
 
