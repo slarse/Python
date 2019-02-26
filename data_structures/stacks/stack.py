@@ -52,7 +52,6 @@ class Stack(object):
 class StackOverflowError(BaseException):
     pass
 
-
 if __name__ == '__main__':
     stack = Stack()
     for i in range(10):

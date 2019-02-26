@@ -30,7 +30,8 @@ def BellmanFord(graph, V, E, src):
 				print("Negative cycle found. Solution not possible.")
 				return
 	
-	printDist(mdist, V)	
+	printDist(mdist, V)
+	return mdist	
 
 			
 

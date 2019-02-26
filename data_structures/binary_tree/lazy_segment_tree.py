@@ -72,10 +72,9 @@ class SegmentTree:
 
     def showData(self):
         showList = []
-        for i in range(1,N+1):
+        for i in range(1,self.N+1):
             showList += [self.query(1, 1, self.N, i, i)]
         print (showList)
-            
 
 if __name__ == '__main__':
     A = [1,2,-4,7,3,-5,6,11,-20,9,14,15,5,2,-8]

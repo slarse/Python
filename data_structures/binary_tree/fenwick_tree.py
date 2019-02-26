@@ -15,8 +15,8 @@ class FenwickTree:
         while (i > 0):
             ret += self.ft[i]
             i -= i & (-i)
-        return ret
-            
+        return ret       
+
 if __name__ == '__main__':
     f = FenwickTree(100)
     f.update(1,20)

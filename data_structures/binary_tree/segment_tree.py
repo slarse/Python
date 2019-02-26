@@ -4,6 +4,7 @@ import math
 class SegmentTree:
     
     def __init__(self, A):
+        self.A = A
         self.N = len(A)
         self.st = [0] * (4 * self.N) # approximate the overall size of segment tree with array N
         self.build(1, 0, self.N - 1)
@@ -16,7 +17,7 @@ class SegmentTree:
 
     def build(self, idx, l, r):
         if l == r:
-            self.st[idx] = A[l]
+            self.st[idx] = self.A[l]
         else:
             mid = (l + r) // 2
             self.build(self.left(idx), l, mid)
@@ -53,10 +54,9 @@ class SegmentTree:
 
     def showData(self):
         showList = []
-        for i in range(1,N+1):
+        for i in range(1,self.N+1):
             showList += [self.query(i, i)]
         print (showList)
-            
 
 if __name__ == '__main__':
     A = [1,2,-4,7,3,-5,6,11,-20,9,14,15,5,2,-8]
@@ -69,3 +69,4 @@ if __name__ == '__main__':
     print (segt.query(1, 15))
     segt.update(7,8,235)
     segt.showData()
+            

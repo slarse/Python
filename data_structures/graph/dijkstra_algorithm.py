@@ -165,7 +165,7 @@ class Graph:
                 print('-> ', end='')
 
         print('\nTotal cost of path: ', cost)
-
+        return cost
 
 if __name__ == '__main__':
     graph = Graph(9)
@@ -210,3 +210,4 @@ if __name__ == '__main__':
 # ----Path to reach 4 from 0----
 # 0 -> 7 -> 6 -> 5 -> 4
 # Total cost of path:  21
+

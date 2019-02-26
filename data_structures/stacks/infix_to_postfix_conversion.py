@@ -55,7 +55,6 @@ def infix_to_postfix(expression):
         postfix.append(stack.pop())
     return ' '.join(postfix)
 
-
 if __name__ == '__main__':
     expression = 'a+b*(c^d-e)^(f+g*h)-i'
 

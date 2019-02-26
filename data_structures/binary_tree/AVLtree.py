@@ -5,6 +5,7 @@ An auto-balanced binary tree!
 from __future__ import print_function
 import math
 import random
+
 class my_queue:
     def __init__(self):
         self.data = []
@@ -63,8 +64,6 @@ def my_max(a,b):
         return a
     return b
 
-
-
 def leftrotation(node):
     r'''
             A                      B
@@ -118,7 +117,6 @@ def rlrotation(node):
 def lrrotation(node):
     node.setright(leftrotation(node.getright()))
     return rightrotation(node)
-
 
 def insert_node(node,data):
     if node is None:
@@ -236,11 +234,7 @@ class AVLtree:
         print()
         print("*************************************")
         return
-    
-    def test(self):
-        getheight(None)
-        print("****")
-        self.getheight()
+
 if __name__ == "__main__":
     t = AVLtree()
     t.traversale()
@@ -254,3 +248,4 @@ if __name__ == "__main__":
     for i in l:
         t.del_node(i)
         t.traversale()
+        

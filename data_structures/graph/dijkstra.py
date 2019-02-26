@@ -33,7 +33,8 @@ def Dijkstra(graph, V, src):
 
 	
 
-	printDist(mdist, V)	
+	printDist(mdist, V)
+	return mdist	
 
 			
 

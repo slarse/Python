@@ -17,7 +17,6 @@ def balanced_parentheses(parentheses):
             stack.pop()
     return stack.is_empty()
 
-
 if __name__ == '__main__':
     examples = ['((()))', '((())', '(()))']
     print('Balanced parentheses demonstration:\n')

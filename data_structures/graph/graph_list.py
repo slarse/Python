@@ -16,8 +16,6 @@ class Graph:
                 print('%d-> '% (j + 1), end=' ')
             print(' ')
 
-
-
 if __name__ == '__main__':
     g = Graph(100)
 
@@ -29,4 +27,3 @@ if __name__ == '__main__':
 
 
     g.show()
-

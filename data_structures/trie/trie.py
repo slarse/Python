@@ -61,16 +61,3 @@ def print_words(node: TrieNode, word: str):  # noqa: E999 This syntax is Python 
     for key, value in node.nodes.items():
         print_words(value, word + key)
 
-
-def test():
-    words = ['banana', 'bananas', 'bandana', 'band', 'apple', 'all', 'beast']
-    root = TrieNode()
-    root.insert_many(words)
-    # print_words(root, '')
-    assert root.find('banana')
-    assert not root.find('bandanas')
-    assert not root.find('apps')
-    assert root.find('apple')
-
-if __name__ == '__main__':
-    test()
