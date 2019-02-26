@@ -54,6 +54,10 @@ because we thought we could do some real good here.
 * [data_structures_analysis](./data_structure_analysis.md)
 * [strings_analysis](./strings_analysis.md)
 
+* [analysis](./analysis.md)
+* [ciphers](./ciphers.md)
+* [searches](./searches.md)
+
 ## The refactoring carried out
 
 (Link to) a UML diagram and its description
