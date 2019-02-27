@@ -142,6 +142,20 @@ Please see the
 [Existing test cases](#existing-test-cases-relating-to-refactored-code) section for more
 details on the moved tests.
 
+### Our final PR
+As the scope of our work ballooned out of proportion, we decided to create a
+concise PR only for the `sorts` package.
+[The PR can be found here](https://github.com/TheAlgorithms/Python/pull/723).
+It includes both making the `sorts` package importable, and moving tests
+from the `sorts` module to the test suite. Most of these tests were doctests.
+See the [sorts test case analysis for details] on the tests themselves.
+We did this only for the generic sorting algorithms, and the "before" state
+can be seen in [this UML-like diagram](diagrams/sorts_before.png). As can
+be seen, the modules are mostly indegendent and have no external tests.
+After our refactor, [the structure looks like this](diagrams/sorts_after.png).
+All tests have been extracted into a subdirectory of a unified test suite,
+which is a first step toward solving the issue we were working on.
+
 ### Before and after: the big picture
 As we touched so many modules, it was infeasible to manually create diagrams of
 everything. What we turned to was to write a script that creates overarching

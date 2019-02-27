@@ -1,0 +1,73 @@
+digraph G {
+    ranksep=1;
+    node [shape=record];
+    subgraph cluster_tests {
+        label="tests";
+        subgraph cluster_sorts {
+            label="sorts";
+            "conftest.py" [label="{conftest.py|\l|+ randlist()\l}"];
+            "test_bogosort.py" [label="{test_bogosort.py|}"];
+            "test_out_of_place_sorts.py" [label="{test_out_of_place_sorts.py|}"];
+            "test_in_place_sorts.py" [label="{test_in_place_sorts.py|}"];
+        }
+
+        "test_out_of_place_sorts.py" -> "conftest.py";
+        "test_in_place_sorts.py" -> "conftest.py";
+    }
+
+
+    subgraph cluster_sorts {
+        label="sorts";
+        "bogosort.py" [label="{bogosort.py|\l|+ bogosort(collection)\l}"];
+        "heap_sort.py" [label="{heap_sort.py|\l|+ heapify(unsorted, index, heap_size)\l+ heap_sort(unsorted)\l}"];
+        "pancake_sort.py" [label="{pancake_sort.py|\l|+ pancakesort(arr)\l}"];
+        "insertion_sort.py" [label="{insertion_sort.py|\l|+ insertion_sort(collection)\l}"];
+        "bucket_sort.py" [label="{bucket_sort.py|+ DEFAULT_BUCKET_SIZE\l\l|+ bucketSort(myList, bucketSize)\l}"];
+        "comb_sort.py" [label="{comb_sort.py|\l|+ comb_sort(data)\l}"];
+        "__init__.py" [label="{__init__.py|\l|}"];
+        "quick_sort_3_partition.py" [label="{quick_sort_3_partition.py|\l|+ quick_sort(sorting)\l+ quick_sort_3partition(sorting, left, right)\l}"];
+        "counting_sort.py" [label="{counting_sort.py|\l|+ counting_sort(collection)\l+ counting_sort_string(string)\l}"];
+        "merge_sort_fastest.py" [label="{merge_sort_fastest.py|\l|+ merge_sort(lst)\l}"];
+        "cyclesort.py" [label="{cyclesort.py|\l|+ cycle_sort(array)\l}"];
+        "shell_sort.py" [label="{shell_sort.py|\l|+ shell_sort(collection)\l}"];
+        "merge_sort.py" [label="{merge_sort.py|\l|+ merge_sort(collection)\l}"];
+        "gnome_sort.py" [label="{gnome_sort.py|\l|+ gnome_sort(unsorted)\l}"];
+        "cocktail_shaker_sort.py" [label="{cocktail_shaker_sort.py|\l|+ cocktail_shaker_sort(unsorted)\l}"];
+        "selection_sort.py" [label="{selection_sort.py|\l|+ selection_sort(collection)\l}"];
+        "bubble_sort.py" [label="{bubble_sort.py|\l|+ bubble_sort(collection)\l}"];
+        "radix_sort.py" [label="{radix_sort.py|\l|+ radixsort(lst)\l}"];
+        "quick_sort.py" [label="{quick_sort.py|\l|+ quick_sort(ARRAY)\l}"];
+        "timsort.py" [label="{timsort.py|\l|+ binary_search(lst, item, start, end)\l+ insertion_sort(lst)\l+ merge(left, right)\l+ timsort(lst)\l+ main()\l}"];
+        "tree_sort.py" [label="{tree_sort.py|\l|+ inorder(root, res)\l+ treesort(arr)\l}"];
+    }
+
+    "insertion_sort.py" -> "bucket_sort.py" [dir=back];
+
+    "test_bogosort.py" -> "bogosort.py";
+    "test_in_place_sorts.py" -> "insertion_sort.py";
+    "test_in_place_sorts.py" -> "bubble_sort.py";
+    "test_in_place_sorts.py" -> "cocktail_shaker_sort.py";
+    "test_in_place_sorts.py" -> "comb_sort.py";
+    "test_in_place_sorts.py" -> "cyclesort.py";
+    "test_in_place_sorts.py" -> "gnome_sort.py";
+    "test_in_place_sorts.py" -> "heap_sort.py";
+    "test_in_place_sorts.py" -> "merge_sort.py";
+    "test_in_place_sorts.py" -> "quick_sort_3_partition.py";
+    "test_in_place_sorts.py" -> "radix_sort.py";
+    "test_in_place_sorts.py" -> "selection_sort.py";
+    "test_in_place_sorts.py" -> "shell_sort.py";
+    "test_out_of_place_sorts.py" -> "bucket_sort.py";
+    "test_out_of_place_sorts.py" -> "counting_sort.py";
+    "test_out_of_place_sorts.py" -> "pancake_sort.py";
+    "test_out_of_place_sorts.py" -> "timsort.py";
+    "test_out_of_place_sorts.py" -> "tree_sort.py";
+    "test_out_of_place_sorts.py" -> "quick_sort.py";
+
+    "insertion_sort.py" -> "bucket_sort.py" [style=invis];
+    "bubble_sort.py" -> "counting_sort.py" [style=invis];
+    "comb_sort.py" -> "pancake_sort.py" [style=invis];
+    "cyclesort.py" -> "timsort.py" [style=invis];
+    "gnome_sort.py" -> "tree_sort.py" [style=invis];
+    "heap_sort.py" -> "quick_sort.py" [style=invis];
+
+}
