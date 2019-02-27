@@ -39,6 +39,8 @@ onboarding experience, we chose to proceed with refactoring this project mostly
 because we thought we could do some real good here.
 
 ## Requirements affected by functionality being refactored
+We listed high level requirements for the refactoring, see issue [#1](https://github.com/slarse/Python/issues/1)
+for the complete list. We have also added analysis of existing test cases related to refactored code, see the [section](#existing-test-cases-relating-to-refactored-code) below.
 
 ## Existing test cases relating to refactored code
 * [`sorts`](sorts_analysis.md)
